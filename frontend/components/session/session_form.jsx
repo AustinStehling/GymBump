@@ -43,7 +43,7 @@ class SessionForm extends React.Component {
             <div className="sign">
               <p>{this.props.errors}</p>
               <form className="new-user">
-                <h3>Sign Up</h3>
+                <h3 className='sign-up-header'>Sign Up</h3>
                   <input
                     type="text"
                     value={this.state.username}
@@ -90,7 +90,7 @@ class SessionForm extends React.Component {
           <div className="sign">
            <p>{this.props.errors}</p>
             <form className="new-user">
-              <h3>Login</h3>
+              <h3 className='login-header'>Login</h3>
                 <input
                   type="text"
                   value={this.state.username}

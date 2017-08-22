@@ -19,7 +19,9 @@ class Greeting extends React.Component {
     if(user === null) {
       return (
         <div className="nav-container">
-          <h1 className="gymbump-header">GYM BUMP</h1>
+          <Link to='/'>
+            <h1 className="gymbump-header">GYM BUMP</h1>
+          </Link>
           <div className="signup-nav">
             <Link to='/signup'>
               <p className='sign-up'>Sign Up</p>

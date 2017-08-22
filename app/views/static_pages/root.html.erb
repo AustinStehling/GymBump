@@ -1,4 +1,8 @@
 <script type="text/javascript">
+  window.staticImages = {
+    crossfitBackground: "<%= asset_path('crossfit_photo.jpg')%>"
+  }
+
   <% if loggedin? %>
     window.currentUser = <%= render(
       "api/users/user.json.jbuilder",

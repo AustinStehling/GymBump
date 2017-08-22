@@ -26,6 +26,10 @@
   font-size: 20px;
 }
 
+.sign-up-header, .login-header {
+  color: black;
+}
+
 .login {
   margin-right: 15px;
   font-size: 20px;
@@ -76,6 +80,9 @@ input {
   margin-bottom: 10px;
   width: 100px;
   height: 30px;
+  background-color: #E7DFDD;
+  color: grey;
+  font-size: 15px;
 }
 
 .sub-button {
