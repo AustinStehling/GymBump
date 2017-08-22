@@ -18,14 +18,16 @@ class Greeting extends React.Component {
 
     if(user === null) {
       return (
-        <div>
-          <Link to='/signup'>
-            Sign Up
-          </Link>
-          <br></br>
-          <Link to='/login'>
-            Login
-          </Link>
+        <div className="nav-container">
+          <h1 className="gymbump-header">GYM BUMP</h1>
+          <div className="signup-nav">
+            <Link to='/signup'>
+              <p className='sign-up'>Sign Up</p>
+            </Link>
+            <Link to='/login'>
+              <p className='login'>Login</p>
+            </Link>
+          </div>
         </div>
       );
     }
