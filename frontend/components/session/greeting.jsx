@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Greeting extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -10,7 +10,7 @@ class Greeting extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.receiveCurrentUser(null)
+    this.props.logout();
   }
 
   render() {
@@ -19,10 +19,11 @@ class Greeting extends React.Component {
     if(user === null) {
       return (
         <div>
-          <Link to='/login'>
+          <Link to='/signup'>
             Sign Up
           </Link>
-          <Link to='./signup'>
+          <br></br>
+          <Link to='/login'>
             Login
           </Link>
         </div>
@@ -31,13 +32,15 @@ class Greeting extends React.Component {
 
     return (
       <div>
-        <h3>{user.username}</h3>
-        <button onClick={this.handleSubmit}>Logout</button>
+        <p>Welcome {user.username}</p>
+        <button onClick={this.handleSubmit}>
+          Logout
+        </button>
       </div>
     );
 
+
   }
 }
-
 
 export default Greeting;
