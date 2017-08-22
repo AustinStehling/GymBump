@@ -9,6 +9,7 @@ const App = () => (
     <header>
       <GreetingContainer />
     </header>
+    <Route exact path='/' />
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
   </div>

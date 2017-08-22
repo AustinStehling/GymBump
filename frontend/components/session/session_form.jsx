@@ -40,7 +40,7 @@ class SessionForm extends React.Component {
       if (formType === 'signup') {
         return (
           <div className="sing-up-form">
-            <div>
+            <div className="sign">
               <p>{this.props.errors}</p>
               <form className="new-user">
                 <h3>Sign Up</h3>
@@ -53,13 +53,13 @@ class SessionForm extends React.Component {
                   <input
                     type="password"
                     value={this.state.password}
-                    placeholder="password"
+                    placeholder="Password"
                     onChange={this.handleUpdate('password')}
                     />
                   <input
                     type="text"
                     value={this.state.email}
-                    placeholder="email"
+                    placeholder="Email"
                     onChange={this.handleUpdate('email')}
                     />
                   <input
@@ -86,28 +86,27 @@ class SessionForm extends React.Component {
       }
 
       return (
-        <div>
-          <p>{this.props.errors}</p>
-          <form >
-            <h3>Login</h3>
-              <input
-                type="text"
-                value={this.state.username}
-                placeholder="Username"
-                onChange={this.handleUpdate('username')}
-                />
-              <br></br>
-              <input
-                type="password"
-                value={this.state.password}
-                placeholder="password"
-                onChange={this.handleUpdate('password')}
-                />
-              <br></br>
-              <button onClick={this.handleSubmit}>Submit</button>
-              <Link to={otherForm}><span>{otherForm.slice(1)}</span></Link>
-          </form>
+        <div className="sing-up-form">
+          <div className="sign">
+           <p>{this.props.errors}</p>
+            <form className="new-user">
+              <h3>Login</h3>
+                <input
+                  type="text"
+                  value={this.state.username}
+                  placeholder="Username"
+                  onChange={this.handleUpdate('username')}
+                  />
+                <input
+                  type="password"
+                  value={this.state.password}
+                  placeholder="Password"
+                  onChange={this.handleUpdate('password')}
+                  />
+                <button className="sub-button-two" onClick={this.handleSubmit}>Submit</button>
+             </form>
         </div>
+      </div>
     );
   }
 }
