@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store'
 import Root from './components/root';
 import { login } from './actions/session_actions';
+import * as APIUtil from './util/user/user_util'
+import { receiveAllUsers } from './actions/user/user_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -18,3 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store } />, root);
 });
+
+window.receiveAllUsers = receiveAllUsers;
+window.fetchUsers = APIUtil.fetchUsers;

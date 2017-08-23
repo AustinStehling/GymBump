@@ -1,6 +1,6 @@
-export const RECEIVE_USER = 'RECEIVE_USER'
-export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS'
-import * as APIUtil from '../../util/user/user_util'
+export const RECEIVE_USER = 'RECEIVE_USER';
+export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
+import * as APIUtil from '../../util/user/user_util';
 
 
 export const receiveAllUsers = users => {
@@ -17,11 +17,11 @@ export const receiveUser = user => {
   };
 };
 
-export const requestAllUsers = () => {
-  APIUtil.fetchUser.then(users => dispatch(receiveAllUsers(users)));
+export const requestAllUsers = () => dispatch => {
+  return APIUtil.fetchUsers.then(users => dispatch(receiveAllUsers(users)));
 }
 
-export const requestUser = id => {
+export const requestUser = id => dispatch => {
   APIUtil.fetchSingleUser(id).then(user => {
     dispatch(receiveUser(user));
     return user;

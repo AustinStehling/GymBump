@@ -4,7 +4,7 @@ import GreetingContainer from './session/greeting_container';
 import SessionFormContainer from './session/session_form_container';
 import { AuthRoute } from '../util/route_util';
 import RootRenderContainer from './session/root_render_container';
-
+import UsersIndexContainer from './user/users_index_container'
 
 const App = () => (
   <div>
