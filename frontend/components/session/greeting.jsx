@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
+import { Router } from 'react-router';
 
 class Greeting extends React.Component {
   constructor(props) {
@@ -23,12 +25,12 @@ class Greeting extends React.Component {
             <h1 className="gymbump-header">GYM BUMP</h1>
           </Link>
           <div className="signup-nav">
-            <Link to='/signup'>
-              <p className='sign-up'>Sign Up</p>
-            </Link>
-            <Link to='/login'>
-              <p className='login'>Login</p>
-            </Link>
+            <button className="signup-home-button" onClick={() => this.props.history.push('/signup')}>
+              Sign Up
+            </button>
+            <button className="login-home-button" onClick={() => this.props.history.push('/login')}>
+              Login
+            </button>
           </div>
         </div>
       );
@@ -47,4 +49,4 @@ class Greeting extends React.Component {
   }
 }
 
-export default Greeting;
+export default withRouter(Greeting);
