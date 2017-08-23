@@ -15,6 +15,7 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
   }
 
   handleSubmit(e) {
@@ -75,6 +76,7 @@ class SessionForm extends React.Component {
                     onChange={this.handleUpdate('last_name')}
                     />
                   <select className="g-selector" onChange={this.handleUpdate('gender')}>
+                    <option>Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                   </select>
