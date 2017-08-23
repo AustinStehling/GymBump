@@ -7,10 +7,11 @@ class UsersIndex extends React.Component {
   }
 
   render() {
+    debugger
     const members = this.props.members.map(member => <li key={member.id}>{member.username}</li>)
     return (
       <div>
-        <ul></ul>
+        <ul>{members}</ul>
       </div>
     )
   }

@@ -14,6 +14,7 @@ const App = () => (
     <Route exact path='/' component={RootRenderContainer}/>
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
+    <Route path='/workouts' component={UsersIndexContainer} />
   </div>
 );
 
