@@ -3,12 +3,13 @@ import merge from 'lodash/merge';
 
 
 
-const userReducer = (state = null, action) => {
+const userReducer = (state = {}, action) => {
   Object.freeze(state)
+  let newState;
 
   switch(action.type) {
-    case RECEIVE_USER:
-      return action.payload.user.id;
+    case RECEIVE_ALL_USERS:
+      newState = merge({}, state, action.users)
     default:
       return state;
   }

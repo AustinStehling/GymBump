@@ -1,13 +1,25 @@
 export const RECEIVE_USER = 'RECEIVE_USER'
+export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS'
 import * as APIUtil from '../../util/user/user_util'
 
-export const receiveUser = payload => {
+
+export const receiveAllUsers = users => {
   return {
-    type: RECEIVE_USER,
-    payload
+   type: RECEIVE_ALL_USERS,
+   users
   };
 };
 
+export const receiveUser = user => {
+  return {
+    type: RECEIVE_USER,
+    user
+  };
+};
+
+export const requestAllUsers = () => {
+  APIUtil.fetchUser.then(users => dispatch(receiveAllUsers(users)));
+}
 
 export const requestUser = id => {
   APIUtil.fetchSingleUser(id).then(user => {
