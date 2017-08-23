@@ -4,3 +4,33 @@
 .user-stats {
   color: black;
 }
+
+.div-main {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 57px;
+  margin-left: 75px;
+  margin-right: 75px;
+}
+
+.div-member-stats {
+ width: 15%;
+}
+
+.div-workout-list {
+  width: 75%;
+}
+
+.ul-workout-list {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 75%;
+}
+
+.li-workout-list {
+ color: black;
+ width: 100px;
+ height: 125px;
+ border: 1px solid black;
+ word-wrap:break-word;
+}

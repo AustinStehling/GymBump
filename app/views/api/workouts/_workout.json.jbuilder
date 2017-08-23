@@ -1,1 +1,1 @@
-json.extract! workout, :name, :created_at
+json.extract! workout, :id, :name, :created_at

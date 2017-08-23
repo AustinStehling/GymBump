@@ -7,7 +7,7 @@ class Leaderboard extends React.Component {
   }
 
   render() {
-    debugger
+  
     const members = this.props.members.map(member => <li className="members-list" key={member.id}>{member.username}</li>)
     return (
       <div>
