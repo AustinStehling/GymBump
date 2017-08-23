@@ -18,9 +18,9 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.includes(:workouts).all
     render :index
-  end 
+  end
 
   private
 
