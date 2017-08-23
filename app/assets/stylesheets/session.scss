@@ -10,7 +10,7 @@
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #0E0B16;
+  background-color: #FF3B3F;
   color: #E7DFDD;
   opacity: 0.8;
   border-bottom: 2px solid #E7DFDD;
@@ -42,13 +42,13 @@
 .sign-up-form {
   display: flex;
   justify-content: center;
-  background: black;
+  background: #E7DFDD;
 }
 
 .sign {
   display: flex;
   justify-content: center;
-  background: #0E0B16;
+  background: #E7DFDD;
   height: 100;
 
 }
@@ -61,7 +61,7 @@
   border: 1px solid grey;
   width: 350px;
   border-radius: 5px;
-  background-color: #E7DFDD;
+  background-color: #A9A9A9;
 }
 
 input {
@@ -73,6 +73,7 @@ input {
   font-size: 15px;
   border-radius: 5px;
   height: 30px;
+  background-color: #E7DFDD;
   color: black;
 }
 
@@ -88,10 +89,10 @@ input {
 
 .sub-button {
   margin-bottom: 10px;
-  border: 1px solid #4717F6;
+  border: 1px solid #FF3B3F;
   padding: 7px;
   border-radius: 5px;
-  background-color: #4717F6;
+  background-color: #FF3B3F;
   color: white;
   font-size: 15px;
   width: 60px;
@@ -101,10 +102,10 @@ input {
 
 .sub-button-two {
   margin-bottom: 10px;
-  border: 1px solid #4717F6;
+  border: 1px solid #FF3B3F;
   padding: 7px;
   border-radius: 5px;
-  background-color: #4717F6;
+  background-color: #FF3B3F;
   color: white;
   font-size: 15px;
   width: 60px;
