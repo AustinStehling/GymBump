@@ -13,12 +13,12 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(:workouts).find(params[:id])
     render :show
   end
 
   def index
-    @users = User.includes(:workouts).all
+    @users = User.all
     render :index
   end
 

@@ -3,7 +3,6 @@ import React from 'react';
 class UserShow extends React.Component {
   componentDidMount() {
     this.props.requestUser(this.props.match.params.userId)
-    debugger
   }
 
   componentWillReceiveProps(nextProps) {
@@ -17,11 +16,10 @@ class UserShow extends React.Component {
     if (!this.props.member) return null;
 
     return (
-      <div>
-        <ul>
-          <li>{member.first_name}</li>
-          <li>{member.last_name}</li>
-          <li>{member.gender}</li>
+      <div >
+        <ul >
+          <li className="user-stats">{member.first_name}</li>
+          <li className="user-stats">{member.last_name}</li>
         </ul>
       </div>
     )
