@@ -13,6 +13,7 @@
 #  birthday        :date
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  image_url       :string
 #
 
 class User < ApplicationRecord
@@ -27,6 +28,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   attr_reader :password
+  has_many :workouts 
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
