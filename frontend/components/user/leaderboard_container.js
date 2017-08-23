@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import UsersIndex from './users_index';
+import Leaderboard from './leaderboard';
 import { requestAllUsers } from '../../actions/user/user_actions'
 import { selectAllMembers } from '../../reducers/selectors'
 
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UsersIndex)
+)(Leaderboard)

@@ -4,7 +4,7 @@ import GreetingContainer from './session/greeting_container';
 import SessionFormContainer from './session/session_form_container';
 import { AuthRoute } from '../util/route_util';
 import RootRenderContainer from './session/root_render_container';
-import UsersIndexContainer from './user/users_index_container'
+import LeaderboardContainer from './user/leaderboard_container'
 
 const App = () => (
   <div>
@@ -14,7 +14,7 @@ const App = () => (
     <Route exact path='/' component={RootRenderContainer}/>
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
-    <Route path='/workouts' component={UsersIndexContainer} />
+    <Route path='/workouts' component={LeaderboardContainer} />
   </div>
 );
 
