@@ -1,0 +1,2 @@
+class Setresult < ApplicationRecord
+end

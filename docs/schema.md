@@ -29,16 +29,16 @@ column name      | data type | details
 -----------------|-----------|-----------------------
 id               | integer   | not null, primary key
 name             | string    | not null
+sets             | integer   | not null
 workout_id       | integer   | not null
 updated_at       | datetime  | not null
 
-## results
+## sets
 
 column name      | data type | details
 -----------------|-----------|-----------------------
 id               | integer   | not null, primary key
 exercise_id      | integer   | not null
-sets             | integer   | not null, default 0
-reps             | integer   | array, default [], if multiple sets, array will be split
-duration         | integer   | array, default [], if array is length 3, idx 0 = hours, idx 1 = mins, idx 2 = seconds
+reps             | integer   |
+duration         | integer   | 
 updated_at       | datetime  | not null
