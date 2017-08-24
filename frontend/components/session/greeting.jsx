@@ -37,14 +37,15 @@ class Greeting extends React.Component {
     }
 
     return (
-      <div>
+      <div className="nav-container">
         <Link to='/'>
           <h1 className="gymbump-header">GYM BUMP</h1>
         </Link>
-        <p>Welcome {user.username}</p>
-        <button onClick={this.handleSubmit}>
-          Logout
-        </button>
+          <div className="signup-nav">
+          <button className="login-home-button" onClick={this.handleSubmit}>
+            Logout
+          </button>
+        </div>
       </div>
     );
 
