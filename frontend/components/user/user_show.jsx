@@ -7,6 +7,7 @@ class UserShow extends React.Component {
 
   }
   componentDidMount() {
+    debugger
     this.props.requestUser(this.props.match.params.userId)
   }
 

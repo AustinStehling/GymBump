@@ -5,7 +5,7 @@
 
   <% if loggedin? %>
     window.currentUser = <%= render(
-      "api/users/user.json.jbuilder",
+      "api/users/current_user.json.jbuilder",
       user: current_user
     ).html_safe %>
   <% end %>

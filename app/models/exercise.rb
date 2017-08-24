@@ -15,4 +15,5 @@ class Exercise < ApplicationRecord
   has_many :setresults
   belongs_to :workout
 
+  accepts_nested_attributes_for :setresults
 end

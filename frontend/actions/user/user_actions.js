@@ -23,7 +23,6 @@ export const requestAllUsers = () => dispatch => {
 
 export const requestUser = id => dispatch => {
   APIUtil.fetchSingleUser(id).then(user => {
-    dispatch(receiveUser(user));
-    return user;
+    return dispatch(receiveUser(user));
   });
 };

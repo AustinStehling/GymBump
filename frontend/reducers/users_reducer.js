@@ -12,6 +12,7 @@ const usersReducer = (state = {}, action) => {
       newState = merge({}, state, action.users);
       return newState;
     case RECEIVE_USER:
+    debugger
       const member = action.user;
       newState = merge({}, state, { selected: member } );
       return newState;

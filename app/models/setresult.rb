@@ -18,4 +18,6 @@ class Setresult < ApplicationRecord
   validates :exercise, presence: true
 
   belongs_to :exercise
+
+  
 end
