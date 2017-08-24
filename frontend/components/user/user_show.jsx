@@ -2,6 +2,10 @@ import React from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 class UserShow extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
   componentDidMount() {
     this.props.requestUser(this.props.match.params.userId)
   }
@@ -33,10 +37,6 @@ class UserShow extends React.Component {
         <div>
           <InfiniteScroll>
             <div className='div-workout-list'>
-              <form>
-                <h3 className='create-workout'>Creat New Workout</h3>
-
-              </form>
               <ul>
                 {workouts}
               </ul>

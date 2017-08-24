@@ -38,6 +38,9 @@ class Greeting extends React.Component {
 
     return (
       <div>
+        <Link to='/'>
+          <h1 className="gymbump-header">GYM BUMP</h1>
+        </Link>
         <p>Welcome {user.username}</p>
         <button onClick={this.handleSubmit}>
           Logout
