@@ -9,6 +9,9 @@
       user: current_user
     ).html_safe %>
   <% end %>
+
+  window.exercises = <%= Exercise.all.to_json %>
+
 </script>
 <link href="https://fonts.googleapis.com/css?family=Play|Raleway" rel="stylesheet">
 

@@ -14,7 +14,7 @@
 
 .div-main {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-top: 57px;
   margin-left: 75px;
   margin-right: 75px;
@@ -22,6 +22,10 @@
 
 .div-member-stats {
  width: 15%;
+ border: 1px solid #A9A9A9;
+ min-width: 300px;
+ margin-right: 45px;
+ border-radius: 5px
 }
 
 .div-workout-list {

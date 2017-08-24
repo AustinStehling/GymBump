@@ -30,7 +30,7 @@ class UserShow extends React.Component {
 
     return (
       <div className='div-main'>
-        <div className='member-stats'>
+        <div className='div-member-stats'>
           <ul >
             <li className="user-stats">{member.first_name}</li>
             <li className="user-stats">{member.last_name}</li>
