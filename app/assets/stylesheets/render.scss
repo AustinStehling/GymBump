@@ -9,6 +9,41 @@
   align-items: center;
 }
 
+.home-button-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-button-render {
+  margin-bottom: 10px;
+  border: 1px solid #FF3B3F;
+  padding: 7px;
+  border-radius: 5px;
+  background-color: #FF3B3F;
+  color: white;
+  font-size: 15px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  margin-right: 7px;
+}
+
+.demo-button {
+  margin-bottom: 10px;
+  border: 1px solid #CAEBF2;
+  padding: 7px;
+  border-radius: 5px;
+  background-color: #CAEBF2;
+  color: black;
+  font-size: 15px;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  margin-left: 7px;
+}
+
+
 .bg-img {
   margin-top: 70px;
   margin-bottom: 10px;

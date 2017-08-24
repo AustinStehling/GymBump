@@ -82,8 +82,10 @@ class RootRender extends React.Component{
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                 </select>
-              <button className="sub-button" onClick={this.handleSubmit}>Submit</button>
-              <button className="sub-button" onClick={this.handleDemo}>Demo Login</button>
+                <div className='home-button-div'>
+                  <button className="sub-button-render" onClick={this.handleSubmit}>Submit</button>
+                  <button className="demo-button" onClick={this.handleDemo}>Demo Login</button>
+                </div>
             </form>
         </div>
       </div>
