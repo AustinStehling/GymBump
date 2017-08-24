@@ -15,9 +15,10 @@
 #
 
 class Setresult < ApplicationRecord
-  validates :exercise, presence: true
+  validates :exercise, :workout, presence: true
 
   belongs_to :exercise
+  belongs_to :workout
 
-  
+
 end

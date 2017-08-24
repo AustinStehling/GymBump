@@ -13,7 +13,10 @@ class Workout < ApplicationRecord
   validates :user, presence: true
 
   belongs_to :user
-  has_many :exercises
-  
-  accepts_nested_attributes_for :exercises
+
+  has_many :setresults
+  has_many :exercises,
+    through: :setresults
+
+  accepts_nested_attributes_for :setresults
 end

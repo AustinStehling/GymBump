@@ -13,7 +13,9 @@ class Exercise < ApplicationRecord
   validates :exercise_name, :workout_id, presence: true
 
   has_many :setresults
-  belongs_to :workout
+
+  has_many :workouts,
+   through: :setresults
 
   accepts_nested_attributes_for :setresults
 end
