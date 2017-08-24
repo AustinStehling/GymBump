@@ -22,3 +22,9 @@ export const requestWorkout = id => dispatch => {
     return dispatch(receiveWorkout(workout));
   });
 };
+
+export const newWorkout = workout => dispatch => {
+  return APIUtil.createWorkout(workout).then(workout => {
+    return dispatch(receiveWorkout(workout));
+  });
+};

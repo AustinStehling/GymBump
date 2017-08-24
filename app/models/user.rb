@@ -28,7 +28,9 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   attr_reader :password
-  has_many :workouts 
+
+  has_many :workouts
+  accepts_nested_attributes_for :workouts
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
