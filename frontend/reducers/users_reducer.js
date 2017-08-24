@@ -12,7 +12,8 @@ const usersReducer = (state = {}, action) => {
       newState = merge({}, state, action.users);
       return newState;
     case RECEIVE_USER:
-      const member = action.user;
+      const member = merge({}, action.user);
+      member.workouts = Object.keys(action.user.workouts)
       newState = merge({}, state, { selected: member } );
       return newState;
     default:

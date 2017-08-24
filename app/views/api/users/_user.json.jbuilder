@@ -1,6 +1,10 @@
 json.extract! user, :id, :username, :first_name, :last_name, :gender
 
 json.workouts do
+  user.workouts.each do |workout|
+    json.set! workout.id do
+      json.partial! 'api/workouts/workout', workout: workout
+    end
+  end
   # json.array! user.workouts, partial: '/api/workouts/workout', as: :workout
-  json.partial! 'api/workouts/workout', collection: user.workouts, as: :workout
 end

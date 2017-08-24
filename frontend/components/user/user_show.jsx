@@ -1,5 +1,6 @@
 import React from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import CreateWorkoutContainer from '../workout/create_workout_container'
 
 class UserShow extends React.Component {
   constructor(props) {
@@ -20,9 +21,9 @@ class UserShow extends React.Component {
     if (!this.props.member) return null;
 
     const { member } = this.props;
-    const allWorkouts = this.props.member.workouts;
+  
 
-    const workouts = allWorkouts.map(workout => <li className="li-workout-list" key={workout.id}>
+    const workouts = this.props.workouts.map(workout => <li className="li-workout-list" key={workout.id}>
                                             <div className="created-workout">{workout.created_at.slice(5,10)}</div>
                                             <div className="workout-name">{workout.name}</div></li>)
 
@@ -35,6 +36,9 @@ class UserShow extends React.Component {
           </ul>
         </div>
         <div>
+          <div>
+            <CreateWorkoutContainer/>
+          </div>
           <InfiniteScroll>
             <div className='div-workout-list'>
               <ul>

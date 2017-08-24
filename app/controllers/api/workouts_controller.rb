@@ -6,6 +6,7 @@ class Api::WorkoutsController < ApplicationController
   end
 
   def create
+    debugger
     @workout = Workout.new(workout_params)
     @workout.user = current_user
     if @workout.save
@@ -41,7 +42,7 @@ class Api::WorkoutsController < ApplicationController
 
   private
 
-  def params
+  def workout_params
     params.require(:workout).permit(:name)
   end
 

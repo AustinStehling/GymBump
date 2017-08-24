@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/workout/workout_util'
+import * as APIUtil from '../../util/workout/workout_util'
 
 export const RECEIVE_WORKOUT = 'RECEIVE_WORKOUT'
 export const CREATE_WORKOUT = 'CREATE_WORKOUT'
@@ -24,6 +24,7 @@ export const requestWorkout = id => dispatch => {
 };
 
 export const newWorkout = workout => dispatch => {
+  debugger
   return APIUtil.createWorkout(workout).then(workout => {
     return dispatch(receiveWorkout(workout));
   });

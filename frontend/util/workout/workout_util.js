@@ -1,14 +1,15 @@
 export const createWorkout = workout => {
-  return $.ajax(
+  debugger
+  return $.ajax({
     method: 'POST',
     url: 'api/workouts',
     data: { workout }
-  )
+  });
 }
 
 export const fetchWorkout = id => {
-  return $.ajax(
+  return $.ajax({
     method: 'GET',
     url: `api/workouts/${workout.id}`
-  )
+  });
 }
