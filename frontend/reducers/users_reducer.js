@@ -13,8 +13,14 @@ const usersReducer = (state = {}, action) => {
       newState = merge({}, state, action.users);
       return newState;
     case RECEIVE_USER:
+
       const member = merge({}, action.user);
-      member.workouts = Object.keys(action.user.workouts)
+      debugger
+      if (!member.workouts) {
+        member.workouts = [];
+      } else {
+        member.workouts = Object.keys(action.user.workouts);
+      }
       newState = merge({}, state, { selected: member } );
       return newState;
     case RECEIVE_WORKOUT:
