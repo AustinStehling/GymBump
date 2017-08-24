@@ -17,6 +17,7 @@ class RootRender extends React.Component{
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   handleSubmit(e) {
@@ -32,6 +33,11 @@ class RootRender extends React.Component{
 
   handleUpdate(property) {
     return e => this.setState({ [property]: e.target.value });
+  }
+
+  handleDemo(e) {
+    e.preventDefault();
+    this.props.login({ username: 'Demo', password: 'password'});
   }
 
   render() {
@@ -77,6 +83,7 @@ class RootRender extends React.Component{
                   <option value="female">Female</option>
                 </select>
               <button className="sub-button" onClick={this.handleSubmit}>Submit</button>
+              <button className="sub-button" onClick={this.handleDemo}>Demo Login</button>
             </form>
         </div>
       </div>
