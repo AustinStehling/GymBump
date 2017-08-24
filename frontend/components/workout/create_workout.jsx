@@ -13,7 +13,6 @@ class CreateWorkout extends React.Component {
   }
 
   handleSumbit(e) {
-    debugger
     e.preventDefault();
     this.props.createWorkout(this.state)
       .then(
@@ -22,6 +21,7 @@ class CreateWorkout extends React.Component {
         }
       );
   }
+
 
   update(property) {
     return e => this.setState({ [property]: e.target.value })

@@ -1,5 +1,5 @@
-import { RECEIVE_WORKOUT } from '../actions/workout/workout_actions'
-import { RECEIVE_USER } from '../actions/user/user_actions'
+import { RECEIVE_WORKOUT } from '../actions/workout/workout_actions';
+import { RECEIVE_USER } from '../actions/user/user_actions';
 import merge from 'lodash/merge';
 
 const workoutReducer = (state = {}, action) => {
@@ -11,7 +11,7 @@ const workoutReducer = (state = {}, action) => {
       return merge({}, state, action.user.workouts)
     case RECEIVE_WORKOUT:
       const workout = action.workout;
-      newState = merge({}, state, { selectedWorkout: workout.id })
+      newState = merge({}, state, { [workout.id]: workout, selectedWorkout: workout.id })
       return newState;
     default:
       return state;

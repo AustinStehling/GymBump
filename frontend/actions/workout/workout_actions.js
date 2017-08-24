@@ -24,7 +24,6 @@ export const requestWorkout = id => dispatch => {
 };
 
 export const newWorkout = workout => dispatch => {
-  debugger
   return APIUtil.createWorkout(workout).then(workout => {
     return dispatch(receiveWorkout(workout));
   });

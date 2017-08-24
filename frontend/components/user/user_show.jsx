@@ -17,6 +17,7 @@ class UserShow extends React.Component {
     }
   }
 
+
   render() {
     if (!this.props.member) return null;
 
@@ -36,7 +37,7 @@ class UserShow extends React.Component {
           </ul>
         </div>
         <div>
-          <div>
+          <div 'div-create-workout'>
             <CreateWorkoutContainer/>
           </div>
           <InfiniteScroll>
