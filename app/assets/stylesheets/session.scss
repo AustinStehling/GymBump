@@ -11,9 +11,8 @@
   padding-left: 20px;
   padding-right: 20px;
   background-color: #FF3B3F;
-  color: #E7DFDD;
-  opacity: 0.8;
-  border-bottom: 2px solid #E7DFDD;
+  color: #EFEFEF;
+  border-bottom: 2px solid #EFEFEF;
 }
 
 .signup-nav {
@@ -39,16 +38,21 @@
   font-size: 30px;
 }
 
+.gymbump-header-logged-in {
+  font-size: 30px;
+  color: #A9A9A9;
+}
+
 .sign-up-form {
   display: flex;
   justify-content: center;
-  background: #E7DFDD;
+  background: #EFEFEF;
 }
 
 .sign {
   display: flex;
   justify-content: center;
-  background: #E7DFDD;
+  background: #EFEFEF;
   height: 100;
 
 }
@@ -73,7 +77,7 @@ input {
   font-size: 15px;
   border-radius: 5px;
   height: 30px;
-  background-color: #E7DFDD;
+  background-color: #EFEFEF;
   color: black;
 }
 
@@ -82,7 +86,7 @@ input {
   margin-bottom: 10px;
   width: 100px;
   height: 30px;
-  background-color: #E7DFDD;
+  background-color: #EFEFEF;
   color: grey;
   font-size: 15px;
 }
