@@ -5,6 +5,13 @@
   color: black;
 }
 
+.new-workout-and-workouts {
+  border: 1px solid #A9A9A9;
+  padding: 15px;
+  border-radius: 5px;
+  background: #A9A9A9;
+}
+
 .div-main {
   display: flex;
   justify-content: space-between;
@@ -18,8 +25,10 @@
 }
 
 .div-workout-list {
-
-  max-height: 300px;
+  max-width: 433px;
+  max-height: 600px;
+  border-radius: 5px
+  border 1px solid #A9A9A9;
 
 }
 
@@ -51,6 +60,7 @@
  justify-content: space-between;
  padding-right: 15px;
  padding-left: 15px;
+ background-color: #EFEFEF;
 }
 
 .li-workout-list:hover {

@@ -31,15 +31,18 @@ class CreateWorkout extends React.Component {
 
       return (
         <div>
-          <form onSubmit={this.handleSumbit}>
-            <h3>New Workout</h3>
-            <input
-              type="text"
-              value={this.state.name}
-              placeholder="Name Me"
-              onChange={this.update('name')}
-              />
-            <button>Create</button>
+          <form className="create-workout-form" onSubmit={this.handleSumbit}>
+            <h3 className="new-workout">{this.props.member}&#39;s Workouts</h3>
+            <div className='create-workout-input-button-con'>
+              <input
+                type="text"
+                value={this.state.name}
+                placeholder="Add Workout"
+                onChange={this.update('name')}
+                className="new-workout-input"
+                />
+              <button className="new-workout-button">Create</button>
+            </div>
           </form>
         </div>
       )

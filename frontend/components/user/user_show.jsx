@@ -37,8 +37,9 @@ class UserShow extends React.Component {
           </ul>
         </div>
         <div>
-          <div 'div-create-workout'>
-            <CreateWorkoutContainer/>
+          <div className="new-workout-and-workouts">
+          <div className='div-create-workout'>
+            <CreateWorkoutContainer member={this.props.member.username}/>
           </div>
           <InfiniteScroll>
             <div className='div-workout-list'>
@@ -48,6 +49,7 @@ class UserShow extends React.Component {
             </div>
           </InfiniteScroll>
         </div>
+       </div>
       </div>
     )
   }

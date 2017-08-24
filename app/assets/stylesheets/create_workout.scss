@@ -1,0 +1,36 @@
+.create-workout-form {
+ border: 1px solid #A9A9A9;
+ margin-bottom: 15px;
+ border-radius: 5px;
+ margin-right: 17px;
+}
+
+.new-workout {
+  display: flex;
+  justify-content: center;
+}
+
+.new-workout-input {
+
+}
+
+.new-workout-button {
+    background: #CAEBF2;
+    padding: 7px;
+    border-radius: 5px;
+    width: 60px;
+    color: black;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 28px;
+    margin-left: 15px;
+    margin-top: 7px;
+}
+
+.create-workout-input-button-con {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
