@@ -19,19 +19,43 @@
 
 .div-workout-list {
   width: 75%;
-  max-height: 300px
+  max-height: 300px;
 }
 
 .ul-workout-list {
   table-layout: fixed;
   border-collapse: collapse;
   width: 75%;
+  border: 1px solid black;
+}
+
+.created-workout {
+  color: black;
+}
+
+.workout-name {
+  color: black;
 }
 
 .li-workout-list {
  color: black;
  width: 400px;
  height: 50px;
- border: 1px solid black;
+ border-top: 1px solid black;
+ border-right: 1px solid black;
+ border-left: 1px solid black;
  word-wrap:break-word;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding-right: 15px;
+ padding-left: 15px;
+}
+
+.li-workout-list:hover {
+    background-color: #FF3B3F;
+}
+
+.li-workout-list:last-child {
+  border-bottom: 1px solid black;
 }

@@ -19,7 +19,8 @@ class UserShow extends React.Component {
     const allWorkouts = this.props.member.workouts;
 
     const workouts = allWorkouts.map(workout => <li className="li-workout-list" key={workout.id}>
-                                                                                    {workout.name}</li>)
+                                            <div className="created-workout">{workout.created_at.slice(5,10)}</div>
+                                            <div className="workout-name">{workout.name}</div></li>)
 
     return (
       <div className='div-main'>
@@ -32,6 +33,10 @@ class UserShow extends React.Component {
         <div>
           <InfiniteScroll>
             <div className='div-workout-list'>
+              <form>
+                <h3 className='create-workout'>Creat New Workout</h3>
+
+              </form>
               <ul>
                 {workouts}
               </ul>
