@@ -19,7 +19,6 @@ class ExerciseIndex extends React.Component {
   }
 
   handleClick(e) {
-    debugger
     this.setState({ inputVal: e.currentTarget.attributes.value.value})
   }
 
@@ -53,18 +52,17 @@ class ExerciseIndex extends React.Component {
 
 
     return (
-      <div>
-        <div>
-          <label>
-            Input Exercise:
+      <div className="exercise-main-div">
+        <div className="exercise-second-div">
+          <label className="exercise-label">
             <input type="text" value={this.state.inputVal}
-                               placeholder={this.state.inputVal}
-                               onChange={this.handleChange}
-                               autoComplete="on"/>
+              onChange={this.handleChange}
+              className="exercise-input"
+              autoComplete="on"/>
+            <ul className="exercise-ul">
+              {match}
+            </ul>
           </label>
-          <ul>
-            {match}
-          </ul>
         </div>
       </div>
     );

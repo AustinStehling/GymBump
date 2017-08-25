@@ -1,0 +1,36 @@
+.workout-auto-li {
+  border: 1px solid grey;
+  padding: 5px;
+  width: 300px;
+  margin: 0px;
+  font-size: 15px;
+  height: 30px;
+  background-color: #EFEFEF;
+  color: black;
+}
+
+.exercise-main-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.exercise-second-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.exercise-label {
+
+}
+
+.exercise-input {
+  margin-bottom: 20px;
+}
+
+.exercise-ul {
+  overflow: auto;
+  max-height: 300px;
+}
