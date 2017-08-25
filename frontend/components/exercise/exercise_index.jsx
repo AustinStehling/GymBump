@@ -6,18 +6,22 @@ class ExerciseIndex extends React.Component {
     super(props);
 
     this.state = { inputVal: '' }
-    this.handleChange = this.handleChange.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({ inputVal: event.target.value })
+  handleChange(e) {
+    this.setState({ inputVal: e.target.value })
   }
 
   componentDidMount() {
     this.props.requestAllExercises();
   }
 
-
+  handleClick(e) {
+    debugger
+    this.setState({ inputVal: e.currentTarget.attributes.value.value})
+  }
 
   render() {
 
@@ -26,16 +30,23 @@ class ExerciseIndex extends React.Component {
 
 
     const match = allExercises.map((exercise) => {
+      if (this.state.inputVal === '') return [];
       let matched = [];
       if (this.state.inputVal.length > 0) {
         for (var j = 0; j < this.state.inputVal.length; j++) {
           matched = [];
           if (exercise.exercise_name.slice(0, j + 1).toUpperCase() === this.state.inputVal.slice(0, j + 1).toUpperCase()) {
-            matched.push(<option>{exercise.exercise_name}</option>);
+            matched.push(<li onClick={this.handleClick}
+                             value={exercise.exercise_name}
+                             className="workout-auto-li"
+                             key={exercise.id}>{exercise.exercise_name}</li>);
           }
         }
       } else {
-        matched.push(<option key={exercise.id}>{exercise.exercise_name}</option>)
+        matched.push(<li onClick={this.handleClick}
+                         value={exercise.exercise_name}
+                         className="workout-auto-li"
+                         key={exercise.id}>{exercise.exercise_name}</li>)
       }
       return matched;
     });
@@ -45,13 +56,16 @@ class ExerciseIndex extends React.Component {
       <div>
         <div>
           <label>
-            Search:
-            <input type="text" value={this.state.inputVal} onChange={this.handleChange}/>
+            Input Exercise:
+            <input type="text" value={this.state.inputVal}
+                               placeholder={this.state.inputVal}
+                               onChange={this.handleChange}
+                               autoComplete="on"/>
           </label>
+          <ul>
+            {match}
+          </ul>
         </div>
-        <select>
-          {match}
-        </select>
       </div>
     );
   }
