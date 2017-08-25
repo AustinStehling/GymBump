@@ -21,7 +21,7 @@ class UserShow extends React.Component {
 
   render() {
     if (!this.props.member) return null;
-
+    
     const { member } = this.props;
     const allWorkouts = this.props.workouts;
 
@@ -43,7 +43,7 @@ class UserShow extends React.Component {
             <CreateWorkoutContainer
                allExercises={this.props.exercises}
                member={this.props.member.username}/>
-          </div>
+           </div>
           <InfiniteScroll>
             <div className='div-workout-list'>
               <ul>
