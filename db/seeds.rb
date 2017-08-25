@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
-Setresult.destroy_all
+Exercise.destroy_all
 Workout.destroy_all
 Setresult.destroy_all
 
@@ -75,7 +75,6 @@ exercise10 = Exercise.create!(exercise_name: "Push-up")
 exercise11 = Exercise.create!(exercise_name: "Bench Press")
 exercise12 = Exercise.create!(exercise_name: "Incline Press")
 exercise13 = Exercise.create!(exercise_name: "Decline Press")
-exercise14 = Exercise.create!(exercise_name: "Smith Machine Bench Press")
 exercise15 = Exercise.create!(exercise_name: "Pec Deck")
 exercise16 = Exercise.create!(exercise_name: "Chest Fly")
 exercise17 = Exercise.create!(exercise_name: "Pull-up")

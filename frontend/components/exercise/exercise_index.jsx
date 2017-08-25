@@ -31,11 +31,11 @@ class ExerciseIndex extends React.Component {
         for (var j = 0; j < this.state.inputVal.length; j++) {
           matched = [];
           if (exercise.exercise_name.slice(0, j + 1).toUpperCase() === this.state.inputVal.slice(0, j + 1).toUpperCase()) {
-            matched.push(<li>{exercise.exercise_name}</li>);
+            matched.push(<option>{exercise.exercise_name}</option>);
           }
         }
       } else {
-        matched.push(<li key={exercise.id}>{exercise.exercise_name}</li>)
+        matched.push(<option key={exercise.id}>{exercise.exercise_name}</option>)
       }
       return matched;
     });
@@ -49,11 +49,9 @@ class ExerciseIndex extends React.Component {
             <input type="text" value={this.state.inputVal} onChange={this.handleChange}/>
           </label>
         </div>
-        <div>
-          <ul>
-            {match}
-          </ul>
-        </div>
+        <select>
+          {match}
+        </select>
       </div>
     );
   }
