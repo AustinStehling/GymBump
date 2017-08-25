@@ -74,3 +74,16 @@
 .li-workout-list:last-child {
   border-bottom: 1px solid black;
 }
+
+.add-workout-button {
+  margin-bottom: 10px;
+  border: 1px solid #FF3B3F;
+  padding: 7px;
+  border-radius: 5px;
+  background-color: #FF3B3F;
+  color: white;
+  font-size: 15px;
+  width: 110px;
+  display: flex;
+  justify-content: center;
+}

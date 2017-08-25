@@ -46,6 +46,12 @@ class UserShow extends React.Component {
     const workouts = allWorkouts.reverse().map(workout => <li className="li-workout-list" key={workout.id}>
                                             <div className="created-workout">{workout.created_at.slice(5,10)}</div>
                                             <div className="workout-name">{workout.name}</div></li>)
+    let buttonText;
+    {if (this.state.active === 'FIRST') {
+      buttonText = 'Cancel Workout'
+    } else {
+      buttonText = 'Create Workout'
+    }}
 
     return (
       <div className='div-main'>
@@ -62,7 +68,7 @@ class UserShow extends React.Component {
             {this.state.active === 'FIRST' ? (
               <CreateWorkoutContainer member={this.props.member.username}/>
             ) : null}
-            <button onClick={this._onButtonClick}>Add a Workout</button>
+            <button className="add-workout-button" onClick={this._onButtonClick}>{buttonText}</button>
            </div>
 
           <InfiniteScroll>
