@@ -21,7 +21,7 @@ class UserShow extends React.Component {
 
   render() {
     if (!this.props.member) return null;
-    
+
     const { member } = this.props;
     const allWorkouts = this.props.workouts;
 
@@ -57,14 +57,6 @@ class UserShow extends React.Component {
     )
   }
 }
-
-
-
-
-
-
-
-
 
 
 export default UserShow;
