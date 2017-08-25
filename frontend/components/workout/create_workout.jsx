@@ -7,56 +7,49 @@ class CreateWorkout extends React.Component {
     super(props);
     this.state = {
       name: '',
-      showComponent: false
+      active: 'FIRST'
     };
-    this._onButtonClick = this._onButtonClick.bind(this);
     this.handleSumbit = this.handleSumbit.bind(this);
     this.update = this.update.bind(this);
   }
 
   handleSumbit(e) {
+    let newActive = this.state.active === 'FIRST' ? 'SECOND' : null
     e.preventDefault();
     this.props.createWorkout(this.state)
       .then(
         () => {
-          this.setState({name: ''});
+          this.setState({name: '', active: newActive});
         }
       );
-  }
+    }
 
-    _onButtonClick() {
-     this.setState({
-       showComponent: true,
-     });
+
+   update(property) {
+     return e => this.setState({ [property]: e.target.value })
    }
-
-  update(property) {
-    return e => this.setState({ [property]: e.target.value })
-  }
 
     render () {
 
       return (
         <div>
-          <form className="create-workout-form" onSubmit={this.handleSumbit}>
-            <h3 className="new-workout">{this.props.member}&#39;s Workouts</h3>
-            <div className='create-workout-input-button-con'>
-              <input
-                type="text"
-                value={this.state.name}
-                placeholder="Add Workout"
-                onChange={this.update('name')}
-                className="new-workout-input"
-                />
-              <button onClick={this._onButtonClick} className="new-workout-button">Create</button>
-              <div>
-                {this.state.showComponent ?
-                   <ExerciseIndexContainer  allExercises={this.props.allExercises}/> :
-                    null
-                  }
+          {this.state.active === 'FIRST' ? (
+            <form className="create-workout-form" onSubmit={this.handleSumbit}>
+              <h3 className="new-workout">{this.props.member}&#39;s Workouts</h3>
+              <div className='create-workout-input-button-con'>
+                <input
+                  type="text"
+                  value={this.state.name}
+                  placeholder="Add Workout"
+                  onChange={this.update('name')}
+                  className="new-workout-input"
+                  />
+                <button className="new-workout-button">Create</button>
               </div>
-            </div>
-          </form>
+            </form>
+          ) : this.state.active === 'SECOND' ? (
+          <ExerciseIndexContainer  allExercises={this.props.allExercises}/>
+          ) : null }
         </div>
       )
     }
