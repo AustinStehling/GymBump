@@ -1,4 +1,5 @@
 import { RECEIVE_ALL_USERS, RECEIVE_USER } from '../actions/user/user_actions';
+import { CLEAR_ALL } from '../actions/reset_state';
 import { RECEIVE_WORKOUT } from '../actions/workout/workout_actions';
 import { RECEIVE_ALL_EXERCISES } from '../actions/exercise/exercise_actions'
 import merge from 'lodash/merge';
@@ -10,6 +11,8 @@ const usersReducer = (state = {}, action) => {
   let newState;
 
   switch(action.type) {
+    case CLEAR_ALL:
+      return {};
     case RECEIVE_ALL_USERS:
       newState = merge({}, state, action.users);
       return newState;

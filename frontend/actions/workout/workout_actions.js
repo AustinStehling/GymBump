@@ -2,6 +2,7 @@ import * as APIUtil from '../../util/workout/workout_util'
 
 export const RECEIVE_WORKOUT = 'RECEIVE_WORKOUT'
 export const CREATE_WORKOUT = 'CREATE_WORKOUT'
+export const CLEAR_WORKOUT = 'CLEAR_WORKOUT'
 
 export const createWorkout = workout => {
   return {
@@ -16,6 +17,8 @@ export const receiveWorkout = workout => {
     workout
   };
 };
+
+
 
 export const requestWorkout = id => dispatch => {
   APIUtil.fetchWorkout(id).then(workout => {

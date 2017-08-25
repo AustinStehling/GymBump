@@ -6,7 +6,7 @@ import { selectMembersWorkouts, selectAllExercises } from '../../reducers/select
 
 const mapStateToProps = state => ({
   member: state.entities.members.selected,
-  workouts: selectMembersWorkouts(state),
+  workouts: selectMembersWorkouts(state).reverse(),
   exercises: selectAllExercises(state)
 });
 

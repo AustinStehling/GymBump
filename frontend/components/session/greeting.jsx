@@ -11,15 +11,24 @@ class Greeting extends React.Component {
   }
 
   handleSubmit(e) {
+
     e.preventDefault();
-    this.props.logout().then(
-      () => {
-        this.props.history.push('/');
-      }
-    );
+    this.props.logout().then(() => {
+      this.props.requestClear()
+      this.props.history.push('/')
+    })
+  //   this.props.logout().then(() => {
+  //     this.props.requestClear().then(
+  //       () => {
+  //         this.props.history.push('/');
+  //     }
+  //       )
+  //     );
+  //   }
   }
 
   render() {
+
     const user = this.props.currentUser;
 
     if(user === null) {
