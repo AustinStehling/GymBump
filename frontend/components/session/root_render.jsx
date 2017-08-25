@@ -21,9 +21,10 @@ class RootRender extends React.Component{
   }
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.form(user)
+    this.props.signup(user)
       .then(
         () => {
           this.props.history.push('/');
@@ -82,7 +83,7 @@ class RootRender extends React.Component{
                   <option value="female">Female</option>
                 </select>
                 <div className='home-button-div'>
-                  <button className="sub-button-render" onClick={this.handleSubmit}>Submit</button>
+                  <button className="sub-button-render" onClick={this.handleSubmit}>Sign Up</button>
                   <button className="demo-button" onClick={this.handleDemoLogin}>Demo Login</button>
                 </div>
             </form>
