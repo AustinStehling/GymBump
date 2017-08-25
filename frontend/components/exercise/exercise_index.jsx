@@ -20,8 +20,10 @@ class ExerciseIndex extends React.Component {
     return (
       <div>
         <select>
-          <option>Please Choose</option>
-          {exercises}
+          <form>
+            <option>Please Choose</option>
+            {exercises}
+          </form>
         </select>
       </div>
     );
