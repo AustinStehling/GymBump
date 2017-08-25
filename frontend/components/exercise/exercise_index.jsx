@@ -4,27 +4,56 @@ import { withRouter } from 'react-router-dom';
 class ExerciseIndex extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = { inputVal: '' }
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(event) {
+    this.setState({ inputVal: event.target.value })
   }
 
   componentDidMount() {
     this.props.requestAllExercises();
   }
 
+
+
   render() {
 
 
     let allExercises = this.props.allExercises;
-    let exercises = allExercises.map(exercise => <option key={exercise.id}>
-                                            {exercise.exercise_name}</option>);
+
+
+    const match = allExercises.map((exercise) => {
+      let matched = [];
+      if (this.state.inputVal.length > 0) {
+        for (var j = 0; j < this.state.inputVal.length; j++) {
+          matched = [];
+          if (exercise.exercise_name.slice(0, j + 1).toUpperCase() === this.state.inputVal.slice(0, j + 1).toUpperCase()) {
+            matched.push(<li>{exercise.exercise_name}</li>);
+          }
+        }
+      } else {
+        matched.push(<li key={exercise.id}>{exercise.exercise_name}</li>)
+      }
+      return matched;
+    });
+
 
     return (
       <div>
-        <select>
-          <form>
-            <option>Please Choose</option>
-            {exercises}
-          </form>
-        </select>
+        <div>
+          <label>
+            Search:
+            <input type="text" value={this.state.inputVal} onChange={this.handleChange}/>
+          </label>
+        </div>
+        <div>
+          <ul>
+            {match}
+          </ul>
+        </div>
       </div>
     );
   }
