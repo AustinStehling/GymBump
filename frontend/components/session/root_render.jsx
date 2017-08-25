@@ -40,6 +40,9 @@ class RootRender extends React.Component{
   }
 
   render() {
+
+    let errors = this.props.errors.map((error, idx) => <li className="errors-mapped" key={idx}>{error}</li>)
+
     return (
       <div className="render-div">
         <div className="render-div-2">
@@ -58,6 +61,7 @@ class RootRender extends React.Component{
                   placeholder="Password"
                   onChange={this.handleUpdate('password')}
                   />
+
                 <input
                   type="text"
                   value={this.state.email}
@@ -70,7 +74,7 @@ class RootRender extends React.Component{
                   placeholder="First Name"
                   onChange={this.handleUpdate('first_name')}
                   />
-                <input
+               <input
                   type="text"
                   value={this.state.LastName}
                   placeholder="Last Name"
@@ -81,6 +85,9 @@ class RootRender extends React.Component{
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                 </select>
+                <ol className="errors-list">
+                  {errors}
+                </ol>
                 <div className='home-button-div'>
                   <button className="sub-button-render" onClick={this.handleSubmit}>Sign Up</button>
                   <button className="demo-button" onClick={this.handleDemoLogin}>Demo Login</button>
