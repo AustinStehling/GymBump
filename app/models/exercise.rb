@@ -10,7 +10,7 @@
 #
 
 class Exercise < ApplicationRecord
-  validates :exercise_name, :workout_id, presence: true
+  validates :exercise_name, presence: true
 
   has_many :setresults
 
