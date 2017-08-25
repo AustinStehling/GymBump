@@ -29,9 +29,6 @@ class Greeting extends React.Component {
             <h1 className="gymbump-header">GYM BUMP</h1>
           </Link>
           <div className="signup-nav">
-            <button className="signup-home-button" onClick={() => this.props.history.push('/signup')}>
-              Sign Up
-            </button>
             <button className="login-home-button" onClick={() => this.props.history.push('/login')}>
               Login
             </button>
