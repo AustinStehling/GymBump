@@ -37,12 +37,13 @@ class SessionForm extends React.Component {
 
     const formType = this.props.formType;
     const otherForm = (this.props.formType === 'login') ? '/signup' : '/login';
+    const errors = this.props.errors
 
       if (formType === 'signup') {
         return (
           <div className="sing-up-form">
             <div className="sign">
-              <p>{this.props.errors}</p>
+
               <form className="new-user">
                 <h3 className='sign-up-header'>Sign Up</h3>
                   <input
@@ -51,35 +52,41 @@ class SessionForm extends React.Component {
                     placeholder="Username"
                     onChange={this.handleUpdate('username')}
                     />
+                  <p className="errors">{errors[0]}</p>
                   <input
                     type="password"
                     value={this.state.password}
                     placeholder="Password"
                     onChange={this.handleUpdate('password')}
                     />
+                  <p className="errors">{errors[1]}</p>
                   <input
                     type="text"
                     value={this.state.email}
                     placeholder="Email"
                     onChange={this.handleUpdate('email')}
                     />
+                  <p className="errors">{errors[2]}</p>
                   <input
                     type="text"
                     value={this.state.firstName}
                     placeholder="First Name"
                     onChange={this.handleUpdate('first_name')}
                     />
+                  <p className="errors">{errors[3]}</p>
                   <input
                     type="text"
                     value={this.state.LastName}
                     placeholder="Last Name"
                     onChange={this.handleUpdate('last_name')}
                     />
+                  <p className="errors">{errors[4]}</p>
                   <select className="g-selector" onChange={this.handleUpdate('gender')}>
                     <option>Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                   </select>
+                  <p className="errors">{errors[5]}</p>
                 <button className="sub-button" onClick={this.handleSubmit}>Submit</button>
               </form>
             </div>
@@ -90,7 +97,7 @@ class SessionForm extends React.Component {
       return (
         <div className="sing-up-form">
           <div className="sign">
-           <p>{this.props.errors}</p>
+
             <form className="new-user">
               <h3 className='login-header'>Login</h3>
                 <input
@@ -99,12 +106,14 @@ class SessionForm extends React.Component {
                   placeholder="Username"
                   onChange={this.handleUpdate('username')}
                   />
+                <p className="errors">{errors[0]}</p>
                 <input
                   type="password"
                   value={this.state.password}
                   placeholder="Password"
                   onChange={this.handleUpdate('password')}
                   />
+                <p className="errors">{errors[1]}</p>
                 <button className="sub-button-two" onClick={this.handleSubmit}>Submit</button>
              </form>
         </div>
