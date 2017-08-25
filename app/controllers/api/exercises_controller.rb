@@ -9,6 +9,10 @@ class Api::ExercisesController < ApplicationController
     end
   end
 
+  def index
+    @Exercises = Exercise.all
+  end
+  
   private
 
   def exercise_params
