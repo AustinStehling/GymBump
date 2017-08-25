@@ -8,7 +8,8 @@ class UserShow extends React.Component {
 
   }
   componentDidMount() {
-    this.props.requestUser(this.props.match.params.userId)
+    this.props.requestUser(this.props.match.params.userId),
+    this.props.requestAllExercises();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -20,7 +21,7 @@ class UserShow extends React.Component {
 
   render() {
     if (!this.props.member) return null;
-
+    
     const { member } = this.props;
     const allWorkouts = this.props.workouts;
 
@@ -39,7 +40,9 @@ class UserShow extends React.Component {
         <div>
           <div className="new-workout-and-workouts">
           <div className='div-create-workout'>
-            <CreateWorkoutContainer member={this.props.member.username}/>
+            <CreateWorkoutContainer
+               allExercises={this.props.exercises}
+               member={this.props.member.username}/>
           </div>
           <InfiniteScroll>
             <div className='div-workout-list'>

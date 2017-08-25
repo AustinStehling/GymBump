@@ -1,13 +1,15 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import ExerciseIndexContainer from '../exercise/exercise_index_container'
 
 class CreateWorkout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ''
+      name: '',
+      showComponent: false
     };
-
+    this._onButtonClick = this._onButtonClick.bind(this);
     this.handleSumbit = this.handleSumbit.bind(this);
     this.update = this.update.bind(this);
   }
@@ -22,6 +24,11 @@ class CreateWorkout extends React.Component {
       );
   }
 
+    _onButtonClick() {
+     this.setState({
+       showComponent: true,
+     });
+   }
 
   update(property) {
     return e => this.setState({ [property]: e.target.value })
@@ -41,7 +48,13 @@ class CreateWorkout extends React.Component {
                 onChange={this.update('name')}
                 className="new-workout-input"
                 />
-              <button className="new-workout-button">Create</button>
+              <button onClick={this._onButtonClick} className="new-workout-button">Create</button>
+              <div>
+                {this.state.showComponent ?
+                   <ExerciseIndexContainer  allExercises={this.props.allExercises}/> :
+                    null
+                  }
+              </div>
             </div>
           </form>
         </div>
