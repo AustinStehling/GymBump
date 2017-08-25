@@ -35,7 +35,6 @@ class CreateWorkout extends React.Component {
         <div>
           {this.state.active === 'FIRST' ? (
             <form className="create-workout-form" onSubmit={this.handleSumbit}>
-              <h3 className="new-workout">{this.props.member}&#39;s Workouts</h3>
               <div className='create-workout-input-button-con'>
                 <input
                   type="text"

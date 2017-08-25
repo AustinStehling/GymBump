@@ -65,8 +65,9 @@ class UserShow extends React.Component {
           <div className="new-workout-and-workouts">
 
           <div className='div-create-workout'>
+            <h3 className="new-workout">{this.props.member.username}&#39;s Workouts</h3>
             {this.state.active === 'FIRST' ? (
-              <CreateWorkoutContainer member={this.props.member.username}/>
+              <CreateWorkoutContainer />
             ) : null}
             <button className="add-workout-button" onClick={this._onButtonClick}>{buttonText}</button>
            </div>
