@@ -1,5 +1,7 @@
-export const createResults = setresult => ({
-  method: 'POST',
-  url: '/api/setresults',
-  data: { setresult }
-});
+export const createResults = setresult => {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/setresults',
+    data: { setresult }
+  });
+}

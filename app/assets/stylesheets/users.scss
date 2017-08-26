@@ -1,6 +1,15 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.placerholder {
+  width: 15%;
+  border: 1px solid #A9A9A9;
+  min-width: 200px;
+  margin-left: 45px;
+  border-radius: 5px
+}
+
+
 .user-stats {
   color: black;
 }

@@ -42,7 +42,7 @@ class UserShow extends React.Component {
 
     const { member } = this.props;
     const allWorkouts = this.props.workouts;
-    
+
     const workouts = allWorkouts.map(workout => <li className="li-workout-list" key={workout.id}>
                                             <div className="created-workout">{workout.created_at.slice(5,10)}</div>
                                             <div className="workout-name">{workout.name}</div></li>)
@@ -79,7 +79,12 @@ class UserShow extends React.Component {
               </ul>
             </div>
           </InfiniteScroll>
+
+
         </div>
+       </div>
+       <div className="placeholder">
+         
        </div>
       </div>
     )

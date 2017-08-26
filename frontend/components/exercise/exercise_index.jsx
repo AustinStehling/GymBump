@@ -59,10 +59,11 @@ class ExerciseIndex extends React.Component {
               onChange={this.handleChange}
               className="exercise-input"
               autoComplete="on"/>
-            <ul className="exercise-ul">
-              {match}
-            </ul>
           </label>
+          <ul className="exercise-ul">
+            {match}
+          </ul>
+          <button>Test</button>
         </div>
       </div>
     );
