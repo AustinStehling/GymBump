@@ -64,12 +64,13 @@ class ExerciseIndex extends React.Component {
             <input type="text" value={this.state.inputVal}
               onChange={this.handleChange}
               className="exercise-input"
-              autoComplete="on"/>
+              />
           </label>
           <ul className="exercise-ul">
             {match}
           </ul>
-          <button onClick={() => this.props.requestExercise(selected)}>Test</button>
+          <button className="new-exercise-button"
+                  onClick={() => this.props.requestExercise(selected)}>Add Exercise</button>
         </div>
       </div>
     );

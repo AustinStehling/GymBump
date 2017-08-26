@@ -84,7 +84,7 @@ class UserShow extends React.Component {
         </div>
        </div>
        <div className="placeholder">
-         
+
        </div>
       </div>
     )
