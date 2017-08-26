@@ -50,6 +50,12 @@ class ExerciseIndex extends React.Component {
       return matched;
     });
 
+    let selected
+    allExercises.forEach(exercise => {
+      if (exercise.exercise_name === this.state.inputVal) {
+        selected = exercise.id
+      }
+    })
 
     return (
       <div className="exercise-main-div">
@@ -63,7 +69,7 @@ class ExerciseIndex extends React.Component {
           <ul className="exercise-ul">
             {match}
           </ul>
-          <button onClick={() => this.props.requestExercise(this.state.inputVal)}>Test</button>
+          <button onClick={() => this.props.requestExercise(selected)}>Test</button>
         </div>
       </div>
     );
