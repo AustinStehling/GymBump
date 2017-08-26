@@ -39,7 +39,7 @@ class UserShow extends React.Component {
 
   render() {
     if (!this.props.member) return null;
-
+    debugger
     const { member } = this.props;
     const allWorkouts = this.props.workouts;
 

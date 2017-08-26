@@ -15,6 +15,8 @@ class CreateSetResult extends React.Component {
       duration: '',
       exercise: '',
       workout: ''
+      exercise_id: this.props.exercise,
+      workout_id: this.props.workout
     }
   }
 
