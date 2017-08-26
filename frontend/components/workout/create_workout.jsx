@@ -14,11 +14,12 @@ class CreateWorkout extends React.Component {
 
   handleSumbit(e) {
     let newActive = this.state.active === 'FIRST' ? 'SECOND' : null
+    let selected = this.state.name;
     e.preventDefault();
     this.props.createWorkout(this.state)
       .then(
         () => {
-          this.setState({name: '', active: newActive});
+          this.setState({name: '', active: newActive, propName: selected});
         }
       );
     }
@@ -48,7 +49,7 @@ class CreateWorkout extends React.Component {
           ) : this.state.active === 'SECOND' ? (
           <ExerciseIndexContainer  user={this.props.user}
                                    exercises={this.props.exercises}
-                                   allExercises={this.props.allExercises}/>
+                                   liftname={this.state.propName}/>
           ) : null }
         </div>
       )

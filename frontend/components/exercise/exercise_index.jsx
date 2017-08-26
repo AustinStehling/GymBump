@@ -8,7 +8,8 @@ class ExerciseIndex extends React.Component {
 
     this.state = {
       inputVal: '',
-      active: 'FIRST'
+      active: 'FIRST',
+      name: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -31,15 +32,17 @@ class ExerciseIndex extends React.Component {
   handleSubmit(e) {
     let newActive = this.state.active === 'FIRST' ? 'SECOND' : null
     let allExercises = this.props.allExercises;
-    let selected
+    let selected;
+    let name;
     allExercises.forEach(exercise => {
       if (exercise.exercise_name === this.state.inputVal) {
-        selected = exercise
+        selected = exercise,
+        name = exercise.exercise_name
       }
     })
     e.preventDefault();
     this.props.requestExercise(selected)
-    this.setState({inputVal: '', active: newActive})
+    this.setState({inputVal: '', active: newActive, name: name})
     this.props.requestAllExercises();
   }
 
@@ -78,6 +81,7 @@ class ExerciseIndex extends React.Component {
           <div className="exercise-main-div">
             <div className="exercise-second-div">
               <label className="exercise-label">
+                <h3>Add an Exercise for {this.props.liftname}</h3>
                 <input type="text" value={this.state.inputVal}
                   onChange={this.handleChange}
                   className="exercise-input"
@@ -90,7 +94,7 @@ class ExerciseIndex extends React.Component {
             </div>
           </div>
         ) : this.state.active === 'SECOND' ? (
-          <SetResultContainer user={this.props.user} exercises={this.props.exercises}/>
+          <SetResultContainer user={this.props.user} exercises={this.props.exercises} exercise={this.state.name}/>
         ) : null }
       </div>
     );

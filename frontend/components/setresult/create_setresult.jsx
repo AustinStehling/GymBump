@@ -19,7 +19,6 @@ class CreateSetResult extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
     let workout = this.props.user.workouts
     let exercise = this.props.exercises
     e.preventDefault();
@@ -47,16 +46,18 @@ class CreateSetResult extends React.Component {
   render () {
 
     return (
-      <div>
-        <form onSubmit={this.handleSubmit} className='setresult-from'>
+      <div className="set-result-form-container">
+        <form className="setresult-from" onSubmit={this.handleSubmit}>
+          <h3>{this.props.exercise}, how'd it go?</h3>
+          <div>
             <input
               type="number"
               placeholder='Weight'
-              className="new-workout-input"
+              className="new-set"
               value={this.state.weight_lifted}
               onChange={this.handleUpdate('weight_lifted')}
-            />
-            <select value={this.state.weight_unit} onChange={this.handleUpdate('weight_unit')}>
+              />
+            <select className="unit" value={this.state.weight_unit} onChange={this.handleUpdate('weight_unit')}>
               <option>Unit</option>
               <option value="lb">lb</option>
               <option value="kg">kg</option>
@@ -64,18 +65,20 @@ class CreateSetResult extends React.Component {
             <input
               type="number"
               placeholder='Reps'
-              className="new-workout-input"
+              className="new-set"
               value={this.state.reps}
               onChange={this.handleUpdate('reps')}
-            />
+              />
+          </div>
+          <div>
             <input
               type="number"
               placeholder='Distance'
-              className="new-workout-input"
+              className="new-set"
               value={this.state.distance}
               onChange={this.handleUpdate('distance')}
-            />
-            <select value={this.state.distance_unit} onChange={this.handleUpdate('distance_unit')}>
+              />
+            <select className="unit" value={this.state.distance_unit} onChange={this.handleUpdate('distance_unit')}>
               <option>Unit</option>
               <option value="mi">lb</option>
               <option value="km">kg</option>
@@ -83,12 +86,12 @@ class CreateSetResult extends React.Component {
             <input
               type="time"
               step="1"
-              className="new-workout-input"
-              className="duration"
+              className="new-set"
               value={this.state.duration}
               onChange={this.handleUpdate('duration')}
-               />
-          <button>Add Result</button>
+              />
+          </div>
+             <button className="new-set-button">Add Result</button>
         </form>
       </div>
    );

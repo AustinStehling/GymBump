@@ -65,13 +65,13 @@ class UserShow extends React.Component {
           <div className="new-workout-and-workouts">
 
           <div className='div-create-workout'>
-            <h3 className="new-workout">{this.props.member.username}&#39;s Workouts</h3>
             {this.state.active === 'FIRST' ? (
               <CreateWorkoutContainer user={this.props.member} exercises={this.props.exercises} />
             ) : null}
             <button className="add-workout-button" onClick={this._onButtonClick}>{buttonText}</button>
            </div>
 
+           <h3 className="new-workout">{this.props.member.username}&#39;s Workouts</h3>
           <InfiniteScroll>
             <div className='div-workout-list'>
               <ul>

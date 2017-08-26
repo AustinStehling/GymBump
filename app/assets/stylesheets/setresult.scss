@@ -1,5 +1,38 @@
-.setresult-form {
+.setresult-from {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  width: inherit;
+}
+
+.set-result-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.unit {
+  width: 50px;
+  font-size: 10px;
+  height: 20px;
+}
+
+.new-set {
+  width: 110px;
+  margin: 5px;
+}
+
+.new-set-button {
+  background: #CAEBF2;
+  padding: 7px;
+  border-radius: 5px;
+  width: 60px;
+  color: black;
+  font-size: 15px;
+  width: 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+  margin-top: 7px;
+  margin-bottom: 20px;
 }
