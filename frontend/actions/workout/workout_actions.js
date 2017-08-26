@@ -21,7 +21,7 @@ export const receiveWorkout = workout => {
 
 
 export const requestWorkout = id => dispatch => {
-  APIUtil.fetchWorkout(id).then(workout => {
+  return APIUtil.fetchWorkout(id).then(workout => {
     return dispatch(receiveWorkout(workout));
   });
 };

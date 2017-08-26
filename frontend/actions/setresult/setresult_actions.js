@@ -1,6 +1,8 @@
 import * as APIUtil from '../../util/setresult/setresult_util'
 
 export const CREATE_SETRESULT = 'CREATE_SETRESULT'
+export const RECEIVE_SETRESULT = 'RECEIVE_SETRESULT'
+export const CLEAR_SETRESULT = 'CLEAR_SETRESULT'
 
 export const createSetResult = setresult => {
   return {
@@ -9,6 +11,21 @@ export const createSetResult = setresult => {
   };
 };
 
-export const createSet = (setresult) => dispatch => {
-  APIUtil.createResults(setresult);
-}
+export const receiveSetResult = workout => {
+  return {
+    type: RECEIVE_SETRESULT,
+    workout
+  };
+};
+
+export const createSet = setresult => dispatch => {
+  return APIUtil.createResults(setresult).then(setresult => {
+    return dispatch(receiveSetResult(setresult));
+  });
+};
+
+export const requestSetResult = id => dispatch => {
+  return APIUtil.fetchSetResult(id).then(setresult => {
+    return dispatch(receiveSetResult(setresult));
+  });
+};

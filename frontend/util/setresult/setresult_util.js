@@ -5,3 +5,10 @@ export const createResults = setresult => {
     data: { setresult }
   });
 }
+
+export const fetchSetResult = id => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/setresults/${setresult.id}`
+  });
+}
