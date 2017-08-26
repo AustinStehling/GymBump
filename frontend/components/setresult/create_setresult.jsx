@@ -43,55 +43,55 @@ class CreateSetResult extends React.Component {
   render () {
 
     <div>
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <label>
-          Weight
+          Weight:
           <input
-
-
-
-
-            />
+            type="integer"
+            value={this.state.weight_lifted}
+            onChange={this.handleUpdate('weight_lifted')}
+          />
         </label>
         <label>
-          Units
-          <select>
+          Units:
+          <select value={this.state.weight_unit} onChange={this.handleUpdate('weight_unit')}>
             <option>Select</option>
             <option value="lb">lb</option>
             <option value="kg">kg</option>
           </select>
         </label>
         <label>
-          Reps
+          Reps:
           <input
-
-
-
+            type="integer"
+            value={this.state.reps}
+            onChange={this.handleUpdate('reps')}
+          />
+        </label>
+        <label>
+          Distance:
+            <input
+              type="integer"
+              value={this.state.distance}
+              onChange={this.handleUpdate('distance')}
             />
         </label>
         <label>
-          Distance
-          <input
-
-
-
-            />
-        </label>
-        <label>
-          Units
-          <select>
+          Units:
+          <select value={this.state.distance_unit} onChange={this.handleUpdate('distance_unit')}>
             <option>Select</option>
             <option value="mi">lb</option>
             <option value="km">kg</option>
           </select>
         </label>
         <label>
-          Duration
+          Duration:
           <input
-            type='time'
-
-
-            />
+            type="time"
+            step="1"
+            value={this.state.duration}
+            onChange={this.handleUpdate('duration')}
+             />
         </label>
       </form>
     </div>
