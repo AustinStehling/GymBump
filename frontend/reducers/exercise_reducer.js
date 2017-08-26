@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_EXERCISES } from '../actions/exercise/exercise_actions';
+import { RECEIVE_ALL_EXERCISES, RECEIVE_EXERCISE } from '../actions/exercise/exercise_actions';
 import { CLEAR_ALL } from '../actions/reset_state';
 import merge from 'lodash/merge'
 
@@ -8,6 +8,8 @@ const exerciseReducer = (state = {}, action) => {
   switch(action.type) {
     case CLEAR_ALL:
       return {};
+    case RECEIVE_EXERCISE:
+      return merge({}, state, { selectedExercise: action.exercise })
     case RECEIVE_ALL_EXERCISES:
       return merge({}, state, action.exercises)
     default:

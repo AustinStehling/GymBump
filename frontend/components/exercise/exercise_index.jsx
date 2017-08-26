@@ -63,7 +63,7 @@ class ExerciseIndex extends React.Component {
           <ul className="exercise-ul">
             {match}
           </ul>
-          <button>Test</button>
+          <button onClick={() => this.props.requestExercise(this.state.inputVal)}>Test</button>
         </div>
       </div>
     );
