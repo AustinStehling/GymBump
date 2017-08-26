@@ -93,6 +93,7 @@ class CreateSetResult extends React.Component {
             onChange={this.handleUpdate('duration')}
              />
         </label>
+        <button>Add Result</button>
       </form>
     </div>
   }
