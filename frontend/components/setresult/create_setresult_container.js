@@ -3,7 +3,7 @@ import CreateSetResult from './create_setresult';
 import { createSet } from '../../actions/setresult/setresult_actions'
 
 const mapDispatchToProps = dispatch => ({
-  createSet: setresult => dispatch(createSet(setresult))
+  createSet: setresult => dispatch(createSet(setresult)),
 });
 
 export default connect(

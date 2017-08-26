@@ -42,7 +42,7 @@ class ExerciseIndex extends React.Component {
 
     let allExercises = this.props.allExercises;
 
-    debugger
+    
     const match = allExercises.map((exercise) => {
       if (this.state.inputVal === '') return [];
       let matched = [];
