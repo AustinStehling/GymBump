@@ -1,4 +1,4 @@
-import * as APIUtil from '../../util/setresult'
+import * as APIUtil from '../../util/setresult/setresult_util'
 
 export const CREATE_SETRESULT = 'CREATE_SETRESULT'
 

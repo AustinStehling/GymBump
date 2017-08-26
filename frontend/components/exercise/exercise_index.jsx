@@ -8,6 +8,7 @@ class ExerciseIndex extends React.Component {
     this.state = { inputVal: '' }
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
@@ -22,12 +23,26 @@ class ExerciseIndex extends React.Component {
     this.setState({ inputVal: e.currentTarget.attributes.value.value})
   }
 
+  handleSubmit(e) {
+    let allExercises = this.props.allExercises;
+    let selected
+    allExercises.forEach(exercise => {
+      if (exercise.exercise_name === this.state.inputVal) {
+        selected = exercise
+      }
+    })
+    e.preventDefault();
+    this.props.requestExercise(selected)
+    this.setState({inputVal: ''})
+    this.props.requestAllExercises();
+  }
+
   render() {
 
 
     let allExercises = this.props.allExercises;
 
-
+    debugger
     const match = allExercises.map((exercise) => {
       if (this.state.inputVal === '') return [];
       let matched = [];
@@ -50,12 +65,6 @@ class ExerciseIndex extends React.Component {
       return matched;
     });
 
-    let selected
-    allExercises.forEach(exercise => {
-      if (exercise.exercise_name === this.state.inputVal) {
-        selected = exercise.id
-      }
-    })
 
     return (
       <div className="exercise-main-div">
@@ -69,8 +78,8 @@ class ExerciseIndex extends React.Component {
           <ul className="exercise-ul">
             {match}
           </ul>
-          <button className="new-exercise-button"
-                  onClick={() => this.props.requestExercise(selected)}>Add Exercise</button>
+          <button className="new-exercise-button" onClick={this.handleSubmit}>Add Exercise</button>
+
         </div>
       </div>
     );

@@ -2,6 +2,7 @@ import React from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import CreateWorkoutContainer from '../workout/create_workout_container'
 import ExerciseIndexContainer from '../exercise/exercise_index_container'
+import SetResultContainer from '../setresult/create_setresult_container'
 
 class UserShow extends React.Component {
   constructor(props) {
@@ -28,6 +29,8 @@ class UserShow extends React.Component {
      let newActive;
      if (this.state.active === null) {
        newActive = 'FIRST';
+     } else if (this.state.active === 'FIRST'){
+       newActive = 'SECOND'
      } else {
        newActive = null;
      }
@@ -39,7 +42,6 @@ class UserShow extends React.Component {
 
   render() {
     if (!this.props.member) return null;
-    debugger
     const { member } = this.props;
     const allWorkouts = this.props.workouts;
 
@@ -68,6 +70,8 @@ class UserShow extends React.Component {
             <h3 className="new-workout">{this.props.member.username}&#39;s Workouts</h3>
             {this.state.active === 'FIRST' ? (
               <CreateWorkoutContainer />
+            ) : this.state.active === 'SECOND' ? (
+              <SetResultContainer />
             ) : null}
             <button className="add-workout-button" onClick={this._onButtonClick}>{buttonText}</button>
            </div>

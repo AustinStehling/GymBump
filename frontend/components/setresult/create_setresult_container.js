@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import CreateSetResult from './create_result';
+import CreateSetResult from './create_setresult';
 import { createSet } from '../../actions/setresult/setresult_actions'
 
 const mapDispatchToProps = dispatch => ({
