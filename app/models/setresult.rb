@@ -15,7 +15,7 @@
 #
 
 class Setresult < ApplicationRecord
-  validates :exercise, :workout, presence: true
+  validates :exercise_id, :workout_id, presence: true
 
   belongs_to :exercise
   belongs_to :workout

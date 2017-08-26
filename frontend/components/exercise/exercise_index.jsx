@@ -1,11 +1,16 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import SetResultContainer from '../setresult/create_setresult_container';
 
 class ExerciseIndex extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { inputVal: '' }
+    this.state = {
+      inputVal: '',
+      active: 'FIRST'
+    };
+
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,6 +29,7 @@ class ExerciseIndex extends React.Component {
   }
 
   handleSubmit(e) {
+    let newActive = this.state.active === 'FIRST' ? 'SECOND' : null
     let allExercises = this.props.allExercises;
     let selected
     allExercises.forEach(exercise => {
@@ -33,7 +39,7 @@ class ExerciseIndex extends React.Component {
     })
     e.preventDefault();
     this.props.requestExercise(selected)
-    this.setState({inputVal: ''})
+    this.setState({inputVal: '', active: newActive})
     this.props.requestAllExercises();
   }
 
@@ -42,7 +48,7 @@ class ExerciseIndex extends React.Component {
 
     let allExercises = this.props.allExercises;
 
-    
+
     const match = allExercises.map((exercise) => {
       if (this.state.inputVal === '') return [];
       let matched = [];
@@ -65,22 +71,27 @@ class ExerciseIndex extends React.Component {
       return matched;
     });
 
-
+    debugger
     return (
-      <div className="exercise-main-div">
-        <div className="exercise-second-div">
-          <label className="exercise-label">
-            <input type="text" value={this.state.inputVal}
-              onChange={this.handleChange}
-              className="exercise-input"
-              />
-          </label>
-          <ul className="exercise-ul">
-            {match}
-          </ul>
-          <button className="new-exercise-button" onClick={this.handleSubmit}>Add Exercise</button>
-
-        </div>
+      <div>
+        {this.state.active === 'FIRST' ? (
+          <div className="exercise-main-div">
+            <div className="exercise-second-div">
+              <label className="exercise-label">
+                <input type="text" value={this.state.inputVal}
+                  onChange={this.handleChange}
+                  className="exercise-input"
+                  />
+              </label>
+              <ul className="exercise-ul">
+                {match}
+              </ul>
+              <button className="new-exercise-button" onClick={this.handleSubmit}>Add Exercise</button>
+            </div>
+          </div>
+        ) : this.state.active === 'SECOND' ? (
+          <SetResultContainer user={this.props.user} exercises={this.props.exercises}/>
+        ) : null }
       </div>
     );
   }

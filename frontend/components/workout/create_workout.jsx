@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import ExerciseIndexContainer from '../exercise/exercise_index_container'
-
+import ExerciseIndexContainer from '../exercise/exercise_index_container';
 class CreateWorkout extends React.Component {
   constructor(props) {
     super(props);
@@ -47,7 +46,9 @@ class CreateWorkout extends React.Component {
               </div>
             </form>
           ) : this.state.active === 'SECOND' ? (
-          <ExerciseIndexContainer  allExercises={this.props.allExercises}/>
+          <ExerciseIndexContainer  user={this.props.user}
+                                   exercises={this.props.exercises}
+                                   allExercises={this.props.allExercises}/>
           ) : null }
         </div>
       )

@@ -8,7 +8,7 @@ const entitiesReducer = combineReducers({
   members: usersReducer,
   workout: workoutReducer,
   exercise: exerciseReducer,
-  setresult: null
+  setresult: setResultReducer
 })
 
 export default entitiesReducer;

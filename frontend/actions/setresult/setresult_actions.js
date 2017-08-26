@@ -10,5 +10,5 @@ export const createSetResult = setresult => {
 };
 
 export const createSet = (setresult) => dispatch => {
-  APIUtil.createResults(setresults);
+  APIUtil.createResults(setresult);
 }

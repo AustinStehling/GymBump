@@ -4,8 +4,6 @@ class CreateSetResult extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleUpdate = this.handleUpdate.bind(this);
     this.state = {
       weight_lifted: '',
       weight_unit: '',
@@ -13,12 +11,17 @@ class CreateSetResult extends React.Component {
       distance: '',
       distance_unit: '',
       duration: '',
-      exercise_id: this.props.exercise,
-      workout_id: this.props.workout
+      exercise_id: '',
+      workout_id: ''
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
   }
 
   handleSubmit(e) {
+    debugger
+    let workout = this.props.user.workouts
+    let exercise = this.props.exercises
     e.preventDefault();
     this.props.createSet(this.state)
       .then(
@@ -30,8 +33,8 @@ class CreateSetResult extends React.Component {
             distance: '',
             distance_unit: '',
             duration: '',
-            exercise: '',
-            workout: ''
+            exercise: exercise[exercise.length - 1],
+            workout: workout[workout.length - 1]
           })
         }
       );
@@ -42,7 +45,7 @@ class CreateSetResult extends React.Component {
   }
 
   render () {
-    debugger
+
     return (
       <div>
         <form onSubmit={this.handleSubmit} className='setresult-from'>

@@ -29,8 +29,6 @@ class UserShow extends React.Component {
      let newActive;
      if (this.state.active === null) {
        newActive = 'FIRST';
-     } else if (this.state.active === 'FIRST'){
-       newActive = 'SECOND'
      } else {
        newActive = null;
      }
@@ -54,7 +52,7 @@ class UserShow extends React.Component {
     } else {
       buttonText = 'Create Workout'
     }}
-    
+
     return (
       <div className='div-main'>
         <div className='div-member-stats'>
@@ -69,9 +67,7 @@ class UserShow extends React.Component {
           <div className='div-create-workout'>
             <h3 className="new-workout">{this.props.member.username}&#39;s Workouts</h3>
             {this.state.active === 'FIRST' ? (
-              <CreateWorkoutContainer />
-            ) : this.state.active === 'SECOND' ? (
-              <SetResultContainer user={this.props.member} exercises={this.props.exercises}/>
+              <CreateWorkoutContainer user={this.props.member} exercises={this.props.exercises} />
             ) : null}
             <button className="add-workout-button" onClick={this._onButtonClick}>{buttonText}</button>
            </div>
