@@ -48,7 +48,7 @@ class UserShow extends React.Component {
                                             <div className="workout-name">{workout.name}</div></li>)
     let buttonText;
     {if (this.state.active === 'FIRST') {
-      buttonText = 'Cancel Workout'
+      buttonText = 'Submit Workout'
     } else {
       buttonText = 'Create Workout'
     }}

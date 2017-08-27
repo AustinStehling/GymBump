@@ -40,6 +40,7 @@ class CreateWorkout extends React.Component {
                   type="text"
                   value={this.state.name}
                   placeholder="Add Workout"
+                  maxLength="20"
                   onChange={this.update('name')}
                   className="new-workout-input"
                   />
