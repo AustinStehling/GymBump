@@ -3,7 +3,8 @@ import React from 'react';
 class CreateSetResult extends React.Component {
   constructor(props) {
     super(props);
-
+    let workout = this.props.user.workouts
+    let exercise = this.props.exercises
     this.state = {
       weight_lifted: '',
       weight_unit: '',
@@ -11,16 +12,15 @@ class CreateSetResult extends React.Component {
       distance: '',
       distance_unit: '',
       duration: '',
-      exercise_id: '',
-      workout_id: ''
+      exercise_id: exercise[exercise.length - 1].id,
+      workout_id: workout[workout.length - 1]
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
   }
 
   handleSubmit(e) {
-    let workout = this.props.user.workouts
-    let exercise = this.props.exercises
+
     e.preventDefault();
     this.props.createSet(this.state)
       .then(
@@ -32,8 +32,8 @@ class CreateSetResult extends React.Component {
             distance: '',
             distance_unit: '',
             duration: '',
-            exercise: exercise[exercise.length - 1],
-            workout: workout[workout.length - 1]
+            exercise: '',
+            workout: ''
           })
         }
       );

@@ -74,7 +74,7 @@ class ExerciseIndex extends React.Component {
       return matched;
     });
 
-    debugger
+    
     return (
       <div>
         {this.state.active === 'FIRST' ? (
