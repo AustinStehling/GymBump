@@ -5,6 +5,7 @@ import merge from 'lodash/merge';
 
 const setResultReducer = (state = {}, action) => {
   Object.freeze(state);
+  let newState;
 
   switch(action.type) {
     case CLEAR_ALL:

@@ -11,10 +11,10 @@ export const createSetResult = setresult => {
   };
 };
 
-export const receiveSetResult = workout => {
+export const receiveSetResult = setresult => {
   return {
     type: RECEIVE_SETRESULT,
-    workout
+    setresult
   };
 };
 
