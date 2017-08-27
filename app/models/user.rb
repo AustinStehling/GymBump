@@ -25,7 +25,7 @@ class User < ApplicationRecord
   validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "FrontSquat.png"
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "crossfit.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   after_initialize :ensure_session_token
