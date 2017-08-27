@@ -1,4 +1,5 @@
 import React from 'react';
+import ExerciseIndexContainer from '../exercise/exercise_index_container'
 
 class CreateSetResult extends React.Component {
   constructor(props) {
@@ -13,14 +14,16 @@ class CreateSetResult extends React.Component {
       distance_unit: '',
       duration: '',
       exercise_id: exercise[exercise.length - 1].id,
-      workout_id: workout[workout.length - 1]
+      workout_id: workout[workout.length - 1],
+      active: null
+
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleSubmit(e) {
-
     e.preventDefault();
     this.props.createSet(this.state)
       .then(
@@ -33,7 +36,8 @@ class CreateSetResult extends React.Component {
             distance_unit: '',
             duration: '',
             exercise: '',
-            workout: ''
+            workout: '',
+            active: 'FIRST'
           })
         }
       );
@@ -43,57 +47,119 @@ class CreateSetResult extends React.Component {
     return e => this.setState({ [property]: e.target.value })
   }
 
+  handleClick(e) {
+    e.preventDefault();
+    this.setState({ active: 'NEWEXERCISE' })
+  }
+
   render () {
 
     return (
-      <div className="set-result-form-container">
-        <form className="setresult-from" onSubmit={this.handleSubmit}>
-          <h3>{this.props.exercise}, how'd it go?</h3>
-          <div>
-            <input
-              type="number"
-              placeholder='Weight'
-              className="new-set"
-              value={this.state.weight_lifted}
-              onChange={this.handleUpdate('weight_lifted')}
-              />
-            <select className="unit" value={this.state.weight_unit} onChange={this.handleUpdate('weight_unit')}>
-              <option>Unit</option>
-              <option value="lb">lb</option>
-              <option value="kg">kg</option>
-            </select>
-            <input
-              type="number"
-              placeholder='Reps'
-              className="new-set"
-              value={this.state.reps}
-              onChange={this.handleUpdate('reps')}
-              />
-          </div>
-          <div>
-            <input
-              type="number"
-              placeholder='Distance'
-              className="new-set"
-              value={this.state.distance}
-              onChange={this.handleUpdate('distance')}
-              />
-            <select className="unit" value={this.state.distance_unit} onChange={this.handleUpdate('distance_unit')}>
-              <option>Unit</option>
-              <option value="mi">lb</option>
-              <option value="km">kg</option>
-            </select>
-            <input
-              type="time"
-              step="1"
-              className="new-set"
-              value={this.state.duration}
-              onChange={this.handleUpdate('duration')}
-              />
-          </div>
-             <button className="new-set-button">Add Result</button>
-        </form>
-      </div>
+    <div>
+      {this.state.active === null ? (
+        <div className="set-result-form-container">
+          <form className="setresult-from" >
+            <h3>{this.props.exercise}, how'd it go?</h3>
+            <div>
+              <input
+                type="number"
+                placeholder='Weight'
+                className="new-set"
+                value={this.state.weight_lifted}
+                onChange={this.handleUpdate('weight_lifted')}
+                />
+              <select className="unit" value={this.state.weight_unit} onChange={this.handleUpdate('weight_unit')}>
+                <option>Unit</option>
+                <option value="lb">lb</option>
+                <option value="kg">kg</option>
+              </select>
+              <input
+                type="number"
+                placeholder='Reps'
+                className="new-set"
+                value={this.state.reps}
+                onChange={this.handleUpdate('reps')}
+                />
+            </div>
+            <div>
+              <input
+                type="number"
+                placeholder='Distance'
+                className="new-set"
+                value={this.state.distance}
+                onChange={this.handleUpdate('distance')}
+                />
+              <select className="unit" value={this.state.distance_unit} onChange={this.handleUpdate('distance_unit')}>
+                <option>Unit</option>
+                <option value="mi">lb</option>
+                <option value="km">kg</option>
+              </select>
+              <input
+                type="time"
+                step="1"
+                className="new-set"
+                value={this.state.duration}
+                onChange={this.handleUpdate('duration')}
+                />
+            </div>
+               <button onClick={this.handleSubmit} className="new-set-button">Add Result</button>
+          </form>
+          <button onClick={this.handleClick} className="new-set-button">Next Exercise</button>
+        </div>
+      ) : this.state.active === 'FIRST' ? (
+        <div className="set-result-form-container">
+          <form className="setresult-from" >
+            <h3>Next set of {this.props.exercise}</h3>
+            <div>
+              <input
+                type="number"
+                placeholder='Weight'
+                className="new-set"
+                value={this.state.weight_lifted}
+                onChange={this.handleUpdate('weight_lifted')}
+                />
+              <select className="unit" value={this.state.weight_unit} onChange={this.handleUpdate('weight_unit')}>
+                <option>Unit</option>
+                <option value="lb">lb</option>
+                <option value="kg">kg</option>
+              </select>
+              <input
+                type="number"
+                placeholder='Reps'
+                className="new-set"
+                value={this.state.reps}
+                onChange={this.handleUpdate('reps')}
+                />
+            </div>
+            <div>
+              <input
+                type="number"
+                placeholder='Distance'
+                className="new-set"
+                value={this.state.distance}
+                onChange={this.handleUpdate('distance')}
+                />
+              <select className="unit" value={this.state.distance_unit} onChange={this.handleUpdate('distance_unit')}>
+                <option>Unit</option>
+                <option value="mi">lb</option>
+                <option value="km">kg</option>
+              </select>
+              <input
+                type="time"
+                step="1"
+                className="new-set"
+                value={this.state.duration}
+                onChange={this.handleUpdate('duration')}
+                />
+            </div>
+               <button onClick={this.handleSubmit} className="new-set-button">Add Result</button>
+          </form>
+          <button onClick={this.handleClick} className="new-set-button">Next Exercise</button>
+        </div>
+      ) : this.state.active === 'NEWEXERCISE' ? (
+        <ExerciseIndexContainer user={this.props.user} exercises={this.props.exercises}/>
+      ) : null }
+    </div>
    );
   }
 
