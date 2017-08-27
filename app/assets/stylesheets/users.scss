@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .placerholder {
   width: 15%;
-  border: 1px solid #A9A9A9;
+  border: 1px solid #2F496E;
   min-width: 200px;
   margin-left: 45px;
   border-radius: 5px
@@ -15,10 +15,10 @@
 }
 
 .new-workout-and-workouts {
-  border: 1px solid #A9A9A9;
+  border: 1px solid #2F496E;
   padding: 15px;
   border-radius: 5px;
-  background: #A9A9A9;
+  background: #2F496E;
 }
 
 .div-main {
@@ -31,7 +31,7 @@
 
 .div-member-stats {
  width: 15%;
- border: 1px solid #A9A9A9;
+ border: 1px solid #2F496E;
  min-width: 300px;
  margin-right: 45px;
  border-radius: 5px
@@ -41,7 +41,7 @@
   max-width: 433px;
   max-height: 600px;
   border-radius: 5px
-  border 1px solid #A9A9A9;
+  border 1px solid #2F496E;
 
 }
 
@@ -73,11 +73,11 @@
  justify-content: space-between;
  padding-right: 15px;
  padding-left: 15px;
- background-color: #EFEFEF;
+ background-color: #F4EADE;
 }
 
 .li-workout-list:hover {
- background-color: #FF3B3F;
+ background-color: #ED8C72;
 }
 
 .li-workout-list:last-child {
@@ -86,10 +86,10 @@
 
 .add-workout-button {
   margin-bottom: 10px;
-  border: 1px solid #FF3B3F;
+  border: 1px solid #ED8C72;
   padding: 7px;
   border-radius: 5px;
-  background-color: #FF3B3F;
+  background-color: #ED8C72;
   color: white;
   font-size: 15px;
   width: 110px;
