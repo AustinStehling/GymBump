@@ -3,6 +3,11 @@
  margin-bottom: 15px;
  border-radius: 5px;
  margin-right: 17px;
+ background: #ED8C72;
+ border: 1px solid #ED8C72;
+ border-radius: 5px;
+ padding: 15px;
+ padding-bottom: 25px;
 }
 
 .new-workout {
@@ -26,7 +31,7 @@
     align-items: center;
     height: 28px;
     margin-left: 15px;
-    margin-top: 7px;
+    margin-top: 8px;
 }
 
 .new-exercise-button {
@@ -40,8 +45,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 15px;
   margin-top: 7px;
+  margin-bottom: 15px;
 }
 
 .create-workout-input-button-con {

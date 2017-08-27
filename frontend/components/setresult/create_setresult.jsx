@@ -58,7 +58,7 @@ class CreateSetResult extends React.Component {
     <div>
       {this.state.active === null ? (
         <div className="set-result-form-container">
-          <form className="setresult-from" >
+          <form className="setresult-form" >
             <h3>{this.props.exercise}, how'd it go?</h3>
             <div>
               <input
@@ -108,7 +108,7 @@ class CreateSetResult extends React.Component {
         </div>
       ) : this.state.active === 'FIRST' ? (
         <div className="set-result-form-container">
-          <form className="setresult-from" >
+          <form className="setresult-form" >
             <h3>Next set of {this.props.exercise}</h3>
             <div>
               <input

@@ -1,4 +1,4 @@
-.setresult-from {
+.setresult-form {
   display: flex;
   flex-direction: column;
   width: inherit;
@@ -8,12 +8,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #ED8C72;
+  border: 1px solid #ED8C72;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .unit {
   width: 50px;
-  font-size: 10px;
-  height: 20px;
+  font-size: 12px;
+  height: 30px;
+  padding: 5px;
+  margin-right: 10px
 }
 
 .new-set {
@@ -26,13 +32,12 @@
   padding: 7px;
   border-radius: 5px;
   width: 60px;
-  color: black;
+  color: #F4EADE;
   font-size: 15px;
   width: 95px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 15px;
   margin-top: 7px;
   margin-bottom: 20px;
 }
