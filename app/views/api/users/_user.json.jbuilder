@@ -1,4 +1,5 @@
 json.extract! user, :id, :username, :first_name, :last_name, :gender
+json.avatar_url asset_path(user.avatar.url)
 
 json.workouts do
   user.workouts.each do |workout|

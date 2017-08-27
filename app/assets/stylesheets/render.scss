@@ -21,6 +21,21 @@
   align-items: center;
 }
 
+.birthday {
+  width: 247px;
+  margin-left: 13px;
+}
+
+.dob{
+  margin-top: 7px;
+}
+
+.birthday-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .home-button-div {
   display: flex;
   align-items: center;
@@ -47,7 +62,7 @@
   padding: 7px;
   border-radius: 5px;
   background-color: #2988BC;
-  color: black;
+  color: #F4EADE;
   font-size: 15px;
   width: 90px;
   display: flex;
@@ -88,7 +103,7 @@
   padding: 7px;
   border-radius: 5px;
   width: 60px;
-  color: black;
+  color: #F4EADE;
   font-size: 20px;
   display: flex;
   justify-content: center;

@@ -12,7 +12,8 @@ class RootRender extends React.Component{
       email: "",
       first_name: "",
       last_name: "",
-      gender: ""
+      gender: "",
+      birthday: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -76,10 +77,20 @@ class RootRender extends React.Component{
                   />
                <input
                   type="text"
-                  value={this.state.LastName}
+                  value={this.state.lastName}
                   placeholder="Last Name"
                   onChange={this.handleUpdate('last_name')}
                   />
+                <div className="birthday-div">
+                  <p className="dob">DOB:</p>
+                  <input
+                    type="date"
+                    className="birthday"
+                    value={this.state.birthday}
+                    placeholder="Birthday"
+                    onChange={this.handleUpdate('birthday')}
+                    />
+                </div>
                 <select className="g-selector" onChange={this.handleUpdate('gender')}>
                   <option>Gender</option>
                   <option value="male">Male</option>
