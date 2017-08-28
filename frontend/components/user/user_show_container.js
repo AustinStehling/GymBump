@@ -3,17 +3,22 @@ import { connect } from 'react-redux';
 import { requestUser } from '../../actions/user/user_actions'
 import { requestAllExercises } from '../../actions/exercise/exercise_actions'
 import { selectMembersWorkouts, selectAllExercises } from '../../reducers/selectors'
+import { selectYourWorkout } from '../../actions/workout/workout_actions';
 
-const mapStateToProps = state => ({
-  member: state.entities.members.selected,
-  workouts: selectMembersWorkouts(state).reverse(),
-  exercises: selectAllExercises(state)
-});
-
+const mapStateToProps = state => {
+  let selected = selectMembersWorkouts(state).reverse()
+  return {
+    member: state.entities.members.selected,
+    workouts: selected,
+    exercises: selectAllExercises(state),
+    selectedWorkout: selected[Object.keys(selected)[0]]
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   requestUser: id => dispatch(requestUser(id)),
-  requestAllExercises: () => dispatch(requestAllExercises())
+  requestAllExercises: () => dispatch(requestAllExercises()),
+  selectYourWorkout: id => dispatch(selectYourWorkout(id))
 });
 
 

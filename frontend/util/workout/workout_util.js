@@ -9,6 +9,6 @@ export const createWorkout = workout => {
 export const fetchWorkout = id => {
   return $.ajax({
     method: 'GET',
-    url: `api/workouts/${workout.id}`
+    url: `api/workouts/${id}`
   });
 }

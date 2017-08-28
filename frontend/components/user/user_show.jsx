@@ -3,13 +3,13 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import CreateWorkoutContainer from '../workout/create_workout_container'
 import ExerciseIndexContainer from '../exercise/exercise_index_container'
 import SetResultContainer from '../setresult/create_setresult_container'
+import WorkoutShowContainer from '../workout/workout_show_container'
 
 class UserShow extends React.Component {
   constructor(props) {
     super(props);
     this._onButtonClick = this._onButtonClick.bind(this);
-
-
+    this.handleClick = this.handleClick.bind(this);
     this.state = { active: null }
   }
 
@@ -37,15 +37,24 @@ class UserShow extends React.Component {
      });
    }
 
+   handleClick(e) {
+     e.preventDefault();
+
+     this.setState({ selected: e.target.title })
+   }
 
   render() {
+
     if (!this.props.member) return null;
     const { member } = this.props;
     const allWorkouts = this.props.workouts;
 
-    const workouts = allWorkouts.map(workout => <li className="li-workout-list" key={workout.id}>
-                                            <div className="created-workout">{workout.created_at.slice(5,10)}</div>
-                                            <div className="workout-name">{workout.name}</div></li>)
+    const workouts = allWorkouts.map(workout => <li className="li-workout-list"
+                                                    key={workout.id}
+                                                    title={workout}
+                                                    onClick={this.handleClick}>
+                              <div className="created-workout">{workout.created_at.slice(5,10)}</div>
+                              <div className="workout-name">{workout.name}</div></li>)
     let buttonText;
     {if (this.state.active === 'FIRST') {
       buttonText = 'Submit Workout'
@@ -85,8 +94,8 @@ class UserShow extends React.Component {
         </div>
        </div>
        <div className="placeholder">
-
        </div>
+        <WorkoutShowContainer selectedWorkout={this.props.selectedWorkout} />
       </div>
     )
   }
