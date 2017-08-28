@@ -10,8 +10,9 @@ Exercise.destroy_all
 Workout.destroy_all
 Setresult.destroy_all
 
-user1 = User.create!(username: 'biga1990', email: 'austin@gmail.com', first_name: 'Austin',
-  last_name: 'Stehling', gender: 'Male', password: 'password')
+user1 = User.create!(username: 'Austin', email: 'austin@gmail.com', first_name: 'Austin',
+  last_name: 'Stehling', gender: 'Male', password: 'password', experience: 'Veteran', weight: 215,
+  height_ft: 6, height_in: 2, birthday: '1990/07/28')
 
 user2 = User.create!(username: 'bdog19', email: 'brandon@gmail.com', first_name: 'Brandon',
   last_name: 'Stehling', gender: 'Male', password: 'password')
@@ -35,7 +36,8 @@ user8 = User.create!(username: 'brody_Ramon', email: 'ramon@gmail.com', first_na
   last_name: 'Frazier', gender: 'Male', password: 'password')
 
 user9 = User.create!(username: 'Demo', email: 'demo@gmail.com', first_name: 'John',
-  last_name: 'Doe', gender: 'Male', password: 'password')
+  last_name: 'Doe', gender: 'Male', password: 'password', experience: 'Veteran', weight: 215,
+  height_ft: 6, height_in: 2, birthday: '1990/07/28')
 
 workout1 = Workout.create!(name: 'Crossfits Annie', user_id: user9.id)
 workout2 = Workout.create!(name: 'Crossfits Angie', user_id: user9.id)
