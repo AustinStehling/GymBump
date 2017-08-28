@@ -157,7 +157,7 @@ class CreateSetResult extends React.Component {
           <button onClick={this.handleClick} className="new-set-button">Next Exercise</button>
         </div>
       ) : this.state.active === 'NEWEXERCISE' ? (
-        <ExerciseIndexContainer user={this.props.user} exercises={this.props.exercises}/>
+        <ExerciseIndexContainer user={this.props.user} exercises={this.props.exercises} liftname={this.props.liftname}/>
       ) : null }
     </div>
    );

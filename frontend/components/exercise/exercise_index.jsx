@@ -74,7 +74,7 @@ class ExerciseIndex extends React.Component {
       return matched;
     });
 
-    
+
     return (
       <div>
         {this.state.active === 'FIRST' ? (
@@ -94,7 +94,8 @@ class ExerciseIndex extends React.Component {
             </div>
           </div>
         ) : this.state.active === 'SECOND' ? (
-          <SetResultContainer user={this.props.user} exercises={this.props.exercises} exercise={this.state.name}/>
+          <SetResultContainer user={this.props.user} exercises={this.props.exercises} exercise={this.state.name}
+            liftname={this.props.liftname}/>
         ) : null }
       </div>
     );
