@@ -13,6 +13,19 @@
   margin-bottom: 25px;
 }
 
+.user-stats-name {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background: #2988BC;
+  width: 240px;
+  margin-left: 25px;
+}
+
 .user-stats {
   color: black;
   display: flex;
@@ -24,10 +37,16 @@
   margin-left: 25px;
 }
 
+.user-stats:last-child {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
 .ul-stats {
   padding-bottom: 25px;
   max-height: 525px;
 }
+
 .new-workout-and-workouts {
   border: 1px solid #2F496E;
   padding: 15px;

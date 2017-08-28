@@ -72,7 +72,7 @@ class UserShow extends React.Component {
         <div className='div-member-stats'>
           <ul className="ul-stats">
             <img className="user-prof-pic" src={member.avatar_url}/>
-            <li className="user-stats"><p>NAME:</p>
+            <li className="user-stats-name"><p>NAME:</p>
                                        <div>{member.first_name} {member.last_name}</div></li>
             <li className="user-stats"><p>GENDER:</p>
                                        <div>{member.gender}</div></li>
