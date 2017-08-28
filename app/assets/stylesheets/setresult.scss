@@ -27,6 +27,22 @@
   margin: 5px;
 }
 
+.new-set-time {
+  width: 30px;
+  margin: 2px;
+}
+
+.cardio-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.set-time-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .new-set-button {
   background: #2988BC;
   padding: 7px;

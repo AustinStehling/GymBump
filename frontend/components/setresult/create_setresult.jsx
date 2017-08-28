@@ -85,7 +85,7 @@ class CreateSetResult extends React.Component {
                 onChange={this.handleUpdate('reps')}
                 />
             </div>
-            <div>
+            <div className='cardio-div'>
               <input
                 type="number"
                 placeholder='Distance'
@@ -95,16 +95,39 @@ class CreateSetResult extends React.Component {
                 />
               <select className="unit" value={this.state.distance_unit} onChange={this.handleUpdate('distance_unit')}>
                 <option>Unit</option>
-                <option value="mi">lb</option>
-                <option value="km">kg</option>
+                <option value="mi">mi</option>
+                <option value="km">km</option>
               </select>
-              <input
-                type="time"
-                step="1"
-                className="new-set"
-                value={this.state.duration}
-                onChange={this.handleUpdate('duration')}
-                />
+              <div className="set-time-div">
+                <input
+                  type="number"
+                  className="new-set-time"
+                  placeholder="h"
+                  min='0'
+                  value={this.state.hour}
+                  onChange={this.handleUpdate('hour')}
+                  />
+                <p>:</p>
+                <input
+                  type="number"
+                  className="new-set-time"
+                  placeholder="m"
+                  min='0'
+                  max='59'
+                  value={this.state.min}
+                  onChange={this.handleUpdate('min')}
+                  />
+                <p>:</p>
+                <input
+                  type="number"
+                  className="new-set-time"
+                  placeholder="s"
+                  min='0'
+                  max='59'
+                  value={this.state.sec}
+                  onChange={this.handleUpdate('sec')}
+                  />
+              </div>
             </div>
                <button onClick={this.handleSubmit} className="new-set-button">Add Result</button>
           </form>
@@ -135,7 +158,7 @@ class CreateSetResult extends React.Component {
                 onChange={this.handleUpdate('reps')}
                 />
             </div>
-            <div>
+            <div className='cardio-div'>
               <input
                 type="number"
                 placeholder='Distance'
@@ -148,22 +171,32 @@ class CreateSetResult extends React.Component {
                 <option value="mi">mi</option>
                 <option value="km">km</option>
               </select>
-              <div>
+              <div className="set-time-div">
                 <input
                   type="number"
                   className="new-set-time"
+                  placeholder="h"
+                  min='0'
                   value={this.state.hour}
                   onChange={this.handleUpdate('hour')}
                   />
+                <p>:</p>
                 <input
                   type="number"
                   className="new-set-time"
+                  placeholder="m"
+                  min='0'
+                  max='59'
                   value={this.state.min}
                   onChange={this.handleUpdate('min')}
                   />
+                <p>:</p>
                 <input
                   type="number"
                   className="new-set-time"
+                  placeholder="s"
+                  min='0'
+                  max='59'
                   value={this.state.sec}
                   onChange={this.handleUpdate('sec')}
                   />
