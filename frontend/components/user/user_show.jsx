@@ -45,7 +45,10 @@ class UserShow extends React.Component {
      array.forEach(workout => {
        if (workout.id === parseInt(key, 10)) value = workout
      })
-     this.setState({ selected: value })
+     debugger
+     this.setState({ selected: value });
+     this.props.requestWorkout(value.id);
+    //  this.props.requestUser(this.props.match.params.userId);
    }
 
   render() {

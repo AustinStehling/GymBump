@@ -1,6 +1,6 @@
 import { RECEIVE_ALL_USERS, RECEIVE_USER } from '../actions/user/user_actions';
 import { CLEAR_ALL } from '../actions/reset_state';
-import { RECEIVE_WORKOUT } from '../actions/workout/workout_actions';
+import { RECEIVE_WORKOUT, SELECT_WORKOUT } from '../actions/workout/workout_actions';
 import merge from 'lodash/merge';
 
 

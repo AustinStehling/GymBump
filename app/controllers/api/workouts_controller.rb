@@ -1,7 +1,7 @@
 class Api::WorkoutsController < ApplicationController
 
   def show
-    @workout = Workout.find(params[:id])
+    @workout = Workout.includes(:setresults).find(params[:id])
     render :show
   end
 

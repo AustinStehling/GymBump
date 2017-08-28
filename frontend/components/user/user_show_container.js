@@ -11,12 +11,14 @@ const mapStateToProps = state => {
     member: state.entities.members.selected,
     workouts: selected,
     exercises: selectAllExercises(state),
+    selectedWorkout: state.entities.workout.selectedWorkout
   };
 };
 
 const mapDispatchToProps = dispatch => ({
   requestUser: id => dispatch(requestUser(id)),
   requestAllExercises: () => dispatch(requestAllExercises()),
+  requestWorkout: id => dispatch(selectYourWorkout(id))
 });
 
 

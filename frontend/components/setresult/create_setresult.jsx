@@ -141,8 +141,8 @@ class CreateSetResult extends React.Component {
                 />
               <select className="unit" value={this.state.distance_unit} onChange={this.handleUpdate('distance_unit')}>
                 <option>Unit</option>
-                <option value="mi">lb</option>
-                <option value="km">kg</option>
+                <option value="mi">mi</option>
+                <option value="km">km</option>
               </select>
               <input
                 type="time"
