@@ -6,10 +6,10 @@ class WorkoutShow extends React.Component {
   }
 
   render () {
-    debugger
+
     return (
-      <div>
-        <h3>{this.props.selectedWorkout.name}</h3>
+      <div className="workout-show-main">
+        <h3 className="workout-show-title">{this.props.selectedWorkout.name}</h3>
       </div>
     );
   }

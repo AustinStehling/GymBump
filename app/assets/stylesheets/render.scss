@@ -111,10 +111,12 @@
 }
 
 .logout-home-button {
+  background: #2988BC;
   padding: 7px;
   border-radius: 5px;
   width: 70px;
   font-size: 20px;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
