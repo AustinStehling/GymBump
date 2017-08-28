@@ -1,0 +1,38 @@
+.workout-show-li {
+  background-color: #ED8C72;
+  width: 250px;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.workout-title {
+  display: flex;
+  justify-content: space-around;
+  background: #2988BC;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.workout-result-li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+}
+
+.workout-result-li:last-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.dur-result-hour {
+  color: black;
+}
+
+.dur-result {
+  color: black;
+}

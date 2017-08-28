@@ -4,9 +4,6 @@
   width: inherit;
 }
 
-.workout-show-li {
-  width: 200px;
-}
 
 .dur-format {
   display: flex;
@@ -23,22 +20,7 @@
   margin-bottom: 20px;
 }
 
-.workout-result-li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.workout-result-li:last-child {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.workout-title {
-  margin-bottom: 10px;
-}
 
 .unit {
   width: 50px;
