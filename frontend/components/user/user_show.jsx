@@ -10,7 +10,7 @@ class UserShow extends React.Component {
     super(props);
     this._onButtonClick = this._onButtonClick.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.state = { active: null }
+    this.state = { active: null, selected: this.props.selectedWorkout }
   }
 
 
@@ -39,8 +39,14 @@ class UserShow extends React.Component {
 
    handleClick(e) {
      e.preventDefault();
-
-     this.setState({ selected: e.target.title })
+     let key = e.target.title
+     let array = this.props.workouts
+     let value = ''
+     array.forEach(workout => {
+       if (workout.id === parseInt(key, 10)) value = workout
+     })
+     debugger
+     this.setState({ selected: value })
    }
 
   render() {
@@ -51,7 +57,7 @@ class UserShow extends React.Component {
 
     const workouts = allWorkouts.map(workout => <li className="li-workout-list"
                                                     key={workout.id}
-                                                    title={workout}
+                                                    title={workout.id}
                                                     onClick={this.handleClick}>
                               <div className="created-workout">{workout.created_at.slice(5,10)}</div>
                               <div className="workout-name">{workout.name}</div></li>)
@@ -95,7 +101,9 @@ class UserShow extends React.Component {
        </div>
        <div className="placeholder">
        </div>
-        <WorkoutShowContainer selectedWorkout={this.props.selectedWorkout} />
+        {!this.state.selected ? (
+          null
+        ) : <WorkoutShowContainer selectedWorkout={this.state.selected} />}
       </div>
     )
   }
