@@ -22,20 +22,21 @@ class WorkoutShow extends React.Component {
                      {result.distance ? (
                        <li className='workout-result-li'><p>Distance:</p>{result.distance}{result.distance_unit}</li>
                      ) : null}
-
-                     <li className='workout-result-li'><p>Duration:</p>
-                       <div className='dur-format'>
-                         {result.hour ? (
-                           <p className='dur-result'>{result.hour}:</p>
-                         ) : null}
-                         {result.min ? (
-                           <p className='dur-result'>{result.min}:</p>
-                         ) : null}
-                         {result.sec ? (
-                           <p className='dur-result'>{result.sec}</p>
-                         ) : null}
-                       </div>
-                     </li>
+                     {result.hour || result.min || result.sec ? (
+                       <li className='workout-result-li'><p>Duration:</p>
+                         <div className='dur-format'>
+                           {result.hour ? (
+                             <p className='dur-result-hour'>{result.hour}:</p>
+                           ) : null}
+                           {result.min ? (
+                             <p className='dur-result'>{result.min}:</p>
+                           ) : null}
+                           {result.sec ? (
+                             <p className='dur-result'>{result.sec}</p>
+                           ) : null}
+                         </div>
+                       </li>
+                     ) : null }
                    </ul>
                   </li>
       }
@@ -44,7 +45,7 @@ class WorkoutShow extends React.Component {
     return (
       <div className="workout-show-main">
         <h3 className="workout-show-title">{this.props.selectedWorkout.name}</h3>
-        <ul>
+        <ul className="workout-show-ul">
           {results}
         </ul>
       </div>
