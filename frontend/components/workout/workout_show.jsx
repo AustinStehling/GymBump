@@ -13,10 +13,29 @@ class WorkoutShow extends React.Component {
         return <li key={result.id} className='workout-show-li'>
                    <p className='workout-title'>{exercises[result.exercise_id].exercise_name}</p>
                    <ul>
-                     <li className='workout-result-li'><p>Weight:</p>{result.weight_lifted}{result.weight_unit}</li>
-                     <li className='workout-result-li'><p>Reps:</p>{result.reps}</li>
-                     <li className='workout-result-li'><p>Distance:</p>{result.distance}{result.distance_unit}</li>
-                     <li className='workout-result-li'><p>Duration:</p>{result.duration}</li>
+                     {result.weight_lifted ? (
+                       <li className='workout-result-li'><p>Weight:</p>{result.weight_lifted}{result.weight_unit}</li>
+                     ) : null}
+                     {result.reps ? (
+                       <li className='workout-result-li'><p>Reps:</p>{result.reps}</li>
+                     ) : null}
+                     {result.distance ? (
+                       <li className='workout-result-li'><p>Distance:</p>{result.distance}{result.distance_unit}</li>
+                     ) : null}
+
+                     <li className='workout-result-li'><p>Duration:</p>
+                       <div className='dur-format'>
+                         {result.hour ? (
+                           <p className='dur-result'>{result.hour}:</p>
+                         ) : null}
+                         {result.min ? (
+                           <p className='dur-result'>{result.min}:</p>
+                         ) : null}
+                         {result.sec ? (
+                           <p className='dur-result'>{result.sec}</p>
+                         ) : null}
+                       </div>
+                     </li>
                    </ul>
                   </li>
       }
