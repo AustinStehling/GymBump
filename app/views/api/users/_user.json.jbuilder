@@ -1,4 +1,6 @@
-json.extract! user, :id, :username, :first_name, :last_name, :gender
+json.extract! user, :id, :username, :gender, :birthday, :experience, :height_ft, :height_in,
+  :first_name, :last_name, :weight
+
 json.avatar_url asset_path(user.avatar.url)
 
 json.workouts do

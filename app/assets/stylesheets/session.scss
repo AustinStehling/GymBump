@@ -83,12 +83,22 @@ input {
 
 .g-selector {
   margin-top: 10px;
-  margin-bottom: 10px;
   width: 100px;
   height: 30px;
   background-color: #F4EADE;
   color: grey;
   font-size: 15px;
+  margin-right: 10px;
+}
+
+.e-selector {
+  margin-top: 10px;
+  width: 110px;
+  height: 30px;
+  background-color: #F4EADE;
+  color: grey;
+  font-size: 15px;
+  margin-right: 10px;
 }
 
 .sub-button {

@@ -45,7 +45,6 @@ class UserShow extends React.Component {
      array.forEach(workout => {
        if (workout.id === parseInt(key, 10)) value = workout
      })
-     debugger
      this.setState({ selected: value })
    }
 
@@ -71,10 +70,21 @@ class UserShow extends React.Component {
     return (
       <div className='div-main'>
         <div className='div-member-stats'>
-          <ul >
-            <img src={member.avatar_url}/>
-            <li className="user-stats">{member.first_name}</li>
-            <li className="user-stats">{member.last_name}</li>
+          <ul className="ul-stats">
+            <img className="user-prof-pic" src={member.avatar_url}/>
+            <li className="user-stats"><p>NAME:</p>
+                                       <div>{member.first_name} {member.last_name}</div></li>
+            <li className="user-stats"><p>GENDER:</p>
+                                       <div>{member.gender}</div></li>
+            <li className="user-stats"><p>BIRTHDAY:</p>
+                                       <div>{member.birthday}</div></li>
+            <li className="user-stats"><p>EXPERIENCE:</p>
+                                       <div>{member.experience}</div></li>
+            <li className="user-stats"><p>WEIGHT:</p>
+                                       <div>{member.weight}lbs</div></li>
+            <li className="user-stats"><p>HEIGHT:</p>
+                                       <div>{member.height_ft}ft {member.height_in}</div>
+                                       </li>
           </ul>
         </div>
         <div>

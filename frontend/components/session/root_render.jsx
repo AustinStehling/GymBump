@@ -13,7 +13,11 @@ class RootRender extends React.Component{
       first_name: "",
       last_name: "",
       gender: "",
-      birthday: ""
+      birthday: "",
+      weight: "",
+      experience: "",
+      height_ft: "",
+      height_in: "",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -53,34 +57,57 @@ class RootRender extends React.Component{
                 <input
                   type="text"
                   value={this.state.username}
-                  placeholder="Username"
+                  placeholder="Username*"
                   onChange={this.handleUpdate('username')}
                   />
                 <input
                   type="password"
                   value={this.state.password}
-                  placeholder="Password"
+                  placeholder="Password*"
                   onChange={this.handleUpdate('password')}
                   />
 
                 <input
                   type="text"
                   value={this.state.email}
-                  placeholder="Email"
+                  placeholder="Email*"
                   onChange={this.handleUpdate('email')}
                   />
                 <input
                   type="text"
                   value={this.state.firstName}
-                  placeholder="First Name"
+                  placeholder="First Name*"
                   onChange={this.handleUpdate('first_name')}
                   />
                <input
                   type="text"
                   value={this.state.lastName}
-                  placeholder="Last Name"
+                  placeholder="Last Name*"
                   onChange={this.handleUpdate('last_name')}
                   />
+                <div className="birthday-div">
+                  <input
+                    type="number"
+                    className="wt-ht"
+                    value={this.state.weight}
+                    placeholder="Weight"
+                    onChange={this.handleUpdate('weight')}
+                    />
+                  <input
+                    type="number"
+                    className="wt-ht"
+                    value={this.state.height_ft}
+                    placeholder="Height ft"
+                    onChange={this.handleUpdate('height_ft')}
+                    />
+                  <input
+                    type="number"
+                    className="wt-ht"
+                    value={this.state.height_in}
+                    placeholder="Height in"
+                    onChange={this.handleUpdate('height_in')}
+                    />
+                </div>
                 <div className="birthday-div">
                   <p className="dob">DOB:</p>
                   <input
@@ -91,11 +118,19 @@ class RootRender extends React.Component{
                     onChange={this.handleUpdate('birthday')}
                     />
                 </div>
-                <select className="g-selector" onChange={this.handleUpdate('gender')}>
-                  <option>Gender</option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                </select>
+                <div className="birthday-div">
+                  <select className="g-selector" onChange={this.handleUpdate('gender')}>
+                    <option>Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                  <select className="e-selector" onChange={this.handleUpdate('experience')}>
+                    <option>Experience</option>
+                    <option value="Novice">Novice</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Veteran">Veteran</option>
+                  </select>
+                </div>
                 <ol className="errors-list">
                   {errors}
                 </ol>
