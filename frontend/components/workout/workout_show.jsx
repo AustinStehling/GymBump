@@ -1,5 +1,7 @@
 import React from 'react';
 import values from 'lodash/values'
+import InfiniteScroll from 'react-infinite-scroll-component';
+
 class WorkoutShow extends React.Component {
   constructor(props) {
     super(props);
@@ -43,11 +45,13 @@ class WorkoutShow extends React.Component {
     })
 
     return (
-      <div className="workout-show-main">
-        <h3 className="workout-show-title">{this.props.selectedWorkout.name}</h3>
-        <ul className="workout-show-ul">
-          {results}
-        </ul>
+        <div className="workout-show-main">
+          <h3 className="workout-show-title">{this.props.selectedWorkout.name}</h3>
+            <InfiniteScroll>
+              <ul className="workout-show-ul">
+               {results}
+              </ul>
+           </InfiniteScroll>
       </div>
     );
   }
