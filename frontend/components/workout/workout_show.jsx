@@ -7,7 +7,7 @@ class WorkoutShow extends React.Component {
 
   render () {
     const setArray = values(this.props.selectedWorkout.setresults)
-    debugger
+    
     const results = setArray.map(result => {
       if (result.workout_id === this.props.selectedWorkout.id) {
         return <li key={result.id}>{result.weight_lifted}
@@ -19,7 +19,7 @@ class WorkoutShow extends React.Component {
                   </li>
       }
     })
-    debugger
+
     return (
       <div className="workout-show-main">
         <h3 className="workout-show-title">{this.props.selectedWorkout.name}</h3>
