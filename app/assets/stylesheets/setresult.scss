@@ -4,6 +4,10 @@
   width: inherit;
 }
 
+.workout-show-li {
+  width: 200px;
+}
+
 .set-result-form-container {
   display: flex;
   flex-direction: column;
@@ -12,6 +16,23 @@
   border: 1px solid #ED8C72;
   border-radius: 5px;
   margin-bottom: 20px;
+}
+
+.workout-result-li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.workout-result-li:last-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.workout-title {
+  margin-bottom: 10px;
 }
 
 .unit {
