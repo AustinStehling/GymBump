@@ -12,7 +12,9 @@ class CreateSetResult extends React.Component {
       reps: '',
       distance: '',
       distance_unit: '',
-      duration: '',
+      hour: '',
+      min: '',
+      sec: '',
       exercise_id: exercise[exercise.length - 1].id,
       workout_id: workout[workout.length - 1],
       active: null
@@ -34,7 +36,9 @@ class CreateSetResult extends React.Component {
             reps: '',
             distance: '',
             distance_unit: '',
-            duration: '',
+            hour: '',
+            min: '',
+            sec: '',
             exercise: '',
             workout: '',
             active: 'FIRST'
@@ -144,13 +148,26 @@ class CreateSetResult extends React.Component {
                 <option value="mi">mi</option>
                 <option value="km">km</option>
               </select>
-              <input
-                type="time"
-                step="1"
-                className="new-set"
-                value={this.state.duration}
-                onChange={this.handleUpdate('duration')}
-                />
+              <div>
+                <input
+                  type="number"
+                  className="new-set-time"
+                  value={this.state.hour}
+                  onChange={this.handleUpdate('hour')}
+                  />
+                <input
+                  type="number"
+                  className="new-set-time"
+                  value={this.state.min}
+                  onChange={this.handleUpdate('min')}
+                  />
+                <input
+                  type="number"
+                  className="new-set-time"
+                  value={this.state.sec}
+                  onChange={this.handleUpdate('sec')}
+                  />
+              </div>
             </div>
                <button onClick={this.handleSubmit} className="new-set-button">Add Result</button>
           </form>
