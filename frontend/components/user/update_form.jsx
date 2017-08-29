@@ -46,51 +46,68 @@ class UpdateUser extends React.Component {
   render() {
 
       return (
-        <div className='div-main'>
+        <div className='div-update'>
           <div className='div-member-stats'>
-              <form >
-                <h3 >Add Stats</h3>
-                <input onChange={this.upDateFile} type="file"/>
-                  <div className="birthday-div">
-                    <input
-                      type="number"
-                      className="wt-ht"
-                      value={this.state.weight}
-                      placeholder="Weight"
-                      onChange={this.handleUpdate('weight')}
-                      />
-                    <input
-                      type="number"
-                      className="wt-ht"
-                      value={this.state.height_ft}
-                      placeholder="Height ft"
-                      onChange={this.handleUpdate('height_ft')}
-                      />
-                    <input
-                      type="number"
-                      className="wt-ht"
-                      value={this.state.height_in}
-                      placeholder="Height in"
-                      onChange={this.handleUpdate('height_in')}
-                      />
-                  </div>
-                  <div >
-                    <select className="g-selector" onChange={this.handleUpdate('gender')}>
-                      <option>Gender</option>
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                    </select>
-                    <select className="e-selector" onChange={this.handleUpdate('experience')}>
-                      <option>Experience</option>
-                      <option value="Novice">Novice</option>
-                      <option value="Intermediate">Intermediate</option>
-                      <option value="Veteran">Veteran</option>
-                    </select>
-                  </div>
-                  <div >
-                    <button onClick={this.handleSubmit}>Update</button>
-                  </div>
+            <h3 className='add-stats-h'>Add Stats</h3>
+            <form className='up-form'>
+                <div className='div-up-form'>
+                  <h3>Weight:</h3>
+                  <input
+                    type="number"
+                    className='update-input'
+                    value={this.state.weight}
+                    placeholder="Weight"
+                    onChange={this.handleUpdate('weight')}
+                    />
+                 </div>
+                 <div className='div-up-form'>
+                   <h3>Height:</h3>
+                   <div>
+                     <input
+                       type="number"
+                       className='update-ht'
+                       value={this.state.height_ft}
+                       placeholder="Height ft"
+                       onChange={this.handleUpdate('height_ft')}
+                       />
+                     <input
+                       type="number"
+                       className='update-ht'
+                       value={this.state.height_in}
+                       placeholder="Height in"
+                       onChange={this.handleUpdate('height_in')}
+                       />
+                   </div>
+                 </div>
+                 <div className='div-up-form'>
+                   <h3>Gender:</h3>
+                     <select className='update-sel' onChange={this.handleUpdate('gender')}>
+                       <option>Gender</option>
+                       <option value="Male">Male</option>
+                       <option value="Female">Female</option>
+                     </select>
+                 </div>
+                 <div className='div-up-form'>
+                   <h3>Experience:</h3>
+                     <select className='update-sel' onChange={this.handleUpdate('experience')}>
+                       <option>Experience</option>
+                       <option value="Novice">Novice</option>
+                       <option value="Intermediate">Intermediate</option>
+                       <option value="Veteran">Veteran</option>
+                     </select>
+                 </div>
+                 <div className='div-up-form'>
+                   <h3>Upload Avatar:</h3>
+                     <input
+                       className='update-av'
+                       onChange={this.upDateFile}
+                       type="file"/>
+                 </div>
               </form>
+              <div className='div-up-button'>
+                <button className='update-stat-button'
+                  onClick={this.handleSubmit}>Update</button>
+              </div>
           </div>
         </div>
       );

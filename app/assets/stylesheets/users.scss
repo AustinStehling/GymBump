@@ -146,3 +146,67 @@
   display: flex;
   justify-content: center;
 }
+
+.div-update {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.update-input {
+  width: 80px;
+  height: 20px;
+}
+.update-sel {
+  width: 90px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: #F4EADE;
+}
+.update-av {
+  width: 80px;
+  height: 20px;
+}
+.update-ht {
+  width: 34px;
+  height: 20px;
+}
+
+.div-up-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+
+}
+.div-up-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.add-stats-h {
+  display: flex;
+  justify-content: center;
+}
+
+.update-stat-button {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 7px;
+  font-size: 15px;
+  border-radius: 5px;
+  background: #2988BC;
+}
+
+.up-form {
+  background: #2988BC;
+  width: 250px;
+  margin-left: 25px;
+  border-radius: 5px;
+  padding: 5px;
+}
