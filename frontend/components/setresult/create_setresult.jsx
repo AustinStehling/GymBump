@@ -90,7 +90,7 @@ class CreateSetResult extends React.Component {
                 />
               <select className="unit" value={this.state.weight_unit} onChange={this.handleUpdate('weight_unit')}>
                 <option>Unit</option>
-                <option value="lb">lb</option>
+                <option value="lbs">lbs</option>
                 <option value="kg">kg</option>
               </select>
               <input
@@ -164,7 +164,7 @@ class CreateSetResult extends React.Component {
                 />
               <select className="unit" value={this.state.weight_unit} onChange={this.handleUpdate('weight_unit')}>
                 <option>Unit</option>
-                <option value="lb">lb</option>
+                <option value="lbs">lbs</option>
                 <option value="kg">kg</option>
               </select>
               <input
