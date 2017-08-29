@@ -76,7 +76,7 @@ class UserShow extends React.Component {
                                 title={workout.id}>
                                 {workout.name}</div></li>)
 
-    
+
     let buttonText;
     {if (this.state.active === 'FIRST') {
       buttonText = 'Submit Workout'
@@ -130,7 +130,7 @@ class UserShow extends React.Component {
        </div>
         {!this.state.selected ? (
           null
-        ) : <WorkoutShowContainer selectedWorkout={this.state.selected} workoutState={this.state.workoutActive} />}
+        ) : <WorkoutShowContainer selectedWorkout={this.state.selected} toggleParent={() => this.setState({ selected: null}).bind(this)}/>}
       </div>
     )
   }

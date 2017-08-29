@@ -17,6 +17,7 @@ class WorkoutShow extends React.Component {
         this.props.requestUser(this.props.match.params.userId)
       }
     )
+    this.props.toggleParent();
   }
 
   render () {
