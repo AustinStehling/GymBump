@@ -97,6 +97,7 @@ class CreateSetResult extends React.Component {
                 <option>Unit</option>
                 <option value="mi">mi</option>
                 <option value="km">km</option>
+                <option value="m">m</option>
               </select>
               <div className="set-time-div">
                 <input
@@ -170,6 +171,7 @@ class CreateSetResult extends React.Component {
                 <option>Unit</option>
                 <option value="mi">mi</option>
                 <option value="km">km</option>
+                <option value="m">m</option>
               </select>
               <div className="set-time-div">
                 <input
