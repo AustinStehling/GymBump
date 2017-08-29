@@ -11,8 +11,7 @@ class WorkoutShow extends React.Component {
 
   handleClick (e) {
     e.preventDefault();
-    debugger
-    this.props.removeWorkout(this.props.selectedWorkout);
+    this.props.deleteWorkout(this.props.selectedWorkout);
   }
 
   render () {

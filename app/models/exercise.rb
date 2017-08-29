@@ -12,7 +12,7 @@
 class Exercise < ApplicationRecord
   validates :exercise_name, presence: true
 
-  has_many :setresults
+  has_many :setresults, dependent: :destroy
 
   has_many :workouts,
    through: :setresults

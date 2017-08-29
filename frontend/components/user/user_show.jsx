@@ -25,6 +25,7 @@ class UserShow extends React.Component {
     }
   }
 
+
    _onButtonClick() {
      let newActive;
      if (this.state.active === null) {
@@ -60,8 +61,14 @@ class UserShow extends React.Component {
                                                     key={workout.id}
                                                     title={workout.id}
                                                     onClick={this.handleClick}>
-                              <div className="created-workout">{workout.created_at.slice(5,10)}</div>
-                              <div className="workout-name">{workout.name}</div></li>)
+                              <div className="created-workout"
+                                onClick={this.handleClick}
+                                title={workout.id}>
+                                {workout.created_at.slice(5,10)}</div>
+                              <div className="workout-name"
+                                onClick={this.handleClick}
+                                title={workout.id}>
+                                {workout.name}</div></li>)
     let buttonText;
     {if (this.state.active === 'FIRST') {
       buttonText = 'Submit Workout'

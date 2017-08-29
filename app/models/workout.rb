@@ -14,7 +14,7 @@ class Workout < ApplicationRecord
 
   belongs_to :user
 
-  has_many :setresults
+  has_many :setresults, dependent: :destroy
   has_many :exercises,
     through: :setresults
 

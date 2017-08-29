@@ -53,7 +53,7 @@ export const newWorkout = workout => dispatch => {
 };
 
 export const deleteWorkout = workout => dispatch => {
-  return APIUtil.deleteWorkout(workout).then(workout => {
+  return APIUtil.deleteLift(workout).then(workout => {
     return dispatch(removeWorkout(workout));
   });
 };
