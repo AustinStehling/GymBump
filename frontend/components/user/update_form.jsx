@@ -28,7 +28,7 @@ class UpdateUser extends React.Component {
     formData.append("user[height_ft]", this.state.height_ft);
     formData.append("user[height_in]", this.state.height_in);
     formData.append("user[avatar]", this.state.avatarFile);
- debugger
+
     const user = Object.assign({}, this.state);
     this.props.editUser(this.props.member.id, formData)
     this.props.toggleParent();

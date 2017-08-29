@@ -13,7 +13,7 @@ export const fetchUsers = () => {
 };
 
 export const updateUser = (id, formData) => {
-  debugger
+
   return $.ajax({
     method: "PATCH",
     url: `/api/users/${id}`,
