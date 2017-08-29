@@ -17,8 +17,8 @@ export const receiveUser = user => {
   };
 };
 
-export const editUser = (id, user) => dispatch => {
-  return APIUtil.updateUser(id, user).then(users => dispatch(receiveUser(user)));
+export const editUser = (id, formData) => dispatch => {
+  return APIUtil.updateUser(id, formData).then(user => dispatch(receiveUser(user)));
 }
 
 export const requestAllUsers = () => dispatch => {

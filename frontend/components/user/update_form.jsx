@@ -4,7 +4,7 @@ import { withRouter } from 'react-router'
 class UpdateUser extends React.Component {
    constructor(props) {
       super(props);
-      debugger
+
       this.state = {
         gender: this.props.member.gender,
         birthday: this.props.member.birthday,
@@ -12,18 +12,33 @@ class UpdateUser extends React.Component {
         experience: this.props.member.experience,
         height_ft: this.props.member.height_ft,
         height_in: this.props.member.height_in,
+        avatarFile: null
       };
 
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleUpdate = this.handleUpdate.bind(this);
+      this.upDateFile = this.upDateFile.bind(this);
     }
 
   handleSubmit(e) {
     e.preventDefault();
+    const formData = new FormData()
+    formData.append("user[gender]", this.state.gender);
+    formData.append("user[birthday]", this.state.birthday);
+    formData.append("user[weight]", this.state.weight);
+    formData.append("user[experience]", this.state.experience);
+    formData.append("user[height_ft]", this.state.height_ft);
+    formData.append("user[height_in]", this.state.height_in);
+    formData.append("user[avatar]", this.state.avatarFile);
+
     const user = Object.assign({}, this.state);
-    debugger
-    this.props.editUser(this.props.member.id, user)
+    this.props.editUser(this.props.member.id, formData)
     this.props.toggleParent();
+  }
+
+  upDateFile(e) {
+    let file = e.currentTarget.files[0];
+    this.setState({ avatarFile: file });
   }
 
   handleUpdate(property) {
@@ -37,6 +52,7 @@ class UpdateUser extends React.Component {
           <div className='div-member-stats'>
               <form >
                 <h3 className='sign-up-header'>Add Stats</h3>
+                <input onChange={this.upDateFile} type="file"/>
                   <div className="birthday-div">
                     <input
                       type="number"
@@ -85,6 +101,7 @@ class UpdateUser extends React.Component {
                   </div>
                   <div className='home-button-div'>
                     <button className="sub-button-render" onClick={this.handleSubmit}>Update</button>
+                    <img src={this.state.avatarUrl}/>
                   </div>
               </form>
           </div>

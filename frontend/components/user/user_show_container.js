@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch => ({
   requestUser: id => dispatch(requestUser(id)),
   requestAllExercises: () => dispatch(requestAllExercises()),
   requestWorkout: id => dispatch(selectYourWorkout(id)),
-  editUser: (id, user) => dispatch(editUser(id, user))
+  editUser: (id, formData) => dispatch(editUser(id, formData))
 });
 
 
