@@ -6,13 +6,12 @@ class UpdateUser extends React.Component {
       super(props);
 
       this.state = {
-        gender: this.props.member.gender,
-        birthday: this.props.member.birthday,
-        weight: this.props.member.weight,
-        experience: this.props.member.experience,
-        height_ft: this.props.member.height_ft,
-        height_in: this.props.member.height_in,
-        avatarFile: null
+        gender: this.props.member.gender || "",
+        weight: this.props.member.weight || "",
+        experience: this.props.member.experience || "",
+        height_ft: this.props.member.height_ft || "",
+        height_in: this.props.member.height_in || "",
+        avatarFile: this.props.member.avatar || ""
       };
 
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,13 +23,12 @@ class UpdateUser extends React.Component {
     e.preventDefault();
     const formData = new FormData()
     formData.append("user[gender]", this.state.gender);
-    formData.append("user[birthday]", this.state.birthday);
     formData.append("user[weight]", this.state.weight);
     formData.append("user[experience]", this.state.experience);
     formData.append("user[height_ft]", this.state.height_ft);
     formData.append("user[height_in]", this.state.height_in);
     formData.append("user[avatar]", this.state.avatarFile);
-
+ debugger
     const user = Object.assign({}, this.state);
     this.props.editUser(this.props.member.id, formData)
     this.props.toggleParent();
@@ -51,7 +49,7 @@ class UpdateUser extends React.Component {
         <div className='div-main'>
           <div className='div-member-stats'>
               <form >
-                <h3 className='sign-up-header'>Add Stats</h3>
+                <h3 >Add Stats</h3>
                 <input onChange={this.upDateFile} type="file"/>
                   <div className="birthday-div">
                     <input
@@ -76,17 +74,7 @@ class UpdateUser extends React.Component {
                       onChange={this.handleUpdate('height_in')}
                       />
                   </div>
-                  <div className="birthday-div">
-                    <p className="dob">DOB:</p>
-                    <input
-                      type="date"
-                      className="birthday"
-                      value={this.state.birthday}
-                      placeholder="Birthday"
-                      onChange={this.handleUpdate('birthday')}
-                      />
-                  </div>
-                  <div className="birthday-div">
+                  <div >
                     <select className="g-selector" onChange={this.handleUpdate('gender')}>
                       <option>Gender</option>
                       <option value="Male">Male</option>
@@ -99,9 +87,8 @@ class UpdateUser extends React.Component {
                       <option value="Veteran">Veteran</option>
                     </select>
                   </div>
-                  <div className='home-button-div'>
-                    <button className="sub-button-render" onClick={this.handleSubmit}>Update</button>
-                    <img src={this.state.avatarUrl}/>
+                  <div >
+                    <button onClick={this.handleSubmit}>Update</button>
                   </div>
               </form>
           </div>

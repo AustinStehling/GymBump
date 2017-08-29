@@ -86,29 +86,6 @@ class RootRender extends React.Component{
                   onChange={this.handleUpdate('last_name')}
                   />
                 <div className="birthday-div">
-                  <input
-                    type="number"
-                    className="wt-ht"
-                    value={this.state.weight}
-                    placeholder="Weight"
-                    onChange={this.handleUpdate('weight')}
-                    />
-                  <input
-                    type="number"
-                    className="wt-ht"
-                    value={this.state.height_ft}
-                    placeholder="Height ft"
-                    onChange={this.handleUpdate('height_ft')}
-                    />
-                  <input
-                    type="number"
-                    className="wt-ht"
-                    value={this.state.height_in}
-                    placeholder="Height in"
-                    onChange={this.handleUpdate('height_in')}
-                    />
-                </div>
-                <div className="birthday-div">
                   <p className="dob">DOB:</p>
                   <input
                     type="date"
@@ -117,19 +94,6 @@ class RootRender extends React.Component{
                     placeholder="Birthday"
                     onChange={this.handleUpdate('birthday')}
                     />
-                </div>
-                <div className="birthday-div">
-                  <select className="g-selector" onChange={this.handleUpdate('gender')}>
-                    <option>Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                  </select>
-                  <select className="e-selector" onChange={this.handleUpdate('experience')}>
-                    <option>Experience</option>
-                    <option value="Novice">Novice</option>
-                    <option value="Intermediate">Intermediate</option>
-                    <option value="Veteran">Veteran</option>
-                  </select>
                 </div>
                 <ol className="errors-list">
                   {errors}
