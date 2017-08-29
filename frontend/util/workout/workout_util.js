@@ -13,9 +13,9 @@ export const fetchWorkout = id => {
   });
 }
 
-export const deleteWorkout = id => {
+export const deleteWorkout = workout => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/workouts/${id}`
+    url: `api/workouts/${workout.id}`
   })
 }

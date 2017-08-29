@@ -1,4 +1,4 @@
-import { RECEIVE_WORKOUT, SELECT_WORKOUT } from '../actions/workout/workout_actions';
+import { RECEIVE_WORKOUT, SELECT_WORKOUT, REMOVE_WORKOUT } from '../actions/workout/workout_actions';
 import { RECEIVE_USER } from '../actions/user/user_actions';
 import { CLEAR_ALL } from '../actions/reset_state';
 import { RECEIVE_SETRESULT } from '../actions/setresult/setresult_actions'
@@ -26,6 +26,10 @@ const workoutReducer = (state = {}, action) => {
     case RECEIVE_SETRESULT:
       const addResult  = { [action.setresult.workout_id]: { setresults : { [action.setresult.id]: action.setresult} }}
       newState = merge({}, state, addResult)
+      return newState;
+    case REMOVE_WORKOUT:
+      newState = merge({}, state);
+      delete newState[action.workout.id];
       return newState;
     default:
       return state;

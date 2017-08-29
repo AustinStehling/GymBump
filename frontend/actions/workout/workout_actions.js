@@ -4,6 +4,7 @@ export const RECEIVE_WORKOUT = 'RECEIVE_WORKOUT'
 export const CREATE_WORKOUT = 'CREATE_WORKOUT'
 export const CLEAR_WORKOUT = 'CLEAR_WORKOUT'
 export const SELECT_WORKOUT = 'SELECT_WORKOUT'
+export const REMOVE_WORKOUT = 'REMOVE_WORKOUT'
 
 export const createWorkout = workout => {
   return {
@@ -26,6 +27,13 @@ export const selectWorkout = workout => {
   };
 };
 
+export const removeWorkout = workout => {
+  return {
+    type: REMOVE_WORKOUT,
+    workout
+  };
+};
+
 export const selectYourWorkout = id => dispatch => {
   return APIUtil.fetchWorkout(id).then(workout => {
     return dispatch(selectWorkout(workout));
@@ -41,5 +49,11 @@ export const requestWorkout = id => dispatch => {
 export const newWorkout = workout => dispatch => {
   return APIUtil.createWorkout(workout).then(workout => {
     return dispatch(receiveWorkout(workout));
+  });
+};
+
+export const deleteWorkout = workout => dispatch => {
+  return APIUtil.deleteWorkout(workout).then(workout => {
+    return dispatch(removeWorkout(workout));
   });
 };
