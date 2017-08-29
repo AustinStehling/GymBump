@@ -59,13 +59,13 @@ class WorkoutShow extends React.Component {
 
     return (
       <div className="workout-show-main">
-        <h3 className="workout-show-title">{this.props.selectedWorkout.name}</h3>
+        <h3 className="workout-show-title">{this.props.selectedWorkout.name}
+          <button className='remove-workout-button' onClick={this.handleClick}>DELETE</button></h3>
           <InfiniteScroll>
             <ul className="workout-show-ul">
              {results}
             </ul>
          </InfiniteScroll>
-       <button onClick={this.handleClick}>Remove Workout</button>
       </div>
     );
   }

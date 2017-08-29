@@ -1,6 +1,6 @@
 import UserShow from './user_show';
 import { connect } from 'react-redux';
-import { requestUser } from '../../actions/user/user_actions'
+import { requestUser, editUser } from '../../actions/user/user_actions'
 import { requestAllExercises } from '../../actions/exercise/exercise_actions'
 import { selectMembersWorkouts, selectAllExercises } from '../../reducers/selectors'
 import { selectYourWorkout } from '../../actions/workout/workout_actions';
@@ -19,7 +19,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   requestUser: id => dispatch(requestUser(id)),
   requestAllExercises: () => dispatch(requestAllExercises()),
-  requestWorkout: id => dispatch(selectYourWorkout(id))
+  requestWorkout: id => dispatch(selectYourWorkout(id)),
+  editUser: (id, user) => dispatch(editUser(id, user))
 });
 
 

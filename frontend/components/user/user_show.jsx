@@ -1,16 +1,18 @@
 import React from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import CreateWorkoutContainer from '../workout/create_workout_container'
-import ExerciseIndexContainer from '../exercise/exercise_index_container'
-import SetResultContainer from '../setresult/create_setresult_container'
-import WorkoutShowContainer from '../workout/workout_show_container'
+import CreateWorkoutContainer from '../workout/create_workout_container';
+import ExerciseIndexContainer from '../exercise/exercise_index_container';
+import SetResultContainer from '../setresult/create_setresult_container';
+import WorkoutShowContainer from '../workout/workout_show_container';
+import UpdateForm from './update_form';
 
 class UserShow extends React.Component {
   constructor(props) {
     super(props);
     this._onButtonClick = this._onButtonClick.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.state = { active: null, selected: this.props.selectedWorkout, workoutActive: 'FIRST' }
+    this.toggleEdit = this.toggleEdit.bind(this);
+    this.state = { active: null, selected: this.props.selectedWorkout, workoutActive: 'FIRST', edit: null }
   }
 
 
@@ -21,11 +23,17 @@ class UserShow extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.currentUser.id !== parseInt(nextProps.match.params.userId)) {
+    if (!this.props.currentUser) {
+      this.props.history.push('/')
+    } else if (this.props.currentUser.id !== parseInt(nextProps.match.params.userId)) {
       this.props.history.push(`/users/${this.props.currentUser.id}`);
     }
   }
 
+  toggleEdit(e) {
+    e.preventDefault();
+    this.setState({ edit: 'ACTIVE' })
+  }
 
    _onButtonClick() {
      let newActive;
@@ -86,25 +94,35 @@ class UserShow extends React.Component {
 
     return (
       <div className='div-main'>
-        <div className='div-member-stats'>
-          <ul className="ul-stats">
-            <img className="user-prof-pic" src={member.avatar_url}/>
-            <li className="user-stats-name"><p>NAME:</p>
-                                       <div>{member.first_name} {member.last_name}</div></li>
-            <li className="user-stats"><p>GENDER:</p>
-                                       <div>{member.gender}</div></li>
-            <li className="user-stats"><p>BIRTHDAY:</p>
-                                       <div>{member.birthday}</div></li>
-            <li className="user-stats"><p>EXPERIENCE:</p>
-                                       <div>{member.experience}</div></li>
-            <li className="user-stats"><p>WEIGHT:</p>
-                                       <div>{member.weight}lbs</div></li>
-            <li className="user-stats"><p>HEIGHT:</p>
-                                       <div>{member.height_ft}ft {member.height_in}</div>
-                                       </li>
+        {this.state.edit === null ? (
+          <div className='div-member-stats'>
+            <button onClick={this.toggleEdit}
+              className='update-button' >Update</button>
+
+            <ul className="ul-stats">
+              <img className="user-prof-pic" src={member.avatar_url}/>
+              <li className="user-stats-name"><p>NAME:</p>
+              <div>{member.first_name} {member.last_name}</div></li>
+              <li className="user-stats"><p>GENDER:</p>
+              <div>{member.gender}</div></li>
+              <li className="user-stats"><p>BIRTHDAY:</p>
+              <div>{member.birthday}</div></li>
+              <li className="user-stats"><p>EXPERIENCE:</p>
+              <div>{member.experience}</div></li>
+              <li className="user-stats"><p>WEIGHT:</p>
+              <div>{member.weight}lbs</div></li>
+              <li className="user-stats"><p>HEIGHT:</p>
+              <div>{member.height_ft}ft {member.height_in}</div>
+            </li>
           </ul>
         </div>
+      ) : <UpdateForm editUser={this.props.editUser}
+                      member={this.props.member}
+                      toggleParent={() => this.setState({ edit: null})}
+                      requestUser={this.props.requestUser}/>}
         <div>
+
+
           <div className="new-workout-and-workouts">
 
           <div className='div-create-workout'>
@@ -130,7 +148,7 @@ class UserShow extends React.Component {
        </div>
         {!this.state.selected ? (
           null
-        ) : <WorkoutShowContainer selectedWorkout={this.state.selected} toggleParent={() => this.setState({ selected: null}).bind(this)}/>}
+        ) : <WorkoutShowContainer selectedWorkout={this.state.selected} toggleParent={() => this.setState({ selected: null})}/>}
       </div>
     )
   }

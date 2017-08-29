@@ -11,6 +11,20 @@
 
 .user-prof-pic {
   margin-bottom: 25px;
+  width: 250px;
+  border-radius: 5px;
+  margin-left: 25px;
+}
+
+.update-button {
+  margin-left: 5px;
+  background: #2988BC;
+  border-radius: 5px;
+  padding: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .user-stats-name {
@@ -52,6 +66,7 @@
   padding: 15px;
   border-radius: 5px;
   background: #2F496E;
+  min-width: 482px;
 }
 
 .div-main {
