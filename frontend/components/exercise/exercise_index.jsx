@@ -41,6 +41,10 @@ class ExerciseIndex extends React.Component {
       }
     })
     e.preventDefault();
+    if (!name) {
+      this.setState({inputVal: 'Invalid Input, Please try Again'})
+      return 'Invalid Input'
+    }
     this.props.requestExercise(selected)
     this.setState({inputVal: '', active: newActive, name: name})
     this.props.requestAllExercises();
@@ -90,11 +94,14 @@ class ExerciseIndex extends React.Component {
               <ul className="exercise-ul">
                 {match}
               </ul>
-              <button className="new-exercise-button" onClick={this.handleSubmit}>Add Exercise</button>
+              <button className="new-exercise-button"
+                onClick={this.handleSubmit}>Add Exercise</button>
             </div>
           </div>
         ) : this.state.active === 'SECOND' ? (
-          <SetResultContainer user={this.props.user} exercises={this.props.exercises} exercise={this.state.name}
+          <SetResultContainer user={this.props.user}
+            exercises={this.props.exercises}
+            exercise={this.state.name}
             liftname={this.props.liftname}/>
         ) : null }
       </div>
