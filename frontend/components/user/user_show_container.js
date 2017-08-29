@@ -11,7 +11,8 @@ const mapStateToProps = state => {
     member: state.entities.members.selected,
     workouts: selected,
     exercises: selectAllExercises(state),
-    selectedWorkout: state.entities.workout.selectedWorkout
+    selectedWorkout: state.entities.workout.selectedWorkout,
+    currentUser: state.session.currentUser
   };
 };
 

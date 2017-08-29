@@ -10,18 +10,19 @@ class UserShow extends React.Component {
     super(props);
     this._onButtonClick = this._onButtonClick.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.state = { active: null, selected: this.props.selectedWorkout }
+    this.state = { active: null, selected: this.props.selectedWorkout, workoutActive: 'FIRST' }
   }
 
 
   componentDidMount() {
     this.props.requestUser(this.props.match.params.userId),
     this.props.requestAllExercises();
+    this.props.history.push(`/users/${this.props.currentUser.id}`);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.match.params.userId !== nextProps.match.params.userId) {
-      this.props.requestUser(nextProps.match.params.userId);
+    if (this.props.currentUser.id !== parseInt(nextProps.match.params.userId)) {
+      this.props.history.push(`/users/${this.props.currentUser.id}`);
     }
   }
 
@@ -56,8 +57,13 @@ class UserShow extends React.Component {
     if (!this.props.member) return null;
     const { member } = this.props;
     const allWorkouts = this.props.workouts;
-
-    const workouts = allWorkouts.map(workout => <li className="li-workout-list"
+    let definedWorkouts = [];
+    allWorkouts.forEach(workout => {
+      if (workout) {
+        definedWorkouts.push(workout)
+      }
+    });
+    let workouts = definedWorkouts.map(workout => <li className="li-workout-list"
                                                     key={workout.id}
                                                     title={workout.id}
                                                     onClick={this.handleClick}>
@@ -69,6 +75,8 @@ class UserShow extends React.Component {
                                 onClick={this.handleClick}
                                 title={workout.id}>
                                 {workout.name}</div></li>)
+
+    
     let buttonText;
     {if (this.state.active === 'FIRST') {
       buttonText = 'Submit Workout'
@@ -122,7 +130,7 @@ class UserShow extends React.Component {
        </div>
         {!this.state.selected ? (
           null
-        ) : <WorkoutShowContainer selectedWorkout={this.state.selected} />}
+        ) : <WorkoutShowContainer selectedWorkout={this.state.selected} workoutState={this.state.workoutActive} />}
       </div>
     )
   }

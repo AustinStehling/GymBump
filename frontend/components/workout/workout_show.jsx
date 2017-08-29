@@ -1,6 +1,7 @@
 import React from 'react';
 import values from 'lodash/values'
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { withRouter } from 'react-router'
 
 class WorkoutShow extends React.Component {
   constructor(props) {
@@ -11,7 +12,11 @@ class WorkoutShow extends React.Component {
 
   handleClick (e) {
     e.preventDefault();
-    this.props.deleteWorkout(this.props.selectedWorkout);
+    this.props.deleteWorkout(this.props.selectedWorkout).then(
+      () => {
+        this.props.requestUser(this.props.match.params.userId)
+      }
+    )
   }
 
   render () {
@@ -66,4 +71,4 @@ class WorkoutShow extends React.Component {
 
 }
 
-export default WorkoutShow;
+export default withRouter(WorkoutShow);

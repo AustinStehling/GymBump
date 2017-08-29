@@ -17,8 +17,10 @@ class Api::WorkoutsController < ApplicationController
   end
 
   def destroy
-    workout = Workout.find(params[:id])
-    workout.destroy
+    @workout = Workout.find(params[:id])
+    @workout.destroy
+
+    render :show
   end
 
   def update
