@@ -43,7 +43,6 @@ class ExerciseIndex extends React.Component {
     e.preventDefault();
     if (!name) {
       this.setState({inputVal: 'Invalid Input, Please try Again'})
-      return 'Invalid Input'
     }
     this.props.requestExercise(selected)
     this.setState({inputVal: '', active: newActive, name: name})
