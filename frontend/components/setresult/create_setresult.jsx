@@ -23,6 +23,7 @@ class CreateSetResult extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleTime = this.handleTime.bind(this);
   }
 
   handleSubmit(e) {
@@ -49,6 +50,21 @@ class CreateSetResult extends React.Component {
 
   handleUpdate(property) {
     return e => this.setState({ [property]: e.target.value })
+  }
+
+  handleTime(property) {
+
+    return e => {
+      let target = e.target.value
+      if (target.length === 1) {
+        target = '0' + target
+      }
+
+      if (target.length === 3) {
+        target = target.slice(1)
+      }
+      this.setState({ [property]: target })
+    }
   }
 
   handleClick(e) {
@@ -106,7 +122,7 @@ class CreateSetResult extends React.Component {
                   placeholder="h"
                   min='0'
                   value={this.state.hour}
-                  onChange={this.handleUpdate('hour')}
+                  onChange={this.handleTime('hour')}
                   />
                 <p>:</p>
                 <input
@@ -116,7 +132,7 @@ class CreateSetResult extends React.Component {
                   min='0'
                   max='59'
                   value={this.state.min}
-                  onChange={this.handleUpdate('min')}
+                  onChange={this.handleTime('min')}
                   />
                 <p>:</p>
                 <input
@@ -126,7 +142,7 @@ class CreateSetResult extends React.Component {
                   min='0'
                   max='59'
                   value={this.state.sec}
-                  onChange={this.handleUpdate('sec')}
+                  onChange={this.handleTime('sec')}
                   />
               </div>
             </div>
@@ -180,7 +196,7 @@ class CreateSetResult extends React.Component {
                   placeholder="h"
                   min='0'
                   value={this.state.hour}
-                  onChange={this.handleUpdate('hour')}
+                  onChange={this.handleTime('hour')}
                   />
                 <p>:</p>
                 <input
@@ -190,7 +206,7 @@ class CreateSetResult extends React.Component {
                   min='0'
                   max='59'
                   value={this.state.min}
-                  onChange={this.handleUpdate('min')}
+                  onChange={this.handleTime('min')}
                   />
                 <p>:</p>
                 <input
@@ -200,7 +216,7 @@ class CreateSetResult extends React.Component {
                   min='0'
                   max='59'
                   value={this.state.sec}
-                  onChange={this.handleUpdate('sec')}
+                  onChange={this.handleTime('sec')}
                   />
               </div>
             </div>
