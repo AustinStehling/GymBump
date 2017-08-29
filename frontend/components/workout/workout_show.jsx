@@ -5,6 +5,14 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 class WorkoutShow extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick (e) {
+    e.preventDefault();
+    debugger
+    this.props.removeWorkout(this.props.selectedWorkout);
   }
 
   render () {
@@ -45,13 +53,14 @@ class WorkoutShow extends React.Component {
     })
 
     return (
-        <div className="workout-show-main">
-          <h3 className="workout-show-title">{this.props.selectedWorkout.name}</h3>
-            <InfiniteScroll>
-              <ul className="workout-show-ul">
-               {results}
-              </ul>
-           </InfiniteScroll>
+      <div className="workout-show-main">
+        <h3 className="workout-show-title">{this.props.selectedWorkout.name}</h3>
+          <InfiniteScroll>
+            <ul className="workout-show-ul">
+             {results}
+            </ul>
+         </InfiniteScroll>
+       <button onClick={this.handleClick}>Remove Workout</button>
       </div>
     );
   }
