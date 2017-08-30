@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import values from 'lodash/values';
+import { Line } from 'react-chartjs-2';
 
 class SearchBestWorkouts extends React.Component {
   constructor(props) {
@@ -70,6 +71,8 @@ class SearchBestWorkouts extends React.Component {
 
     let mergedSets = [].concat.apply([], setResults)
 
+    const allResults = {}
+
     const completedExercises = {};
 
     for (var i = 0; i < mergedSets.length; i++) {
@@ -78,13 +81,31 @@ class SearchBestWorkouts extends React.Component {
       let name = exercise.exercise_name
 
       if (exercise.ex_type === 'lift') {
+        if (!allResults[name]) {
+          allResults[name] = { labels: [],
+                               datasets: [{
+                                 label: 'Weight over Time',
+                                 backgroundColor: '#ED8C72',
+                                 borderColor: '#2988BC',
+                                 data: [],
+                              }],
+                            };
+        }
+
         if (completedExercises[name] < (set.weight_lifted)) {
           completedExercises[name] = set.weight_lifted
         } else if (!completedExercises[name]) {
           completedExercises[name] = set.weight_lifted
         }
+
+        allResults[name].labels.push(i + 1)
+        allResults[name].datasets[0].data.push(set.weight_lifted)
       }
+
     }
+
+
+
 
     const best = Object.keys(completedExercises).map((exercise) => {
       if (this.state.inputVal === '') return [];
@@ -112,7 +133,7 @@ class SearchBestWorkouts extends React.Component {
      <div>
        {this.state.active === 'FIRST' ? (
          <div className="best-lift-div">
-           <h3 className="best-lift-title">Heaviest Weight Lifted</h3>
+           <h3 className="best-lift-title">Personal Records</h3>
            <div className='best-lift-input-div'>
              <input type="text" value={this.state.inputVal}
                onChange={this.handleChange}
@@ -129,6 +150,9 @@ class SearchBestWorkouts extends React.Component {
          <div className="best-lift-div">
            <h3 className="best-lift-title">
              {this.state.name}: {completedExercises[this.state.name]}</h3>
+           <div >
+             <Line width={250} height={200} data={allResults[this.state.name]}/>
+           </div>
            <button className='best-lift-button' onClick={this.handleSubmit}>Back</button>
          </div>
        ) : null}
