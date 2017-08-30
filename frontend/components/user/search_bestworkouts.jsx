@@ -85,8 +85,8 @@ class SearchBestWorkouts extends React.Component {
           allResults[name] = { labels: [],
                                datasets: [{
                                  label: 'Weight over Time',
-                                 backgroundColor: '#ED8C72',
-                                 borderColor: '#2988BC',
+                                 backgroundColor: '#2988BC',
+                                 borderColor: '#2F496E',
                                  data: [],
                               }],
                             };
@@ -150,7 +150,7 @@ class SearchBestWorkouts extends React.Component {
          <div className="best-lift-div">
            <h3 className="best-lift-title">
              {this.state.name}: {completedExercises[this.state.name]}</h3>
-           <div >
+           <div className='chart-background'>
              <Line width={250} height={200} data={allResults[this.state.name]}/>
            </div>
            <button className='best-lift-button' onClick={this.handleSubmit}>Back</button>
