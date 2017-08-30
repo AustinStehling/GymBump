@@ -5,6 +5,8 @@ import ExerciseIndexContainer from '../exercise/exercise_index_container';
 import SetResultContainer from '../setresult/create_setresult_container';
 import WorkoutShowContainer from '../workout/workout_show_container';
 import UpdateForm from './update_form';
+import SearchBestWorkoutsContainer from './search_bestworkouts_container';
+
 
 class UserShow extends React.Component {
   constructor(props) {
@@ -97,7 +99,7 @@ class UserShow extends React.Component {
         {this.state.edit === null ? (
           <div className='div-member-stats'>
             <button onClick={this.toggleEdit}
-              className='update-button' >Update</button>
+              className='update-button' >Update Stats</button>
 
             <ul className="ul-stats">
               <img className="user-prof-pic" src={member.avatar_url}/>
@@ -115,6 +117,7 @@ class UserShow extends React.Component {
               <div>{member.height_ft}ft {member.height_in}</div>
             </li>
           </ul>
+          <SearchBestWorkoutsContainer allWorkouts={this.props.workouts}/>
         </div>
       ) : <UpdateForm editUser={this.props.editUser}
                       member={this.props.member}
