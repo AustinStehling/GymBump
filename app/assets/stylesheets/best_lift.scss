@@ -1,10 +1,11 @@
 .your-best {
   height: 100px;
-
+  margin-top: 10px;
 }
 
 .best-lift {
   width: 250px;
+  margin-bottom: 10px;
 }
 
 .best-lift-title {
@@ -26,8 +27,7 @@
   width: 250px;
   margin: 0px;
   font-size: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  border-radius: 5px;
   height: 30px;
   background-color: #F4EADE;
   color: black;
@@ -40,8 +40,25 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  border: 1px solid #2F496E;
   min-width: 300px;
   margin-right: 45px;
   border-radius: 5px;
+}
+
+.best-lift-button {
+  margin-bottom: 10px;
+  border: 1px solid #ED8C72;
+  padding: 7px;
+  border-radius: 5px;
+  background-color: #ED8C72;
+  color: white;
+  font-size: 15px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.best-lift-ul {
+  overflow: auto;
+  height: 150px;
 }

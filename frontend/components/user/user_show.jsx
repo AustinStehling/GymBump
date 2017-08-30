@@ -151,6 +151,7 @@ class UserShow extends React.Component {
        </div>
        <div className="placeholder">
        </div>
+
         {!this.state.selected ? (
           null
         ) : <WorkoutShowContainer selectedWorkout={this.state.selected} toggleParent={() => this.setState({ selected: null})}/>}

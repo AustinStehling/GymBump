@@ -112,7 +112,7 @@ class SearchBestWorkouts extends React.Component {
      <div>
        {this.state.active === 'FIRST' ? (
          <div className="best-lift-div">
-           <h3 className="best-lift-title">Your Best:</h3>
+           <h3 className="best-lift-title">Heaviest Weight Lifted</h3>
            <div className='best-lift-input-div'>
              <input type="text" value={this.state.inputVal}
                onChange={this.handleChange}
@@ -120,15 +120,16 @@ class SearchBestWorkouts extends React.Component {
                placeholder="Enter an Exercise"
                />
            </div>
-           <button onClick={this.handleSubmit}>Your Best</button>
-           <ul >
+           <ul className='best-lift-ul'>
              {best}
            </ul>
+           <button className='best-lift-button' onClick={this.handleSubmit}>Best Lift</button>
          </div>
        ) : this.state.active === 'SECOND' ? (
-         <div>
-           <p>{this.state.name}: {completedExercises[this.state.name]}</p>
-           <button onClick={this.handleSubmit}>Back</button>
+         <div className="best-lift-div">
+           <h3 className="best-lift-title">
+             {this.state.name}: {completedExercises[this.state.name]}</h3>
+           <button className='best-lift-button' onClick={this.handleSubmit}>Back</button>
          </div>
        ) : null}
      </div>
