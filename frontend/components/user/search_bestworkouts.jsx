@@ -5,11 +5,23 @@ import values from 'lodash/values';
 class SearchBestWorkouts extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      inputVal: '',
+      name: ''
+    };
+
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
     this.props.requestAllExercises();
   }
+
+  handleChange(e) {
+    this.setState({ inputVal: e.target.value })
+  }
+
 
   render () {
 
@@ -22,14 +34,44 @@ class SearchBestWorkouts extends React.Component {
 
     let mergedSets = [].concat.apply([], setResults)
 
-    let completedExercises = [];
+    let completedExercises = {};
 
     mergedSets.forEach(set => {
-      if (completedExercises.indexOf(exercises[set.exercise_id].exercise_name) < 0) {
-        completedExercises.push(exercises[set.exercise_id].exercise_name)
+
+      if (set) {
+        let exercise = exercises[set.exercise_id]
+        if (exercise.ex_type === 'lift') {
+          if (completedExercises[exercise.exercise_name] < set.weight_lifted) {
+            completedExercises[exercise.exercise_name] = set.weight_lifted
+          } else {
+            completedExercises[exercise.exercise_name] = set.weight_lifted
+          }
+        }
       }
     })
-    
+    debugger
+    // const match = completedExercises.map((exercise) => {
+    //   if (this.state.inputVal === '') return [];
+    //   let matched = [];
+    //   if (this.state.inputVal.length > 0) {
+    //     for (var j = 0; j < this.state.inputVal.length; j++) {
+    //       matched = [];
+    //       if (exercise.slice(0, j + 1).toUpperCase() === this.state.inputVal.slice(0, j + 1).toUpperCase()) {
+    //         matched.push(<li onClick={this.handleClick}
+    //                          value={exercise}
+    //                          className="workout-auto-li"
+    //                          key={exercise.id}>{exercise}</li>);
+    //       }
+    //     }
+    //   } else {
+    //     matched.push(<li onClick={this.handleClick}
+    //                      value={exercise}
+    //                      className="workout-auto-li"
+    //                      key={exercise.id}>{exercise}</li>)
+    //   }
+    //   return matched;
+    // });
+
     return (
       <div>
         <input/>

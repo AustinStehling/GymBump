@@ -1,5 +1,5 @@
 @Exercises.each do |exercise|
   json.set! exercise.id do
-    json.extract! exercise, :id, :exercise_name
+    json.extract! exercise, :id, :exercise_name, :ex_type
   end
 end
