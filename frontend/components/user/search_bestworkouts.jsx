@@ -40,6 +40,7 @@ class SearchBestWorkouts extends React.Component {
       let set = mergedSets[i];
       let exercise = exercises[set.exercise_id]
       let name = exercise.exercise_name
+
       if (exercise.ex_type === 'lift') {
         if (completedExercises[name] < (set.weight_lifted)) {
           completedExercises[name] = set.weight_lifted
@@ -48,32 +49,38 @@ class SearchBestWorkouts extends React.Component {
         }
       }
     }
-    debugger
-    // const match = completedExercises.map((exercise) => {
-    //   if (this.state.inputVal === '') return [];
-    //   let matched = [];
-    //   if (this.state.inputVal.length > 0) {
-    //     for (var j = 0; j < this.state.inputVal.length; j++) {
-    //       matched = [];
-    //       if (exercise.slice(0, j + 1).toUpperCase() === this.state.inputVal.slice(0, j + 1).toUpperCase()) {
-    //         matched.push(<li onClick={this.handleClick}
-    //                          value={exercise}
-    //                          className="workout-auto-li"
-    //                          key={exercise.id}>{exercise}</li>);
-    //       }
-    //     }
-    //   } else {
-    //     matched.push(<li onClick={this.handleClick}
-    //                      value={exercise}
-    //                      className="workout-auto-li"
-    //                      key={exercise.id}>{exercise}</li>)
-    //   }
-    //   return matched;
-    // });
+
+    const match = Object.keys(completedExercises).map((exercise) => {
+      if (this.state.inputVal === '') return [];
+      let matched = [];
+      if (this.state.inputVal.length > 0) {
+        for (var j = 0; j < this.state.inputVal.length; j++) {
+          matched = [];
+          if (exercise.slice(0, j + 1).toUpperCase() === this.state.inputVal.slice(0, j + 1).toUpperCase()) {
+            matched.push(<li onClick={this.handleClick}
+                             value={exercise}
+                             className="workout-auto-li"
+                             key={exercise.id}>{exercise}</li>);
+          }
+        }
+      } else {
+        matched.push(<li onClick={this.handleClick}
+                         value={exercise}
+                         className="workout-auto-li"
+                         key={exercise.id}>{exercise}</li>)
+      }
+      return matched;
+    });
 
     return (
       <div>
-        <input/>
+        <input type="text" value={this.state.inputVal}
+          onChange={this.handleChange}
+          className="exercise-input"
+          />
+        <ul className="exercise-ul">
+          {match}
+        </ul>
       </div>
     )
   }
