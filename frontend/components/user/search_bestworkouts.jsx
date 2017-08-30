@@ -9,7 +9,7 @@ class SearchBestWorkouts extends React.Component {
     this.state = {
       inputVal: '',
       name: '',
-      active: 'FIRST',
+      active: '',
       result: ''
     };
 
@@ -20,6 +20,7 @@ class SearchBestWorkouts extends React.Component {
 
   componentDidMount() {
     this.props.requestAllExercises();
+    this.setState({active: 'FIRST'})
   }
 
 
@@ -49,8 +50,9 @@ class SearchBestWorkouts extends React.Component {
       this.setState({inputVal: 'Invalid Input, Please try Again'})
       return 'Invalid Input'
     }
+
+    this.setState({inputVal: '', active: newActive, name: name})
     debugger
-    this.setState({inputVal: '', active: newActive, name: name, result: completedExercises[name]})
     this.props.requestAllExercises();
   }
 
@@ -64,7 +66,7 @@ class SearchBestWorkouts extends React.Component {
     })
 
     let mergedSets = [].concat.apply([], setResults)
-    
+
     const completedExercises = {};
 
     for (var i = 0; i < mergedSets.length; i++) {
@@ -122,7 +124,7 @@ class SearchBestWorkouts extends React.Component {
          </div>
        ) : this.state.active === 'SECOND' ? (
          <div>
-           <p>{this.state.result}</p>
+           <p>{completedExercises[this.state.name]}</p>
            <button onClick={this.handleSubmit}>Back</button>
          </div>
        ) : null}
