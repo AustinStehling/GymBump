@@ -99,7 +99,7 @@ class SearchBestWorkouts extends React.Component {
         }
 
         allResults[name].labels.push(i + 1)
-        allResults[name].datasets[0].data.push(set.weight_lifted)
+        allResults[name].datasets[0].data.unshift(set.weight_lifted)
       }
 
     }
