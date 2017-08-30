@@ -36,24 +36,27 @@ class SearchBestWorkouts extends React.Component {
   handleSubmit(e) {
     let newActive = this.state.active === 'FIRST' ? 'SECOND' : 'FIRST'
     let allExercises = values(this.props.exercises);
-    debugger
+
     let selected;
     let name;
-    allExercises.forEach(exercise => {
-      if (exercise.exercise_name === this.state.inputVal) {
-        selected = exercise,
-        name = exercise.exercise_name
+    if (newActive === 'SECOND') {
+      allExercises.forEach(exercise => {
+        if (exercise.exercise_name === this.state.inputVal) {
+          selected = exercise,
+          name = exercise.exercise_name
+        }
+      })
+      e.preventDefault();
+      if (!name) {
+        this.setState({inputVal: 'Invalid Input, Please try Again'})
+        return 'Invalid Input'
       }
-    })
-    e.preventDefault();
-    if (!name) {
-      this.setState({inputVal: 'Invalid Input, Please try Again'})
-      return 'Invalid Input'
-    }
 
-    this.setState({inputVal: '', active: newActive, name: name})
-    debugger
-    this.props.requestAllExercises();
+      this.setState({inputVal: '', active: newActive, name: name})
+      this.props.requestAllExercises();
+    } else if (newActive === 'FIRST') {
+      this.setState({inputVal: '', active: newActive, name: '' })
+    }
   }
 
   render () {
@@ -124,7 +127,7 @@ class SearchBestWorkouts extends React.Component {
          </div>
        ) : this.state.active === 'SECOND' ? (
          <div>
-           <p>{completedExercises[this.state.name]}</p>
+           <p>{this.state.name}: {completedExercises[this.state.name]}</p>
            <button onClick={this.handleSubmit}>Back</button>
          </div>
        ) : null}

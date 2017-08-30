@@ -29,7 +29,9 @@ const workoutReducer = (state = {}, action) => {
       return newState;
     case REMOVE_WORKOUT:
       newState = merge({}, state, { selectedWorkout: '' })
+      debugger
       delete newState[action.workout.id]
+      debugger
       return newState
     default:
       return state;
