@@ -29,7 +29,9 @@ class SearchBestWorkouts extends React.Component {
     let exercises = this.props.exercises;
 
     let setResults = allWorkouts.map(workout => {
-      return values(workout.setresults)
+      if (workout){
+        return values(workout.setresults)
+      }
     })
 
     let mergedSets = [].concat.apply([], setResults)
@@ -37,17 +39,19 @@ class SearchBestWorkouts extends React.Component {
     const completedExercises = {};
 
     for (var i = 0; i < mergedSets.length; i++) {
-      let set = mergedSets[i];
-      let exercise = exercises[set.exercise_id]
-      let name = exercise.exercise_name
-
-      if (exercise.ex_type === 'lift') {
-        if (completedExercises[name] < (set.weight_lifted)) {
-          completedExercises[name] = set.weight_lifted
-        } else if (!completedExercises[name]) {
-          completedExercises[name] = set.weight_lifted
+      if (mergedSets[i]) {
+        let set = mergedSets[i];
+        let exercise = exercises[set.exercise_id]
+        let name = exercise.exercise_name
+        if (exercise.ex_type === 'lift') {
+          if (completedExercises[name] < (set.weight_lifted)) {
+            completedExercises[name] = set.weight_lifted
+          } else if (!completedExercises[name]) {
+            completedExercises[name] = set.weight_lifted
+          }
         }
       }
+
     }
 
     const match = Object.keys(completedExercises).map((exercise) => {

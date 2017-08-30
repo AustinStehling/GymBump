@@ -66,7 +66,7 @@ class UserShow extends React.Component {
 
     if (!this.props.member) return null;
     const { member } = this.props;
-    const allWorkouts = this.props.workouts;
+    let allWorkouts = this.props.workouts;
     let definedWorkouts = [];
     allWorkouts.forEach(workout => {
       if (workout) {
@@ -118,8 +118,8 @@ class UserShow extends React.Component {
             </li>
           </ul>
           <div className='your-best'>
-            
-            <SearchBestWorkoutsContainer allWorkouts={this.props.workouts}/></div>
+
+            <SearchBestWorkoutsContainer/></div>
         </div>
       ) : <UpdateForm editUser={this.props.editUser}
                       member={this.props.member}
