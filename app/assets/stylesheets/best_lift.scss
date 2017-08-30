@@ -1,0 +1,47 @@
+.your-best {
+  height: 100px;
+
+}
+
+.best-lift {
+  width: 250px;
+}
+
+.best-lift-title {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.best-lift-input-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.best-lift-li {
+  border: 1px solid grey;
+  padding: 5px;
+  width: 250px;
+  margin: 0px;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 30px;
+  background-color: #F4EADE;
+  color: black;
+}
+
+.best-lift-div {
+  background-color: #2F496E;
+  margin-top: 50px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #2F496E;
+  min-width: 300px;
+  margin-right: 45px;
+  border-radius: 5px;
+}

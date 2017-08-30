@@ -59,26 +59,30 @@ class SearchBestWorkouts extends React.Component {
           if (exercise.slice(0, j + 1).toUpperCase() === this.state.inputVal.slice(0, j + 1).toUpperCase()) {
             matched.push(<li onClick={this.handleClick}
                              value={exercise}
-                             className="workout-auto-li"
+                             className="best-lift-li"
                              key={exercise.id}>{exercise}</li>);
           }
         }
       } else {
         matched.push(<li onClick={this.handleClick}
                          value={exercise}
-                         className="workout-auto-li"
+                         className="best-lift-li"
                          key={exercise.id}>{exercise}</li>)
       }
       return matched;
     });
 
     return (
-      <div>
-        <input type="text" value={this.state.inputVal}
-          onChange={this.handleChange}
-          className="exercise-input"
-          />
-        <ul className="exercise-ul">
+      <div className="best-lift-div">
+        <h3 className="best-lift-title">Your Best:</h3>
+        <div className='best-lift-input-div'>
+          <input type="text" value={this.state.inputVal}
+            onChange={this.handleChange}
+            className="best-lift"
+            placeholder="Enter an Exercise"
+            />
+        </div>
+        <ul >
           {match}
         </ul>
       </div>

@@ -117,7 +117,9 @@ class UserShow extends React.Component {
               <div>{member.height_ft}ft {member.height_in}</div>
             </li>
           </ul>
-          <SearchBestWorkoutsContainer allWorkouts={this.props.workouts}/>
+          <div className='your-best'>
+            
+            <SearchBestWorkoutsContainer allWorkouts={this.props.workouts}/></div>
         </div>
       ) : <UpdateForm editUser={this.props.editUser}
                       member={this.props.member}
