@@ -30,7 +30,7 @@ const usersReducer = (state = {}, action) => {
       return newState;
     case REMOVE_WORKOUT:
       newState = merge({}, state);
-      let key = newState.selected.workouts.indexOf(action.workout.id)
+      let key = newState.selected.workouts.indexOf(action.workout.id.toString())
       newState.selected.workouts.splice(key, 1)
       return newState;
     default:

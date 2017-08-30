@@ -66,7 +66,7 @@ class UserShow extends React.Component {
 
     if (!this.props.member) return null;
     const { member } = this.props;
-    let allWorkouts = this.props.workouts;
+    const allWorkouts = this.props.workouts;
     let definedWorkouts = [];
     allWorkouts.forEach(workout => {
       if (workout) {
