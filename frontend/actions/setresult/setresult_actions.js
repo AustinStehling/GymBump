@@ -29,3 +29,9 @@ export const requestSetResult = id => dispatch => {
     return dispatch(receiveSetResult(setresult));
   });
 };
+
+export const editResult = id => dispatch => {
+  return APIUtil.editSetResult(id).then(setresult => {
+    return dispatch(receiveSetResult(setresult));
+  });
+};

@@ -70,14 +70,13 @@ class ExerciseIndex extends React.Component {
           }
         }
       } else {
-        matched.push(<li onClick={this.handleClick}
-                         value={exercise.exercise_name}
-                         className="workout-auto-li"
-                         key={exercise.id}>{exercise.exercise_name}</li>)
+          matched.push(<li onClick={this.handleClick}
+                           value={exercise.exercise_name}
+                           className="workout-auto-li"
+                           key={exercise.id}>{exercise.exercise_name}</li>)
       }
       return matched;
     });
-
 
     return (
       <div>

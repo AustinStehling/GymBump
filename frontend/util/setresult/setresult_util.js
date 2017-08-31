@@ -9,6 +9,14 @@ export const createResults = setresult => {
 export const fetchSetResult = id => {
   return $.ajax({
     method: 'GET',
-    url: `api/setresults/${setresult.id}`
+    url: `api/setresults/${id}`
+  });
+}
+
+export const editSetResult = id => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `api/setresults/${id}`,
+    data: { data }
   });
 }
