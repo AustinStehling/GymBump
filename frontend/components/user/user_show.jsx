@@ -94,6 +94,13 @@ class UserShow extends React.Component {
       buttonText = 'Create Workout'
     }}
 
+    let ulClass;
+    {if (this.state.active === 'FIRST') {
+      ulClass = 'workout-ul-two'
+    } else {
+      ulClass = 'workout-ul'
+    }}
+
     return (
       <div className='div-main'>
         {this.state.edit === null ? (
@@ -140,7 +147,7 @@ class UserShow extends React.Component {
            <h3 className="new-workout">{this.props.member.username}&#39;s Workouts</h3>
           <InfiniteScroll>
             <div className='div-workout-list'>
-              <ul className='workout-ul'>
+              <ul className={ulClass}>
                 {workouts}
               </ul>
             </div>

@@ -58,6 +58,7 @@ class SearchBestWorkouts extends React.Component {
     } else if (newActive === 'FIRST') {
       this.setState({inputVal: '', active: newActive, name: '' })
     }
+  
   }
 
   render () {

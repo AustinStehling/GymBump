@@ -71,7 +71,11 @@
 
 .workout-ul {
   overflow: auto;
-  height: 400px;
+  max-height: 400px;
+}
+.workout-ul-two {
+  overflow: auto;
+  max-height: 100px;
 }
 
 .div-main {
