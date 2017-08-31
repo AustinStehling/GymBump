@@ -5,6 +5,14 @@ class Leaderboard extends React.Component {
   componentDidMount() {
     this.props.requestAllUsers();
     this.props.requestAllExercises();
+    this.state = { exercise: '' }
+
+    this.handleUpdate = this.handleUpdate.bind(this)
+  }
+
+  handleUpdate(property) {
+    debugger
+    return e => this.setState({ [property]: e.target.value });
   }
 
   render() {
@@ -60,7 +68,7 @@ class Leaderboard extends React.Component {
    )
 
    let exerciseDropdown = completedMemberExercises.map(exercise => {
-     return <option>{exercise}</option>
+     return <option value={exercise}>{exercise}</option>
    })
 
 
@@ -69,7 +77,8 @@ class Leaderboard extends React.Component {
     return (
 
       <div>
-        <select>
+        <select onChange={this.handleUpdate('exercise')}>
+        <option>Please Select</option>
           {exerciseDropdown}
         </select>
         <ul>
