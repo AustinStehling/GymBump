@@ -11,7 +11,6 @@ class Leaderboard extends React.Component {
   }
 
   handleUpdate(property) {
-    debugger
     return e => this.setState({ [property]: e.target.value });
   }
 
@@ -64,12 +63,27 @@ class Leaderboard extends React.Component {
           }
         }
        }
-     }
-   )
+     })
 
-   let exerciseDropdown = completedMemberExercises.map(exercise => {
-     return <option value={exercise}>{exercise}</option>
+
+   let exerciseDropdown = completedMemberExercises.map((exercise, idx) => {
+     return <option key={idx} value={exercise}>{exercise}</option>
    })
+
+   const memberAndMax = {}
+   Object.keys(membersLiftMaxes).map(member => {
+     let exerciseMax = membersLiftMaxes[member][this.state.exercise]
+     debugger
+     if(!memberAndMax[this.state.exercise]){
+       memberAndMax[this.state.exercise] = []
+       memberAndMax[this.state.exercise].push([member, exerciseMax])
+     } else if (memberAndMax[this.state.exercise]) {
+       memberAndMax[this.state.exercise].push([member, exerciseMax])
+     }
+     debugger
+   })
+
+   debugger
 
 
 
@@ -84,6 +98,7 @@ class Leaderboard extends React.Component {
         <ul>
           {members}
         </ul>
+
       </div>
     )
   }
