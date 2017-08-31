@@ -58,7 +58,7 @@ class SearchBestWorkouts extends React.Component {
     } else if (newActive === 'FIRST') {
       this.setState({inputVal: '', active: newActive, name: '' })
     }
-  
+
   }
 
   render () {
@@ -81,7 +81,6 @@ class SearchBestWorkouts extends React.Component {
       let exercise = exercises[set.exercise_id]
       let name = exercise.exercise_name
       let bodypart = exercise.bodypart
-
 
       if (exerciseTypes[bodypart]) {
         exerciseTypes[bodypart] += 1
@@ -108,9 +107,10 @@ class SearchBestWorkouts extends React.Component {
           completedExercises[name] = set.weight_lifted
         }
 
-        allResults[name].labels.push(i + 1)
+        allResults[name].labels.push(allResults[name].labels.length + 1)
         allResults[name].datasets[0].data.unshift(set.weight_lifted)
       }
+
 
     }
 
