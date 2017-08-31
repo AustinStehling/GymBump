@@ -14,6 +14,7 @@ class Leaderboard extends React.Component {
 
     const membersSetResults = {}
     const membersLiftMaxes = {}
+    const completedMemberExercises = []
 
     this.props.members.map(member => {
 
@@ -39,6 +40,11 @@ class Leaderboard extends React.Component {
         for (var j = 0; j < sets.length; j++) {
           let currentExercise = this.props.allExercises[sets[j].exercise_id]
           let exercise = currentExercise.exercise_name
+
+          if (completedMemberExercises.indexOf(exercise) < 0) {
+            completedMemberExercises.push(exercise)
+          }
+
           if (currentExercise.ex_type === 'lift') {
             if (membersLiftMaxes[member][exercise]) {
               if(membersLiftMaxes[member][exercise] < sets[j].weight_lifted) {
@@ -52,17 +58,20 @@ class Leaderboard extends React.Component {
        }
      }
    )
-   debugger
+
+   let exerciseDropdown = completedMemberExercises.map(exercise => {
+     return <option>{exercise}</option>
+   })
 
 
-    // for (var i = 0; i < members.length; i++) {
-    //   members[i]
-    // }
 
 
     return (
 
       <div>
+        <select>
+          {exerciseDropdown}
+        </select>
         <ul>
           {members}
         </ul>
