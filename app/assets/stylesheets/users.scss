@@ -69,6 +69,11 @@
   min-width: 482px;
 }
 
+.workout-ul {
+  overflow: auto;
+  height: 400px;
+}
+
 .div-main {
   display: flex;
   justify-content: flex-start;

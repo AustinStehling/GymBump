@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import values from 'lodash/values';
-import { Line } from 'react-chartjs-2';
+import { Line, Pie } from 'react-chartjs-2';
 
 class SearchBestWorkouts extends React.Component {
   constructor(props) {
@@ -72,13 +72,21 @@ class SearchBestWorkouts extends React.Component {
     let mergedSets = [].concat.apply([], setResults)
 
     const allResults = {}
-
+    const exerciseTypes = {}
     const completedExercises = {};
 
     for (var i = 0; i < mergedSets.length; i++) {
       let set = mergedSets[i];
       let exercise = exercises[set.exercise_id]
       let name = exercise.exercise_name
+      let bodypart = exercise.bodypart
+
+
+      if (exerciseTypes[bodypart]) {
+        exerciseTypes[bodypart] += 1
+      } else if (!exerciseTypes[bodypart]) {
+        exerciseTypes[bodypart] = 1
+      }
 
       if (exercise.ex_type === 'lift') {
         if (!allResults[name]) {
@@ -92,6 +100,7 @@ class SearchBestWorkouts extends React.Component {
                             };
         }
 
+
         if (completedExercises[name] < (set.weight_lifted)) {
           completedExercises[name] = set.weight_lifted
         } else if (!completedExercises[name]) {
@@ -103,6 +112,18 @@ class SearchBestWorkouts extends React.Component {
       }
 
     }
+
+
+    const PieChart = {
+      datasets: [{
+        data: Object.values(exerciseTypes),
+        backgroundColor: [
+          '#2D4262', '#363237', '#73605B', '#D09683'
+        ],
+      }],
+
+      labels: Object.keys(exerciseTypes)
+    };
 
 
 
@@ -133,27 +154,39 @@ class SearchBestWorkouts extends React.Component {
      <div>
        {this.state.active === 'FIRST' ? (
          <div className="best-lift-div">
-           <h3 className="best-lift-title">Personal Records</h3>
-           <div className='best-lift-input-div'>
-             <input type="text" value={this.state.inputVal}
-               onChange={this.handleChange}
-               className="best-lift"
-               placeholder="Enter an Exercise"
-               />
+           <div className='best-lift-div-two'>
+             <h3 className="best-lift-title">Personal Records</h3>
+             <div className='best-lift-input-div'>
+               <input type="text" value={this.state.inputVal}
+                 onChange={this.handleChange}
+                 className="best-lift"
+                 placeholder="Enter an Exercise"
+                 />
+             </div>
+             <ul className='best-lift-ul'>
+               {best}
+             </ul>
+             <button className='best-lift-button' onClick={this.handleSubmit}>Best Lift</button>
            </div>
-           <ul className='best-lift-ul'>
-             {best}
-           </ul>
-           <button className='best-lift-button' onClick={this.handleSubmit}>Best Lift</button>
+
+
          </div>
        ) : this.state.active === 'SECOND' ? (
          <div className="best-lift-div">
-           <h3 className="best-lift-title">
-             {this.state.name}: {completedExercises[this.state.name]}</h3>
-           <div className='chart-background'>
-             <Line width={250} height={200} data={allResults[this.state.name]}/>
+           <div className='best-lift-div-two'>
+             <h3 className="best-lift-title">
+               {this.state.name}: {completedExercises[this.state.name]}</h3>
+             <div className='chart-background'>
+               <Line width={250} height={200} data={allResults[this.state.name]}/>
+             </div>
+             <button className='best-lift-button' onClick={this.handleSubmit}>Back</button>
            </div>
-           <button className='best-lift-button' onClick={this.handleSubmit}>Back</button>
+           <div className='best-lift-div-three'>
+             <h3 className="best-lift-title">Your Focus</h3>
+             <div className='pie-chart-background'>
+               <Pie circumfrence={100} data={PieChart} />
+             </div>
+           </div>
          </div>
        ) : null}
      </div>

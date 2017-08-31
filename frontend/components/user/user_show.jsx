@@ -140,7 +140,7 @@ class UserShow extends React.Component {
            <h3 className="new-workout">{this.props.member.username}&#39;s Workouts</h3>
           <InfiniteScroll>
             <div className='div-workout-list'>
-              <ul>
+              <ul className='workout-ul'>
                 {workouts}
               </ul>
             </div>
