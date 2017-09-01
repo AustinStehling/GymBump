@@ -175,12 +175,14 @@ class Leaderboard extends React.Component {
           </div>
         ): (!this.state.exercise) ? (
           <div className='lb-ul-div'>
+            <h3 className='selected-ex-title'>Leaderboard</h3>
             <ul className='leaderboard-ul'>
               {members}
             </ul>
           </div>
         ): null}
           <div className='pie-chart-div-lb'>
+            <h3 className='pie-chart-header'>What the World's Doing</h3>
             <Pie circumfrence={300} data={PieChart}/>
           </div>
       </div>

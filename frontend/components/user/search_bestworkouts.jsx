@@ -183,7 +183,7 @@ class SearchBestWorkouts extends React.Component {
              <button className='best-lift-button' onClick={this.handleSubmit}>Back</button>
            </div>
            <div className='best-lift-div-three'>
-             <h3 className="best-lift-title">Your Focus</h3>
+             <h3 className="best-lift-title">Workout Analysis</h3>
              <div className='pie-chart-background'>
                <Pie circumfrence={100} data={PieChart} />
              </div>
