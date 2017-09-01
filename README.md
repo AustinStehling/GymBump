@@ -59,16 +59,11 @@ Exercise breakdown categorizes exercises by area trained; upper body, lower body
 
 The leaderboard is a fun feature that allows users to compare their weight lifting exercise results to users using the web application. It’s an area to gain perspective and inspire motivation to improve. The leaderboard only contains exercises in the category of weight lifting and that user’s have performed. What fun would it be to see results that don’t contain any results?
 
-Leaderboard with the demo account selected:
-
-![Leaderboard]
-(http://i66.tinypic.com/acbijb.png)
-
 The leaderboard was one of the more difficult components to build because it required the organization of a lot of data.
 
 * I needed the users.
 * I needed to find all of the exercises users performed
-* I needed to find the each user’s max on the particular exercise.
+* I needed to find the user’s max on each particular exercise.
 * I needed to sort the lifts from greatest to least.
 * I needed to store the results under keys of exercise names to allow a user to choose which exercise leaderboard they wanted to view.
 
