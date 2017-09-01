@@ -107,8 +107,8 @@ class Leaderboard extends React.Component {
      })
 
      let maxLis = sorted.reverse().map((user) => {
-       return <li className="members-list" key={memberId[user[0]].id}><p>{user[0]}:</p>
-                            <p>{user[1]}</p></li>
+       return <li  key={memberId[user[0]].id}><p className="members-list">{user[0]}:</p>
+                            <p className="members-list">{user[1]}</p></li>
      })
 
 
@@ -122,12 +122,15 @@ class Leaderboard extends React.Component {
         <option>Please Select</option>
           {exerciseDropdown}
         </select>
-        <ul>
-          {members}
-        </ul>
-        <ul>
-          {maxLis}
-        </ul>
+        {(this.state.exercise) ? (
+          <ul>
+            {maxLis}
+          </ul>
+        ): (!this.state.exercise) ? (
+          <ul>
+            {members}
+          </ul>
+        ): null}
       </div>
     )
   }
