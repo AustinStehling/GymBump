@@ -38,7 +38,7 @@ const match = allExercises.map((exercise) => {
                        className="workout-auto-li"
                        key={exercise.id}>{exercise.exercise_name}</li>)
   }
-  
+
   return matched;
 });
 
@@ -59,6 +59,9 @@ Exercise breakdown categorizes exercises by area trained; upper body, lower body
 
 The leaderboard is a fun feature that allows users to compare their weight lifting exercise results to users using the web application. It’s an area to gain perspective and inspire motivation to improve. The leaderboard only contains exercises in the category of weight lifting and that user’s have performed. What fun would it be to see results that don’t contain any results?
 
+![Leaderboard]
+(http://i66.tinypic.com/acbijb.png)
+
 The leaderboard was one of the more difficult components to build because it required the organization of a lot of data.
 
 * I needed the users.
@@ -75,16 +78,16 @@ Exercise trends are found on the leaderboard. It’s a simple feature that shows
 
 In addition to the features already implemented on GymBump, these are some additions that I plan to implement in order for it to grow in the direction I desire:
 
-###Detailed Workout Analysis
+### Detailed Workout Analysis
 
 I will be implementing an entire page dedicated to the smart analysis of a user’s workout inputs. It will be largely based on their progress for particular exercises and will compare that progress to their training volume and intensity.
 
 I’d also like to add features that provide workout analysis for exercises in categories other than weight lifting. This would include cardiovascular and plyometric exercises.
 
-###Leaderboard Additions
+### Leaderboard Additions
 
 I’d like to implement the leaderboard so it includes workouts in other categories including the standard Crossfit workouts as well as cardiovascular workouts.
 
-###Tracked Goals & Smart Suggestions
+### Tracked Goals & Smart Suggestions
 
 I’d like to take the analytics from each user's workout log and offer them suggestions on what they can be doing to improve. A simple example; if a person is struggling to increase their Squat and 80% of their exercises fall in the upper body category, that would set off a red flag and prompt a suggestion to rethink their exercise selections.
