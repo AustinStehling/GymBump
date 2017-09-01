@@ -156,15 +156,20 @@ class Leaderboard extends React.Component {
           </select>
         </div>
         {(this.state.exercise) ? (
-          <ul className='leaderboard-ul'>
-            <li className="members-list"><p className="members-list-p">Name</p>
-            <p className="members-list-p-two">Max (lbs)</p></li>
-            {maxLis}
-          </ul>
+          <div className='lb-ul-div'>
+            <h3 className='selected-ex-title'>{this.state.exercise}</h3>
+            <ul className='leaderboard-ul'>
+              <li className="members-list"><p className="members-list-p">Name</p>
+              <p className="members-list-p-two">Max (lbs)</p></li>
+              {maxLis}
+            </ul>
+          </div>
         ): (!this.state.exercise) ? (
-          <ul className='leaderboard-ul'>
-            {members}
-          </ul>
+          <div className='lb-ul-div'>
+            <ul className='leaderboard-ul'>
+              {members}
+            </ul>
+          </div>
         ): null}
           <div className='pie-chart-div-lb'>
             <Pie circumfrence={300} data={PieChart}/>

@@ -89,10 +89,20 @@
   font-size: 20px;
 }
 
-.leaderboard-ul {
-  margin: 20px;
-  padding: 10px;
+.lb-ul-div {
   background: #2F496E;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.selected-ex-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leaderboard-ul {
+  padding: 10px;
   border-radius: 5px;
   height: 400px;
   overflow: auto;
