@@ -66,24 +66,35 @@ class Leaderboard extends React.Component {
      })
 
 
-   let exerciseDropdown = completedMemberExercises.map((exercise, idx) => {
-     return <option key={idx} value={exercise}>{exercise}</option>
-   })
+     let exerciseDropdown = completedMemberExercises.map((exercise, idx) => {
+       return <option key={idx} value={exercise}>{exercise}</option>
+     })
 
-   const memberAndMax = {}
-   Object.keys(membersLiftMaxes).map(member => {
-     let exerciseMax = membersLiftMaxes[member][this.state.exercise]
-     debugger
-     if(!memberAndMax[this.state.exercise]){
-       memberAndMax[this.state.exercise] = []
-       memberAndMax[this.state.exercise].push([member, exerciseMax])
-     } else if (memberAndMax[this.state.exercise]) {
-       memberAndMax[this.state.exercise].push([member, exerciseMax])
-     }
-     debugger
-   })
+     let sorted = [];
+     const memberAndMax = {}
+     Object.keys(membersLiftMaxes).map(member => {
+       let exerciseMax = membersLiftMaxes[member][this.state.exercise]
 
-   debugger
+       if(!memberAndMax[this.state.exercise]){
+         memberAndMax[this.state.exercise] = []
+         memberAndMax[this.state.exercise].push([member, exerciseMax])
+       } else if (memberAndMax[this.state.exercise]) {
+         memberAndMax[this.state.exercise].push([member, exerciseMax])
+       }
+
+       memberAndMax[this.state.exercise].map(max => {
+         if (sorted.indexOf(max) < 0) {
+           sorted.push(max)
+         }
+       })
+
+       sorted.sort((a, b) => {
+         return a[1] - b[1]
+       })
+     })
+
+     debugger
+
 
 
 
