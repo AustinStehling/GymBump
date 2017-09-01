@@ -35,8 +35,8 @@ user7 = User.create!(username: 'Chris', email: 'chris@gmail.com', first_name: 'C
 user8 = User.create!(username: 'Ramon', email: 'ramon@gmail.com', first_name: 'Ramon',
   last_name: 'Frazier', gender: 'Male', password: 'password')
 
-user9 = User.create!(username: 'Demo', email: 'demo@gmail.com', first_name: 'Austin',
-  last_name: 'Stehling', gender: 'Male', password: 'password', experience: 'Veteran', weight: 215,
+user9 = User.create!(username: 'Demo', email: 'demo@gmail.com', first_name: 'De',
+  last_name: 'Mo', gender: 'Male', password: 'password', experience: 'Veteran', weight: 215,
   height_ft: 6, height_in: 2, birthday: '1990/07/28')
 
 workout1 = Workout.create!(name: 'Workout 1', user_id: user9.id)
