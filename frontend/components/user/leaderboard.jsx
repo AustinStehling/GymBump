@@ -20,7 +20,7 @@ class Leaderboard extends React.Component {
 
   render() {
     const members = this.props.members.map(member => {
-      return <li className="members-list" key={member.id}>{member.username}</li>
+      return <li className="members-list" key={member.id + 1}>{member.username}</li>
     })
 
     const memberId = {}
@@ -42,7 +42,7 @@ class Leaderboard extends React.Component {
           if (membersSetResults[member.username]) {
             membersSetResults[member.username].unshift(results)
           } else {
-            membersSetResults[member.username] = [];
+            membersSetResults[member.username] = [results];
           }
         }
       }
@@ -107,7 +107,6 @@ class Leaderboard extends React.Component {
      })
 
      let maxLis = sorted.reverse().map((user) => {
-       debugger
        return <li className="members-list" key={memberId[user[0]].id}><p>{user[0]}:</p>
                             <p>{user[1]}</p></li>
      })
