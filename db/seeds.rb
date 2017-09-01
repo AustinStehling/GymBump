@@ -14,25 +14,25 @@ user1 = User.create!(username: 'Austin', email: 'austin@gmail.com', first_name: 
   last_name: 'Stehling', gender: 'Male', password: 'password', experience: 'Veteran', weight: 215,
   height_ft: 6, height_in: 2, birthday: '1990/07/28')
 
-user2 = User.create!(username: 'bdog19', email: 'brandon@gmail.com', first_name: 'Brandon',
+user2 = User.create!(username: 'Brandon', email: 'brandon@gmail.com', first_name: 'Brandon',
   last_name: 'Stehling', gender: 'Male', password: 'password')
 
-user3 = User.create!(username: 'word_search_lassy', email: 'kayla@gmail.com', first_name: 'Kayla',
+user3 = User.create!(username: 'Kayla', email: 'kayla@gmail.com', first_name: 'Kayla',
   last_name: 'Stehling', gender: 'Female', password: 'password')
 
-user4 = User.create!(username: 'pistol_pat', email: 'pat@gmail.com', first_name: 'Pat',
+user4 = User.create!(username: 'Patricia', email: 'pat@gmail.com', first_name: 'Pat',
   last_name: 'Stehling', gender: 'Female', password: 'password')
 
-user5 = User.create!(username: 'kfs59', email: 'keith@gmail.com', first_name: 'Keith',
+user5 = User.create!(username: 'Keith', email: 'keith@gmail.com', first_name: 'Keith',
   last_name: 'Stehling', gender: 'Male', password: 'password')
 
-user6 = User.create!(username: 'burpeeMachine', email: 'remington@gmail.com', first_name: 'Remington',
+user6 = User.create!(username: 'Remington', email: 'remington@gmail.com', first_name: 'Remington',
   last_name: 'Stehling', gender: 'Male', password: 'password')
 
-user7 = User.create!(username: 'cpLycoLax', email: 'chris@gmail.com', first_name: 'Chris',
+user7 = User.create!(username: 'Chris', email: 'chris@gmail.com', first_name: 'Chris',
   last_name: 'Petillo', gender: 'Male', password: 'password')
 
-user8 = User.create!(username: 'brody_Ramon', email: 'ramon@gmail.com', first_name: 'Ramon',
+user8 = User.create!(username: 'Ramon', email: 'ramon@gmail.com', first_name: 'Ramon',
   last_name: 'Frazier', gender: 'Male', password: 'password')
 
 user9 = User.create!(username: 'Demo', email: 'demo@gmail.com', first_name: 'Austin',
@@ -47,7 +47,6 @@ workout5 = Workout.create!(name: 'Workout 5', user_id: user9.id)
 workout6 = Workout.create!(name: 'Workout 6', user_id: user9.id)
 workout7 = Workout.create!(name: 'Workout 7', user_id: user9.id)
 workout8 = Workout.create!(name: 'Workout 8', user_id: user9.id)
-
 
 
 exercise1 = Exercise.create!(exercise_name: "Squat", ex_type: 'lift', bodypart: 'Lower Body')
@@ -106,6 +105,41 @@ exercise55 = Exercise.create!(exercise_name: "Treadmill", ex_type: 'cardio', bod
 exercise56 = Exercise.create!(exercise_name: "Elliptical", ex_type: 'cardio', bodypart: 'Cardio')
 exercise57 = Exercise.create!(exercise_name: "Muscle Up", ex_type: 'lift', bodypart: 'Upper Body')
 
+workout9 = Workout.create!(name: 'Workout 1', user_id: user1.id)
+workout10 = Workout.create!(name: 'Workout 1', user_id: user2.id)
+workout11 = Workout.create!(name: 'Workout 1', user_id: user3.id)
+workout12 = Workout.create!(name: 'Workout 1', user_id: user4.id)
+workout13 = Workout.create!(name: 'Workout 1', user_id: user5.id)
+workout14 = Workout.create!(name: 'Workout 1', user_id: user6.id)
+workout15 = Workout.create!(name: 'Workout 1', user_id: user7.id)
+workout16 = Workout.create!(name: 'Workout 1', user_id: user8.id)
+
+Setresult.create!(workout_id: workout9.id, exercise_id: exercise11.id, weight_lifted: 455, reps: 1, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout10.id, exercise_id: exercise11.id, weight_lifted: 225, reps: 1, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout11.id, exercise_id: exercise45.id, reps: 45)
+Setresult.create!(workout_id: workout12.id, exercise_id: exercise42.id, reps: 30)
+Setresult.create!(workout_id: workout13.id, exercise_id: exercise11.id, weight_lifted: 415, reps: 1, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout14.id, exercise_id: exercise11.id, weight_lifted: 350, reps: 1, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout15.id, exercise_id: exercise11.id, weight_lifted: 415, reps: 1, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout16.id, exercise_id: exercise11.id, weight_lifted: 325, reps: 1, weight_unit: 'lbs')
+
+Setresult.create!(workout_id: workout9.id, exercise_id: exercise1.id, weight_lifted: 545, reps: 1, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout10.id, exercise_id: exercise1.id, weight_lifted: 315, reps: 1, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout11.id, exercise_id: exercise33.id, reps: 50)
+Setresult.create!(workout_id: workout12.id, exercise_id: exercise34.id, reps: 40)
+Setresult.create!(workout_id: workout13.id, exercise_id: exercise1.id, weight_lifted: 500, reps: 1, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout14.id, exercise_id: exercise1.id, weight_lifted: 405, reps: 1, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout15.id, exercise_id: exercise1.id, weight_lifted: 225, reps: 1, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout16.id, exercise_id: exercise1.id, weight_lifted: 475, reps: 1, weight_unit: 'lbs')
+
+Setresult.create!(workout_id: workout9.id, exercise_id: exercise4.id, weight_lifted: 635, reps: 1, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout10.id, exercise_id: exercise4.id, weight_lifted: 405, reps: 1, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout11.id, exercise_id: exercise2.id, weight_lifted: 30, reps: 10, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout12.id, exercise_id: exercise3.id, weight_lifted: 25, reps: 10, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout13.id, exercise_id: exercise4.id, weight_lifted: 600, reps: 1, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout14.id, exercise_id: exercise4.id, weight_lifted: 495, reps: 1, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout15.id, exercise_id: exercise4.id, weight_lifted: 315, reps: 1, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout16.id, exercise_id: exercise4.id, weight_lifted: 515, reps: 1, weight_unit: 'lbs')
 
 Setresult.create!(workout_id: workout1.id, exercise_id: exercise11.id, weight_lifted: 215, reps: 12, weight_unit: 'lbs')
 Setresult.create!(workout_id: workout1.id, exercise_id: exercise11.id, weight_lifted: 225, reps: 10, weight_unit: 'lbs')
@@ -179,10 +213,10 @@ Setresult.create!(workout_id: workout7.id, exercise_id: exercise4.id, weight_lif
 
 Setresult.create!(workout_id: workout8.id, exercise_id: exercise11.id, weight_lifted: 285, reps: 12, weight_unit: 'lbs')
 Setresult.create!(workout_id: workout8.id, exercise_id: exercise11.id, weight_lifted: 295, reps: 10, weight_unit: 'lbs')
-Setresult.create!(workout_id: workout8.id, exercise_id: exercise11.id, weight_lifted: 455, reps: 8, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout8.id, exercise_id: exercise11.id, weight_lifted: 305, reps: 8, weight_unit: 'lbs')
 Setresult.create!(workout_id: workout8.id, exercise_id: exercise1.id, weight_lifted: 395, reps: 8, weight_unit: 'lbs')
 Setresult.create!(workout_id: workout8.id, exercise_id: exercise1.id, weight_lifted: 405, reps: 6, weight_unit: 'lbs')
-Setresult.create!(workout_id: workout8.id, exercise_id: exercise1.id, weight_lifted: 535, reps: 4, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout8.id, exercise_id: exercise1.id, weight_lifted: 415, reps: 4, weight_unit: 'lbs')
 Setresult.create!(workout_id: workout8.id, exercise_id: exercise4.id, weight_lifted: 495, reps: 5, weight_unit: 'lbs')
 Setresult.create!(workout_id: workout8.id, exercise_id: exercise4.id, weight_lifted: 505, reps: 5, weight_unit: 'lbs')
-Setresult.create!(workout_id: workout8.id, exercise_id: exercise4.id, weight_lifted: 635, reps: 5, weight_unit: 'lbs')
+Setresult.create!(workout_id: workout8.id, exercise_id: exercise4.id, weight_lifted: 515, reps: 5, weight_unit: 'lbs')

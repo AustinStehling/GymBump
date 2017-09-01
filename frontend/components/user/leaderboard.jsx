@@ -88,7 +88,15 @@ class Leaderboard extends React.Component {
          datasets: [{
            data: Object.values(completedExercises),
            backgroundColor: [
-             '#2D4262', '#363237', '#73605B', '#D09683'
+             '#2D4262',
+             '#363237',
+             '#73605B',
+             '#D09683',
+             '#F1F3CE',
+             '#1E656D',
+             '#00293C',
+             '#F0810F',
+             '#75B1A9',
            ],
          }],
 
