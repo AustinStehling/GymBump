@@ -5,7 +5,7 @@ class Leaderboard extends React.Component {
   componentDidMount() {
     this.props.requestAllUsers();
     this.props.requestAllExercises();
-    this.state = { exercise: '' }
+    this.state = { exercise: null }
 
     this.handleUpdate = this.handleUpdate.bind(this)
   }
@@ -73,27 +73,32 @@ class Leaderboard extends React.Component {
      let sorted = [];
      const memberAndMax = {}
      Object.keys(membersLiftMaxes).map(member => {
-       let exerciseMax = membersLiftMaxes[member][this.state.exercise]
+       if (this.state.exercise) { 
+         let exerciseMax = membersLiftMaxes[member][this.state.exercise]
 
-       if(!memberAndMax[this.state.exercise]){
-         memberAndMax[this.state.exercise] = []
-         memberAndMax[this.state.exercise].push([member, exerciseMax])
-       } else if (memberAndMax[this.state.exercise]) {
-         memberAndMax[this.state.exercise].push([member, exerciseMax])
-       }
-
-       memberAndMax[this.state.exercise].map(max => {
-         if (sorted.indexOf(max) < 0) {
-           sorted.push(max)
+         if(!memberAndMax[this.state.exercise]){
+           memberAndMax[this.state.exercise] = []
+           memberAndMax[this.state.exercise].push([member, exerciseMax])
+         } else if (memberAndMax[this.state.exercise]) {
+           memberAndMax[this.state.exercise].push([member, exerciseMax])
          }
-       })
 
-       sorted.sort((a, b) => {
-         return a[1] - b[1]
-       })
+         memberAndMax[this.state.exercise].map(max => {
+           if (sorted.indexOf(max) < 0) {
+             sorted.push(max)
+           }
+         })
+
+         sorted.sort((a, b) => {
+           return a[1] - b[1]
+         })
+       }
      })
 
-     debugger
+     const maxLis = sorted.reverse().map((user, idx) => {
+       return <li key={idx}><p>{user[0]}:</p>
+                            <p>{user[1]}</p></li>
+     })
 
 
 
@@ -109,7 +114,9 @@ class Leaderboard extends React.Component {
         <ul>
           {members}
         </ul>
-
+        <ul>
+          {maxLis}
+        </ul>
       </div>
     )
   }
