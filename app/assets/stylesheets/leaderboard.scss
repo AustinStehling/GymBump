@@ -14,6 +14,22 @@
   font-weight: bold;
 }
 
+.userPresent {
+  color: black;
+  width: 400px;
+  height: 30px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background: #2988BC;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .pie-chart-div-lb {
   width: 500px;
   padding: 15px;

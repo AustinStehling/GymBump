@@ -136,10 +136,19 @@ class Leaderboard extends React.Component {
        }
      })
 
+
      let maxLis = sorted.reverse().map((user) => {
-       return <li className="members-list" key={memberId[user[0]].id}>
+
+       if (memberId[user[0]].id === this.props.cu.id) {
+         return <li className='userPresent' key={memberId[user[0]].id}>
                             <p className="members-list-p">{user[0]}</p>
                             <p className="members-list-p-two">{user[1]}</p></li>
+       } else {
+         return <li className='members-list' key={memberId[user[0]].id}>
+                            <p className="members-list-p">{user[0]}</p>
+                            <p className="members-list-p-two">{user[1]}</p></li>
+       }
+
      })
 
 

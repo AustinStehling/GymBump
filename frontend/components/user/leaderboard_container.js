@@ -6,6 +6,7 @@ import { requestAllExercises } from '../../actions/exercise/exercise_actions'
 
 const mapStateToProps = state => {
   return {
+    cu: state.session.currentUser,
     members: selectAllMembers(state),
     allExercises: state.entities.exercise
   }
