@@ -1,6 +1,6 @@
 # GymBump
 
-https://gymbump.herokuapp.com/#/
+[link to GymBump!](https://gymbump.herokuapp.com/#/)
 
 GymBump is a full-stack web application that began as an original idea. It combined my experiences as a former personal trainer and current Crossfitter with my technical ability as a software developer.
 
@@ -17,6 +17,32 @@ The workout log was intended to be simple. It’s the core component of this app
 I have used other fitness applications that did not allow for a good user experience when it came to inputting workout information. In fact many offered a text box to upload workouts which easily became disorganized and didn’t provide the functionality to analyze inputs.
 
 Exercise selection was made easy with an autocomplete feature that watches a users key strokes and offers exercise suggestions depending on the characters they begin to type.
+
+```javascript
+const match = allExercises.map((exercise) => {
+  if (this.state.inputVal === '') return [];
+  let matched = [];
+  if (this.state.inputVal.length > 0) {
+    for (var j = 0; j < this.state.inputVal.length; j++) {
+      matched = [];
+      if (exercise.exercise_name.slice(0, j + 1).toUpperCase() === this.state.inputVal.slice(0, j + 1).toUpperCase()) {
+        matched.push(<li onClick={this.handleClick}
+                         value={exercise.exercise_name}
+                         className="workout-auto-li"
+                         key={exercise.id}>{exercise.exercise_name}</li>);
+      }
+    }
+  } else {
+      matched.push(<li onClick={this.handleClick}
+                       value={exercise.exercise_name}
+                       className="workout-auto-li"
+                       key={exercise.id}>{exercise.exercise_name}</li>)
+  }
+  
+  return matched;
+});
+
+```
 
 The steps to create a workout were carefully selected. This was done by rendering different React components depending on which stage of a workout entry a user was on; Naming, selecting an exercise, setting results for a particular exercise.
 Once an exercise is selected, a user can add as many set results for that particular exercise without needing to go through the process of selecting the exercise over and over again. If a user did 5 sets of bench press, they only need to select bench press once. This was done by storing a selected exercise in my state.
