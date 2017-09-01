@@ -60,7 +60,7 @@ Exercise breakdown categorizes exercises by area trained; upper body, lower body
 The leaderboard is a fun feature that allows users to compare their weight lifting exercise results to users using the web application. It’s an area to gain perspective and inspire motivation to improve. The leaderboard only contains exercises in the category of weight lifting and that user’s have performed. What fun would it be to see results that don’t contain any results?
 
 ![Leaderboard]
-(http://i66.tinypic.com/acbijb.png)
+(http://oi66.tinypic.com/acbijb.jpg)
 
 The leaderboard was one of the more difficult components to build because it required the organization of a lot of data.
 
