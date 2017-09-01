@@ -69,8 +69,7 @@ The leaderboard was one of the more difficult components to build because it req
 
 Leaderboard:
 
-![Image of Leaderboard]
-(./app/assets/images/screenshot.png)
+![Image of Leaderboard](./app/assets/images/screenshot.png)
 
 ### Exercise Trends
 
