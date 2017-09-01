@@ -60,7 +60,7 @@ class Leaderboard extends React.Component {
           let currentExercise = this.props.allExercises[sets[j].exercise_id]
           let exercise = currentExercise.exercise_name
 
-          if (completedMemberExercises.indexOf(exercise) < 0) {
+          if (completedMemberExercises.indexOf(exercise) < 0 && currentExercise.ex_type === 'lift') {
             completedMemberExercises.push(exercise)
           }
 
