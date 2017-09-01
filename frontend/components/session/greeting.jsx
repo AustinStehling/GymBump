@@ -43,6 +43,9 @@ class Greeting extends React.Component {
         <Link to='/'>
           <h1 className="gymbump-header">GYM BUMP</h1>
         </Link>
+        <Link to='/workouts'>
+          <h3>Leaderboard</h3>
+        </Link>
           <div className="signup-nav">
           <button className="logout-home-button" onClick={this.handleSubmit}>
             Logout

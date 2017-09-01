@@ -2,10 +2,15 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import values from 'lodash/values'
 class Leaderboard extends React.Component {
+  
+  constructor(props) {
+    super(props)
+    this.state = { exercise: null }
+  }
   componentDidMount() {
     this.props.requestAllUsers();
     this.props.requestAllExercises();
-    this.state = { exercise: null }
+
 
     this.handleUpdate = this.handleUpdate.bind(this)
   }
@@ -73,7 +78,7 @@ class Leaderboard extends React.Component {
      let sorted = [];
      const memberAndMax = {}
      Object.keys(membersLiftMaxes).map(member => {
-       if (this.state.exercise) { 
+       if (this.state.exercise) {
          let exerciseMax = membersLiftMaxes[member][this.state.exercise]
 
          if(!memberAndMax[this.state.exercise]){
