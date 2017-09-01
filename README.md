@@ -67,6 +67,11 @@ The leaderboard was one of the more difficult components to build because it req
 * I needed to sort the lifts from greatest to least.
 * I needed to store the results under keys of exercise names to allow a user to choose which exercise leaderboard they wanted to view.
 
+Leaderboard:
+
+![Image of Leaderboard]
+(./app/assets/images/screenshot.png)
+
 ### Exercise Trends
 
 Exercise trends are found on the leaderboard. It’s a simple feature that shows what exercises people are doing the most of and changes each time any user inputs an exercise.
