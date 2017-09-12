@@ -21,7 +21,8 @@
     "redux-thunk": "^2.2.0",
     "salad-ui": "^1.1.50",
     "time-input": "^1.5.1",
-    "webpack": "^3.5.5"
+    "webpack": "^3.5.5",
+    "webpack-uglify-js-plugin": "^1.1.9"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
