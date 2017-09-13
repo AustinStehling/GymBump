@@ -36,7 +36,8 @@ class RootRender extends React.Component{
       );
   }
 
-  handleDemoLogin() {
+  handleDemoLogin(e) {
+    e.preventDefault();
     this.props.login({username: 'Demo', password: 'password'});
   }
 
