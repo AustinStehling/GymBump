@@ -53,8 +53,6 @@ class CreateSetResult extends React.Component {
   }
 
   handleTime(property) {
-
-    debugger
     return e => {
       let target = e.target.value
       if (target.length === 1) {
