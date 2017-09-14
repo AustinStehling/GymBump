@@ -19,8 +19,10 @@ class UserShow extends React.Component {
 
 
   componentDidMount() {
-    this.props.requestUser(this.props.match.params.userId),
-    this.props.requestAllExercises();
+    this.props.requestUser(this.props.match.params.userId)
+    // this.props.requestAllExercises();
+
+
     this.props.history.push(`/users/${this.props.currentUser.id}`);
   }
 

@@ -68,7 +68,7 @@ class SearchBestWorkouts extends React.Component {
 
     let setResults = allWorkouts.map(workout => {
       return values(workout.setresults)
-    })
+    });
 
     let mergedSets = [].concat.apply([], setResults)
 
@@ -79,6 +79,7 @@ class SearchBestWorkouts extends React.Component {
     for (var i = 0; i < mergedSets.length; i++) {
       let set = mergedSets[i];
       let exercise = exercises[set.exercise_id]
+      if (!exercise) continue;
       let name = exercise.exercise_name
       let bodypart = exercise.bodypart
 
