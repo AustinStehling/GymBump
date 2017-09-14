@@ -26,7 +26,9 @@ class WorkoutShow extends React.Component {
     const results = setArray.map((result, idx) => {
       if (result.workout_id === this.props.selectedWorkout.id) {
         return <li key={result.id} className='workout-show-li'>
-                   <p className='workout-title'><p>Set {idx + 1}: </p><p>{exercises[result.exercise_id].exercise_name}</p></p>
+                    {exercises[result.exercise_id].exercise_name ? (
+                      <p className='workout-title'><p>Set {idx + 1}: </p><p>{exercises[result.exercise_id].exercise_name}</p></p>
+                    ): null}
                    <ul>
                      {result.weight_lifted ? (
                        <li className='workout-result-li'><p className='workout-result-li'>Weight:</p>{result.weight_lifted}{result.weight_unit}</li>
