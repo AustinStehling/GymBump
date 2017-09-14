@@ -63,27 +63,27 @@ class ExerciseIndex extends React.Component {
     let allExercises = this.props.allExercises;
 
 
-    const match = allExercises.map((exercise) => {
-      if (this.state.inputVal === '') return [];
-      let matched = [];
-      if (this.state.inputVal.length > 0) {
-        for (var j = 0; j < this.state.inputVal.length; j++) {
-          matched = [];
-          if (exercise.exercise_name.slice(0, j + 1).toUpperCase() === this.state.inputVal.slice(0, j + 1).toUpperCase()) {
-            matched.push(<li onClick={this.handleClick}
-                             value={exercise.exercise_name}
-                             className="workout-auto-li"
-                             key={exercise.id}>{exercise.exercise_name}</li>);
-          }
-        }
-      } else {
-          matched.push(<li onClick={this.handleClick}
-                           value={exercise.exercise_name}
-                           className="workout-auto-li"
-                           key={exercise.id}>{exercise.exercise_name}</li>)
-      }
-      return matched;
-    });
+    // const match = allExercises.map((exercise) => {
+    //   if (this.state.inputVal === '') return [];
+    //   let matched = [];
+    //   if (this.state.inputVal.length > 0) {
+    //     for (var j = 0; j < this.state.inputVal.length; j++) {
+    //       matched = [];
+    //       if (exercise.exercise_name.slice(0, j + 1).toUpperCase() === this.state.inputVal.slice(0, j + 1).toUpperCase()) {
+    //         matched.push(<li onClick={this.handleClick}
+    //                          value={exercise.exercise_name}
+    //                          className="workout-auto-li"
+    //                          key={exercise.id}>{exercise.exercise_name}</li>);
+    //       }
+    //     }
+    //   } else {
+    //       matched.push(<li onClick={this.handleClick}
+    //                        value={exercise.exercise_name}
+    //                        className="workout-auto-li"
+    //                        key={exercise.id}>{exercise.exercise_name}</li>)
+    //   }
+    //   return matched;
+    // });
 
     return (
       <div>
@@ -97,9 +97,7 @@ class ExerciseIndex extends React.Component {
                   className="exercise-input"
                   />
               </label>
-              <ul className="exercise-ul">
-                {match}
-              </ul>
+            
               <button className="new-exercise-button"
                 onClick={this.handleSubmit}>Add Exercise</button>
             </div>
