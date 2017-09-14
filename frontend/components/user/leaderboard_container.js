@@ -8,7 +8,7 @@ const mapStateToProps = state => {
   return {
     cu: state.session.currentUser,
     members: selectAllMembers(state),
-    allExercises: state.entities.exercise
+    allExercises: state.entities.exercise || []
   }
 };
 

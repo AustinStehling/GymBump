@@ -50,6 +50,13 @@ class ExerciseIndex extends React.Component {
     this.props.requestAllExercises();
   }
 
+  // getInitialState: function(){
+  //   return {
+  //     allExercises: []
+  //   }
+  // },
+
+
   render() {
 
 

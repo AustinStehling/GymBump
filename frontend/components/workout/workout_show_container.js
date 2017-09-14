@@ -5,7 +5,7 @@ import { requestUser } from '../../actions/user/user_actions'
 import { editResult } from '../../actions/setresult/setresult_actions'
 
 const mapStateToProps = state => ({
-  exercises: state.entities.exercise
+  exercises: state.entities.exercise || []
 });
 
 const mapDispatchToProps = dispatch => ({
