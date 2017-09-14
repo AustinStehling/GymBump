@@ -54,7 +54,8 @@ class Leaderboard extends React.Component {
       }
     })
 
-    Object.keys(membersSetResults).map(member => {
+    let setKeys = Object.keys(membersSetResults) || []
+    setKeys.map(member => {
       let setResults = membersSetResults[member]
       membersLiftMaxes[member] = {}
       for (var i = 0; i < setResults.length; i++) {
