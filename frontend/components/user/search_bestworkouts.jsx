@@ -63,8 +63,8 @@ class SearchBestWorkouts extends React.Component {
 
   render () {
 
-    let allWorkouts = this.props.allWorkouts;
-    let exercises = this.props.exercises;
+    let allWorkouts = this.props.allWorkouts || []
+    let exercises = this.props.exercises || []
 
     let setResults = allWorkouts.map(workout => {
       return values(workout.setresults)

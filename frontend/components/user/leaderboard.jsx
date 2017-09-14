@@ -21,12 +21,15 @@ class Leaderboard extends React.Component {
   }
 
   render() {
-    const members = this.props.members.map(member => {
+
+    const members = this.props.members || []
+    const membersList = members.map(member => {
       return <li className="members-list" key={member.id + 1}>{member.username}</li>
-    })
+    }) || []
+
 
     const memberId = {}
-    this.props.members.map(member => {
+    members.map(member => {
       memberId[member.username] = member
     })
 
@@ -35,7 +38,7 @@ class Leaderboard extends React.Component {
     const completedMemberExercises = []
     const completedExercises = {}
 
-    this.props.members.map(member => {
+    members.map(member => {
 
       if (member.workouts) {
         let workouts = values(member.workouts)
@@ -177,7 +180,7 @@ class Leaderboard extends React.Component {
           <div className='lb-ul-div'>
             <h3 className='selected-ex-title'>Leaderboard</h3>
             <ul className='leaderboard-ul'>
-              {members}
+              {membersList}
             </ul>
           </div>
         ): null}

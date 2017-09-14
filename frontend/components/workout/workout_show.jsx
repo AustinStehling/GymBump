@@ -21,8 +21,8 @@ class WorkoutShow extends React.Component {
   }
 
   render () {
-    const setArray = values(this.props.selectedWorkout.setresults)
-    const exercises = this.props.exercises
+    const setArray = values(this.props.selectedWorkout.setresults) || []
+    const exercises = this.props.exercises || []
     const results = setArray.map((result, idx) => {
       if (result.workout_id === this.props.selectedWorkout.id) {
         return <li key={result.id} className='workout-show-li'>

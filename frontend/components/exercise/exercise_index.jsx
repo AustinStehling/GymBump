@@ -56,7 +56,7 @@ class ExerciseIndex extends React.Component {
   render() {
 
 
-    let allExercises = this.props.allExercises || [{ exercise_name: '' }]
+    let allExercises = this.props.allExercises || []
 
       let match = allExercises.map((exercise) => {
         if (this.state.inputVal === '') return [];
