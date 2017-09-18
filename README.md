@@ -6,7 +6,7 @@ GymBump is a full-stack web application that began as an original idea. It combi
 
 GymBump is a growing project with new features on the way. It was designed to give its users a central hub to log workouts and receive workout analysis. The workout analytics are intended to help a user create a balanced exercise plan that promotes optimal progress.
 
-GymBump utilizes Ruby on Rails v5.1.3 on the back-end, a PostgreSQL database, and React.js with a Redux architectural framework on the front-end. Chart.js was used to create visual representations of user workout data in a straightforward format.
+GymBump utilizes Ruby on Rails v5.1.3 on the back-end, a PostgreSQL database, and React.js with a Redux architectural library on the front-end. Chart.js was used to create visual representations of user workout data in a straightforward format.
 
 ## Features & Implementation
 
